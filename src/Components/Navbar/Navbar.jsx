@@ -1,31 +1,8 @@
-import { Row, Col, Button, Menu, Dropdown } from 'antd'
+import { Row, Col, Button, Menu, Dropdown, Divider } from 'antd'
 import { Link } from 'react-router-dom'
+import ConnectWallet from '../ConnectWallet/ConnectWallet'
 import './Navbar.scss'
 import { MenuOutlined } from '@ant-design/icons'
-
-const Navbar = () => {
-  return (
-    <div className='navbar'>
-      <Row align='middle' justify='space-around'>
-        <Col>
-          <Button type='text' id='home-logo'>
-            <Link to='/' id='home-logo'>
-              Home
-            </Link>
-          </Button>
-        </Col>
-        <Col>
-          <Dropdown overlay={menu} placement='bottomRight'>
-            <Button type='text'>
-              <MenuOutlined />
-            </Button>
-          </Dropdown>
-        </Col>
-      </Row>
-    </div>
-  )
-}
-export default Navbar
 
 const menu = (
   <Menu
@@ -57,3 +34,29 @@ const menu = (
     ]}
   />
 )
+
+const Navbar = () => {
+  return (
+    <div className='navbar'>
+      <Row align='middle' justify='space-around'>
+        <Col>
+          <Button type='text' id='home-logo'>
+            <Link to='/' id='home-logo'>
+              Home
+            </Link>
+          </Button>
+        </Col>
+        <Col>
+          <ConnectWallet id='connect-wallet' />
+          <Divider type='vertical' />
+          <Dropdown overlay={menu} placement='bottomRight'>
+            <Button type='text'>
+              <MenuOutlined />
+            </Button>
+          </Dropdown>
+        </Col>
+      </Row>
+    </div>
+  )
+}
+export default Navbar
