@@ -1,9 +1,8 @@
 import { Suspense, lazy } from 'react'
-import { Row, Col } from 'antd'
+import { Row, Col, BackTop } from 'antd'
 import HomeComponent from '../../Components/HomeComponent/HomeComponent'
 import ProfileComponent from '../../Components/ProfileComponent/ProfileComponent'
 import WorkExperienceComponent from '../../Components/WorkExperienceComponent/WorkExperienceComponent'
-
 import './Home.scss'
 
 const ParticlesComponent = lazy(() =>
@@ -27,6 +26,7 @@ const Home = () => {
           <WorkExperienceComponent />
         </Col>
       </Row>
+      <BackTop visibilityHeight={250} />
     </div>
   )
 }

@@ -75,7 +75,7 @@ const ParticlesEFX = () => {
           number: {
             density: {
               enable: true,
-              area: 700,
+              area: 800,
             },
             value: 80,
           },

@@ -5,10 +5,10 @@ const HomeComponent = () => {
   return (
     <div className='home-component'>
       <Row align='middle'>
-        <Col span={24}>
+        <Col>
           <p className='intro'>HI!</p>
-          <p className='intro'>MY NAME</p>
-          <p className='intro'>IS HOWARD!</p>
+          <p className='intro'>I AM</p>
+          <p className='intro'>HOWARD!</p>
         </Col>
       </Row>
     </div>

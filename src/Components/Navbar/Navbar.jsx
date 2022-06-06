@@ -1,60 +1,56 @@
-import { Row, Col, Button, Menu, Dropdown, Divider } from 'antd'
-import { Link } from 'react-router-dom'
+import { useLayoutEffect, useContext } from 'react'
+import { Row, Col } from 'antd'
+import { Spin as Hamburger } from 'hamburger-react'
 import ConnectWallet from '../ConnectWallet/ConnectWallet'
+import OverlayMenu from '../OverlayMenu/OverlayMenu'
+import { MenuContext } from '../MenuProvider/MenuProvider'
 import './Navbar.scss'
-import { MenuOutlined } from '@ant-design/icons'
-
-const menu = (
-  <Menu
-    items={[
-      {
-        key: 'tokens',
-        label: <Link to='tokens'>GET TOKENS</Link>,
-      },
-      {
-        key: 'nft',
-        label: <Link to='nft'>MINT NFT</Link>,
-      },
-      {
-        key: 'vault',
-        label: <Link to='vault'>VAULT</Link>,
-      },
-      {
-        key: 'lottery',
-        label: <Link to='lottery'>GET LUCKY!</Link>,
-      },
-      {
-        key: 'roadmap',
-        label: <Link to='roadmap'>ROADMAP</Link>,
-      },
-      {
-        key: 'faq',
-        label: <Link to='faq'>FAQ</Link>,
-      },
-    ]}
-  />
-)
 
 const Navbar = () => {
+  const menu = useContext(MenuContext)
+
+  const isMenuOpen = menu.isMenuOpen
+
+  useLayoutEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden'
+      document.body.style.height = '0%'
+      return
+    }
+    if (!isMenuOpen) {
+      document.body.style.overflow = 'auto'
+      document.body.style.height = '100%'
+      return
+    }
+  }, [isMenuOpen])
+
+  const handleClick = () => {
+    menu.changeMenuState()
+    return
+  }
+
   return (
     <div className='navbar'>
-      <Row align='middle' justify='space-around'>
+      <Row align='middle' justify='space-between'>
         <Col>
-          <Button type='text' id='home-logo'>
-            <Link to='/' id='home-logo'>
-              Home
-            </Link>
-          </Button>
+          <div id='hamburger-menu'>
+            <Hamburger
+              label='MENU'
+              size={45}
+              distance='sm'
+              easing='ease-in'
+              direction='right'
+              toggled={isMenuOpen}
+              toggle={handleClick}
+            />
+          </div>
         </Col>
         <Col>
-          <ConnectWallet id='connect-wallet' />
-          <Divider type='vertical' />
-          <Dropdown overlay={menu} placement='bottomRight'>
-            <Button type='text'>
-              <MenuOutlined />
-            </Button>
-          </Dropdown>
+          <ConnectWallet />
         </Col>
+      </Row>
+      <Row>
+        <Col>{isMenuOpen ? <OverlayMenu /> : null}</Col>
       </Row>
     </div>
   )

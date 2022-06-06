@@ -9,7 +9,12 @@ const ConnectWallet = () => {
 
   return (
     <>
-      <Button type='text' onClick={clickHandler}>
+      <Button
+        size='large'
+        type='text'
+        onClick={clickHandler}
+        id='connect-wallet'
+      >
         Connect Wallet
       </Button>
     </>
