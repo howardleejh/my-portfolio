@@ -1,11 +1,15 @@
+import { useContext } from 'react'
 import { Row, Col, BackTop } from 'antd'
 import Profile from '../../Components/Profile/Profile'
 import WelcomeMessage from '../../Components/WelcomeMessage/WelcomeMessage'
 import TechStack from '../../Components/TechStack/TechStack'
 import { Fade } from 'react-awesome-reveal'
+import { MenuContext } from '../../Components/MenuProvider/MenuProvider'
 import './Home.scss'
 
 const Home = () => {
+  const menu = useContext(MenuContext)
+
   return (
     <div className='home-page'>
       <Fade>
@@ -19,7 +23,7 @@ const Home = () => {
           <Profile />
         </Col>
       </Row>
-      <Fade>
+      <Fade fraction={0.4}>
         <Profile
           message={
             <>
@@ -45,7 +49,7 @@ const Home = () => {
         />
       </Fade>
       <TechStack />
-      <BackTop />
+      {menu.isMenuOpen ? <></> : <BackTop />}
     </div>
   )
 }

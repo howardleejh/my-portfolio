@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useLayoutEffect } from 'react'
 import { MenuContext } from '../MenuProvider/MenuProvider'
 import { Row, Col } from 'antd'
 import { Spin as Hamburger } from 'hamburger-react'
@@ -9,6 +9,19 @@ import './Navbar.scss'
 const Navbar = () => {
   const menu = useContext(MenuContext)
   const isMenuOpen = menu.isMenuOpen
+
+  useLayoutEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden'
+      document.body.style.height = '0%'
+      return
+    }
+    if (!isMenuOpen) {
+      document.body.style.overflow = 'auto'
+      document.body.style.height = '100%'
+      return
+    }
+  }, [isMenuOpen])
 
   return (
     <div className='navbar'>

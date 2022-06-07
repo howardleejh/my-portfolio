@@ -1,4 +1,5 @@
 import { Row, Col } from 'antd'
+import WordCloud from '../WordCloud/WordCloud'
 import './TechStack.scss'
 
 const TechStack = () => {
@@ -6,7 +7,7 @@ const TechStack = () => {
     <div className='tech-stack'>
       <Row align='middle' justify='center'>
         <Col>
-          <h1>test test</h1>
+          <WordCloud />
         </Col>
       </Row>
     </div>
