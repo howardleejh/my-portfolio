@@ -5,16 +5,16 @@ export const MenuContext = createContext({})
 export default function MenuProvider({ children }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  const changeMenuState = () => {
-    if (isMenuOpen) {
-      setIsMenuOpen(false)
+  const openMenu = () => {
+    if (!isMenuOpen) {
+      setIsMenuOpen(true)
       return
     }
-    setIsMenuOpen(true)
+    setIsMenuOpen(false)
   }
 
   return (
-    <MenuContext.Provider value={{ isMenuOpen, changeMenuState }}>
+    <MenuContext.Provider value={{ isMenuOpen, openMenu }}>
       {children}
     </MenuContext.Provider>
   )

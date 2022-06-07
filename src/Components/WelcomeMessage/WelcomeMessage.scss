@@ -1,0 +1,5 @@
+@use '../../Sass/Style.scss';
+
+.welcome-message {
+  @include Style.messages-template;
+}

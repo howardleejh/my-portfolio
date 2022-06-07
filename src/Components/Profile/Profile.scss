@@ -1,0 +1,10 @@
+@use '../../Sass/Style.scss';
+
+.profile {
+  @include Style.messages-template;
+
+  @media screen and (max-width: 600px) {
+    font-size: 2em;
+    margin: 3em 0;
+  }
+}

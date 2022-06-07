@@ -1,0 +1,18 @@
+@mixin main-headers {
+  font-weight: 900;
+}
+
+@mixin sub-headers {
+  font-weight: 700;
+}
+
+@mixin messages-template {
+  height: 100vh;
+  font-size: 5em;
+  line-height: 2em;
+  padding: 2em 0;
+
+  @media screen and (max-width: 600px) {
+    font-size: 3.5em;
+  }
+}

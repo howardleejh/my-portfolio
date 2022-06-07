@@ -1,32 +1,51 @@
-import { Suspense, lazy } from 'react'
 import { Row, Col, BackTop } from 'antd'
-import HomeComponent from '../../Components/HomeComponent/HomeComponent'
-import ProfileComponent from '../../Components/ProfileComponent/ProfileComponent'
-import WorkExperienceComponent from '../../Components/WorkExperienceComponent/WorkExperienceComponent'
+import Profile from '../../Components/Profile/Profile'
+import WelcomeMessage from '../../Components/WelcomeMessage/WelcomeMessage'
+import TechStack from '../../Components/TechStack/TechStack'
+import { Fade } from 'react-awesome-reveal'
 import './Home.scss'
-
-const ParticlesComponent = lazy(() =>
-  import('../../Components/ParticlesEFX/ParticlesEFX')
-)
 
 const Home = () => {
   return (
     <div className='home-page'>
-      <Row align='middle'>
+      <Fade>
+        <WelcomeMessage />
+      </Fade>
+      <Row align='middle' justify='center' id='profile-container'>
         <Col>
-          <Suspense>
-            <ParticlesComponent />
-          </Suspense>
-          <HomeComponent />
-        </Col>
-        <Col>
-          <ProfileComponent />
-        </Col>
-        <Col>
-          <WorkExperienceComponent />
+          <Profile message='I am a' />
+          <Profile />
+          <Profile />
+          <Profile />
         </Col>
       </Row>
-      <BackTop visibilityHeight={250} />
+      <Fade>
+        <Profile
+          message={
+            <>
+              Mid-Career <br /> Switcher
+            </>
+          }
+        />
+        <Profile
+          message={
+            <>
+              Bootcamp <br /> Graduate
+            </>
+          }
+        />
+        <Profile message={<>Blockchain ...</>} />
+        <Profile message={<>and a ...</>} />
+        <Profile
+          message={
+            <>
+              Full-stack <br /> Developer
+            </>
+          }
+        />
+      </Fade>
+      <TechStack />
+      <BackTop />
     </div>
   )
 }
