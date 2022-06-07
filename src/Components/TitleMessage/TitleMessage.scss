@@ -1,0 +1,5 @@
+@use '../../Sass/Style.scss';
+
+.title-message-container {
+  @include Style.messages-template;
+}
