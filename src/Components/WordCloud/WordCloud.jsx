@@ -1,4 +1,3 @@
-import { Row, Col } from 'antd'
 import * as THREE from 'three'
 import { useRef, useState, useEffect } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
@@ -15,6 +14,7 @@ function Word({ children, ...props }) {
   }
   const ref = useRef()
   const [hovered, setHovered] = useState(false)
+  // eslint-disable-next-line
   const over = (e) => (e.stopPropagation(), setHovered(true))
   const out = () => setHovered(false)
   // Change the mouse cursor on hover
@@ -44,46 +44,57 @@ function Word({ children, ...props }) {
   )
 }
 
-function Cloud({ count = 6, radius = 25 }) {
+function Cloud({ count = 7, radius = 25 }) {
   const words = [
-    'Solidity',
-    'Truffle Framework',
-    'Smart Contracts',
-    'Open Zeppelin',
-    'Tenderly',
-    'ChainLink',
-    'Remix IDE',
-    'Ganache',
-    'Hardhat',
-    'Ethers JS',
-    'Web3',
-    'Javascript',
-    'React JS',
-    'Gatsby JS',
-    'Frontend',
-    'Backend',
-    'Full Stack',
-    'Blockchain',
-    'Ethereum',
-    'Express JS',
-    'Node JS',
-    'MongoDB',
-    'REST APIs',
-    'HTML',
-    'SASS',
-    'Bootstrap',
-    'ANT Design',
-    'jQuery',
-    'CryptoZombies',
-    'Udemy',
-    'DEFI',
-    'Mongoose ODM',
-    'MongoDB Atlas',
-    'Adobe Photoshop',
     'Adobe After Effects',
-    'Adobe Premiere Pro',
     'Adobe Illustrator',
+    'Adobe Photoshop',
+    'Adobe Premiere Pro',
     'Adobe XD',
+    'ANT Design',
+    'Backend',
+    'Blockchain',
+    'Bootstrap',
+    'ChainLink',
+    'CryptoZombies',
+    'DEFI',
+    'Digital Ocean',
+    'ERC20',
+    'ERC721',
+    'ERC1155',
+    'Ethereum',
+    'Ethers JS',
+    'Express JS',
+    'FontAwesome',
+    'Frontend',
+    'Full Stack',
+    'Ganache',
+    'Gatsby JS',
+    'Git',
+    'Github',
+    'Gitlab',
+    'Hardhat',
+    'Heroku',
+    'HTML',
+    'Javascript',
+    'jQuery',
+    'Metamask',
+    'MongoDB',
+    'MongoDB Atlas',
+    'Mongoose ODM',
+    'Node JS',
+    'Open Zeppelin',
+    'React JS',
+    'Remix IDE',
+    'REST APIs',
+    'SASS',
+    'Smart Contracts',
+    'Solidity',
+    'Tenderly',
+    'THREE JS',
+    'Truffle Framework',
+    'Udemy',
+    'Web3',
   ]
 
   const positions = []
@@ -98,7 +109,6 @@ function Cloud({ count = 6, radius = 25 }) {
           spherical.set(radius, phiSpan * i, thetaSpan * j)
         ),
       ])
-
   return positions.map(([pos], index) => (
     <Word key={index} position={pos} children={words[index]} />
   ))

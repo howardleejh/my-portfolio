@@ -1,9 +1,10 @@
 import { useContext } from 'react'
-import { Row, Col, BackTop } from 'antd'
+import { BackTop } from 'antd'
 import { MenuContext } from '../../Components/MenuProvider/MenuProvider'
 import IntroComponent from '../../Components/IntroComponent/IntroComponent'
 import ThreeDCarousel from '../../Components/ThreeDCarousel/ThreeDCarousel'
-import OtherTech from '../../Components/WordCloud/WordCloud'
+import WordCloud from '../../Components/WordCloud/WordCloud'
+import ExperienceComponent from '../../Components/ExperienceComponent/ExperienceComponent'
 import './Home.scss'
 
 const Home = () => {
@@ -13,7 +14,8 @@ const Home = () => {
     <div className='home-page'>
       <IntroComponent />
       <ThreeDCarousel />
-      <OtherTech />
+      <WordCloud />
+      <ExperienceComponent />
       {menu.isMenuOpen ? <></> : <BackTop />}
     </div>
   )
