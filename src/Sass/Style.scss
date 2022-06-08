@@ -7,13 +7,13 @@
 }
 
 @mixin messages-template {
-  height: 100vh;
+  height: 110vh;
   font-size: 5em;
   line-height: 2em;
-  padding: 2.5em 0;
+  padding: 3em 0;
 
-  @media screen and (max-width: 600px) {
-    font-size: 3.5em;
-    padding: 3em 0;
+  p {
+    font-size: 0.25em;
+    line-height: 0em;
   }
 }

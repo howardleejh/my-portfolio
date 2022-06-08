@@ -1,11 +1,6 @@
 .three-d-carousel {
-  display: grid;
-  place-items: center;
-  padding: 10em 0;
-
   h1 {
     font-size: 10em;
-    padding: 0.5em;
   }
 
   ul {
@@ -13,6 +8,7 @@
     font-size: 5em;
     transform-style: preserve-3d;
     animation: three-dimensions-circle 30s linear infinite;
+    padding: 0.5em 0;
 
     &:hover {
       animation-play-state: paused;

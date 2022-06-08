@@ -1,4 +1,9 @@
-#profile-container {
-  position: sticky;
-  top: -15%;
+.home-page {
+  #profile-container {
+    position: sticky;
+    top: -7em;
+  }
+  #tech-stack {
+    height: 100vh;
+  }
 }
