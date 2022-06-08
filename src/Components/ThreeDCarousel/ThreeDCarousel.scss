@@ -1,4 +1,8 @@
 .three-d-carousel {
+  display: grid;
+  place-items: center;
+  padding: 10em 0;
+
   h1 {
     font-size: 10em;
   }

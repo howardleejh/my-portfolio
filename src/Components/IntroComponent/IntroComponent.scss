@@ -1,0 +1,16 @@
+.intro-component-container {
+  @media screen and (max-width: 600px) {
+    h1 {
+      font-size: 4em;
+      font-weight: 700;
+      line-height: 1em;
+      padding: 5em 0;
+    }
+
+    p {
+      font-size: 1em;
+      position: relative;
+      top: -18em;
+    }
+  }
+}

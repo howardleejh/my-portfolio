@@ -22,7 +22,6 @@ const ThreeDCarousel = () => {
       <Row align='middle' justify='center'>
         <Col>
           <h1>Tech Stack</h1>
-
           <ul>
             <li>
               <Tooltip title='HTML 5'>
