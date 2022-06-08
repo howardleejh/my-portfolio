@@ -1,9 +1,9 @@
 import { useContext } from 'react'
 import { Row, Col, BackTop } from 'antd'
-import TitleMessage from '../../Components/TitleMessage/TitleMessage'
-import ThreeDCarousel from '../../Components/ThreeDCarousel/ThreeDCarousel'
 import { Fade } from 'react-awesome-reveal'
 import { MenuContext } from '../../Components/MenuProvider/MenuProvider'
+import TitleMessage from '../../Components/TitleMessage/TitleMessage'
+import ThreeDCarousel from '../../Components/ThreeDCarousel/ThreeDCarousel'
 import './Home.scss'
 
 const Home = () => {
@@ -23,7 +23,6 @@ const Home = () => {
       <Row align='middle' justify='center' id='profile-container'>
         <Col>
           <TitleMessage title='I am a' />
-          <TitleMessage />
         </Col>
       </Row>
       <Fade fraction={0.4}>
