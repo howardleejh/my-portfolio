@@ -1,14 +1,21 @@
-import { Card } from 'antd'
 import './ExperienceCard.scss'
 
 const ExperienceCard = (props) => {
-  const { Meta } = Card
   return (
-    <>
-      <Card hoverable cover={<img alt={props.alt} src={props.source} />}>
-        <Meta title={props.title} description={props.description} />
-      </Card>
-    </>
+    <div className='exp-card'>
+      <div className='exp-card-inner'>
+        <div className='exp-card-front' style={props.style}>
+          <section>
+            <h3>{props.title}</h3>
+          </section>
+        </div>
+        <div className='exp-card-back'>
+          <h1>John Doe</h1>
+          <p>Architect & Engineer</p>
+          <p>We love that guy</p>
+        </div>
+      </div>
+    </div>
   )
 }
 export default ExperienceCard

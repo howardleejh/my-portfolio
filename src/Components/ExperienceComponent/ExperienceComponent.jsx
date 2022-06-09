@@ -1,48 +1,42 @@
-import { Row, Col, Descriptions, Space } from 'antd'
+import { Row, Col, Space } from 'antd'
 import ExperienceCard from '../ExperienceCard/ExperienceCard'
 import './ExperienceComponent.scss'
+import img1 from '../../Media/GA.png'
+import img2 from '../../Media/Centaur-md.png'
+import img3 from '../../Media/Igloo.png'
 
 const ExperienceComponent = () => {
   return (
-    <div className='experience-component'>
-      <Descriptions
-        bordered
-        title='Work Experience'
-        layout='vertical'
-        column={4}
-        size='small'
-      >
-        <Descriptions.Item label='Years of Work'>Prepaid</Descriptions.Item>
-        <Descriptions.Item label='Years of Experience'>
-          18:00:00
-        </Descriptions.Item>
-        <Descriptions.Item label='Amount of Coffee'>a lot</Descriptions.Item>
-        <Descriptions.Item label='Organizations'>$20.00</Descriptions.Item>
-        <Descriptions.Item label='Currently at'>$60.00</Descriptions.Item>
-      </Descriptions>
-      <Row align='middle' justify='center' className='card-container'>
-        <Col className='exp-card'>
+    <div className='exp-component'>
+      <Row align='middle' justify='center' gutter={[16, 16]}>
+        <Col>
           <ExperienceCard
-            source='https://archives.bulbagarden.net/media/upload/4/49/Ash_Pikachu.png'
-            alt='an image'
-            title='test'
-            description='hello world'
+            title='General Assembly Singapore'
+            id='card1'
+            style={{
+              background: `#ffffff url(${img1}) no-repeat center`,
+              backgroundSize: 'contain',
+            }}
           />
         </Col>
-        <Col className='exp-card'>
+        <Col>
           <ExperienceCard
-            source='https://archives.bulbagarden.net/media/upload/4/49/Ash_Pikachu.png'
-            alt='an image'
-            title='test'
-            description='hello world'
+            title='Centaur Finance'
+            id='card1'
+            style={{
+              background: `#ffffff url(${img2}) no-repeat center`,
+              backgroundSize: 'contain',
+            }}
           />
         </Col>
-        <Col className='exp-card'>
+        <Col>
           <ExperienceCard
-            source='https://archives.bulbagarden.net/media/upload/4/49/Ash_Pikachu.png'
-            alt='an image'
-            title='test'
-            description='hello world'
+            title='Igloo Insure'
+            id='card1'
+            style={{
+              background: `#ffffff url(${img3}) no-repeat center`,
+              backgroundSize: 'cover',
+            }}
           />
         </Col>
       </Row>

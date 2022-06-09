@@ -1,8 +1,14 @@
 import * as THREE from 'three'
 import { useRef, useState, useEffect } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { Text, TrackballControls } from '@react-three/drei'
+import { Text, OrbitControls } from '@react-three/drei'
 import './WordCloud.scss'
+
+/*
+Feature extracted:
+Author: Paul Henschel [drcmda]
+Link: https://codesandbox.io/s/basic-demo-forked-yup2o?file=/src/App.js
+*/
 
 function Word({ children, ...props }) {
   const color = new THREE.Color()
@@ -44,7 +50,7 @@ function Word({ children, ...props }) {
   )
 }
 
-function Cloud({ count = 7, radius = 25 }) {
+function Cloud({ count = 8, radius = 20 }) {
   const words = [
     'Adobe After Effects',
     'Adobe Illustrator',
@@ -59,6 +65,7 @@ function Cloud({ count = 7, radius = 25 }) {
     'CryptoZombies',
     'DEFI',
     'Digital Ocean',
+    'EIP Standards',
     'ERC20',
     'ERC721',
     'ERC1155',
@@ -109,6 +116,8 @@ function Cloud({ count = 7, radius = 25 }) {
           spherical.set(radius, phiSpan * i, thetaSpan * j)
         ),
       ])
+
+  console.log(positions.length, words.length)
   return positions.map(([pos], index) => (
     <Word key={index} position={pos} children={words[index]} />
   ))
@@ -120,7 +129,7 @@ export default function WordCloud() {
       <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 35], fov: 90 }}>
         <fog attach='fog' args={['#202025', 0, 80]} />
         <Cloud />
-        <TrackballControls rotation={true} />
+        <OrbitControls />
       </Canvas>
     </div>
   )

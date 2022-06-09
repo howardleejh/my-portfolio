@@ -1,16 +1,7 @@
-.experience-component {
-  height: 100vh;
+.exp-component {
+  width: 100%;
   display: grid;
   place-items: center;
-
-  .card-container {
-    width: 100%;
-    position: relative;
-    top: -5em;
-  }
-
-  .exp-card {
-    width: 15em;
-    margin: 1em;
-  }
+  padding: 1em;
+  margin: 10em 0;
 }
