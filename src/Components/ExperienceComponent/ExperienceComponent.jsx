@@ -11,7 +11,7 @@ import './ExperienceComponent.scss'
 const ExperienceComponent = () => {
   return (
     <div className='exp-component'>
-      <Row align='middle' justify='center' gutter={[16, 16]}>
+      <Row align='middle' justify='center'>
         <Col>
           <ExperienceCard
             company='Meta/Facebook'
@@ -237,7 +237,12 @@ const ExperienceComponent = () => {
       <Row align='middle' justify='center' className='exp-download-btn'>
         <Col>
           <h4>Here's my resume for your reference:</h4>
-          <Button type='primary' size='large'>
+          <Button
+            type='primary'
+            size='large'
+            href='https://drive.google.com/file/d/1QYSo4QjjBGRKZnxTO9wX96mpqF4lnZkU/view?usp=sharing'
+            target='_blank'
+          >
             <p>
               DOWNLOAD <FontAwesomeIcon icon={faDownload} />
             </p>

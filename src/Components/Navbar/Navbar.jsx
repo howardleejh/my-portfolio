@@ -26,11 +26,12 @@ const Navbar = () => {
   return (
     <div className='navbar'>
       <Row justify='space-between' align='middle'>
-        <Col>
+        <Col span={8}>
           <Hamburger
             direction='right'
             toggled={isMenuOpen}
             toggle={menu.openMenu}
+            easing='ease-in'
           />
         </Col>
         <Col>

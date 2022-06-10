@@ -40,7 +40,7 @@ const IntroComponent = () => {
         <TitleMessage
           title={
             <>
-              Software <br /> Developer
+              Software <br /> Developer.
             </>
           }
           message='Really...'
@@ -53,7 +53,7 @@ const IntroComponent = () => {
         <TitleMessage
           title={
             <>
-              Blockchain <br /> Developer
+              Blockchain <br /> Developer.
             </>
           }
           message='Solidity • Hardhat • Ethers '

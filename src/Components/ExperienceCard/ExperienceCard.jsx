@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Button, Modal } from 'antd'
+import { isMobile } from 'react-device-detect'
 import './ExperienceCard.scss'
 
 const ExperienceCard = (props) => {
@@ -30,12 +31,12 @@ const ExperienceCard = (props) => {
         </div>
       </div>
       <Modal
+        width={isMobile ? null : 850}
         title={`${props.jobTitle} - ${props.company}`}
         centered
         visible={modalVisible}
         onOk={() => setModalVisible(false)}
         onCancel={() => setModalVisible(false)}
-        width={1000}
         className='exp-modal'
         style={{ textAlign: 'justify' }}
       >
