@@ -24,7 +24,7 @@ const IntroComponent = () => {
         <TitleMessage
           title={
             <>
-              Mid-Career <br /> Switcher
+              Mid-Career <br /> Switcher.
             </>
           }
           message='4 years at Facebook, I had a blast with the Event Operations team in Singapore.'
@@ -32,7 +32,7 @@ const IntroComponent = () => {
         <TitleMessage
           title={
             <>
-              Bootcamp <br /> Graduate
+              Bootcamp <br /> Graduate.
             </>
           }
           message='6 months at General Assembly Singapore, I learnt the ropes.'
@@ -40,10 +40,10 @@ const IntroComponent = () => {
         <TitleMessage
           title={
             <>
-              Developer <br /> ...
+              Software <br /> Developer
             </>
           }
-          message='I really am.'
+          message='Really...'
         />
         <TitleMessage
           title={<>Full Stack</>}

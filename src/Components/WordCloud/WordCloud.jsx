@@ -2,6 +2,10 @@ import * as THREE from 'three'
 import { useRef, useState, useEffect } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Text, OrbitControls } from '@react-three/drei'
+import { Button } from 'antd'
+import { HashLink } from 'react-router-hash-link'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import './WordCloud.scss'
 
 /*
@@ -70,6 +74,8 @@ function Cloud({ count = 8, radius = 20 }) {
     'ERC721',
     'ERC1155',
     'Ethereum',
+    'Ethereum Main Net',
+    'Ethereum Test Nets',
     'Ethers JS',
     'Express JS',
     'FontAwesome',
@@ -89,8 +95,10 @@ function Cloud({ count = 8, radius = 20 }) {
     'MongoDB',
     'MongoDB Atlas',
     'Mongoose ODM',
+    'NFTS',
     'Node JS',
     'Open Zeppelin',
+    'Oracles',
     'React JS',
     'Remix IDE',
     'REST APIs',
@@ -117,7 +125,6 @@ function Cloud({ count = 8, radius = 20 }) {
         ),
       ])
 
-  console.log(positions.length, words.length)
   return positions.map(([pos], index) => (
     <Word key={index} position={pos} children={words[index]} />
   ))
@@ -131,6 +138,17 @@ export default function WordCloud() {
         <Cloud />
         <OrbitControls />
       </Canvas>
+      <HashLink
+        smooth
+        to={'/#contact'}
+        scroll={(el) =>
+          el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+        }
+      >
+        <Button type='text' size='large' id='next-btn'>
+          <FontAwesomeIcon icon={faChevronDown} />
+        </Button>
+      </HashLink>
     </div>
   )
 }

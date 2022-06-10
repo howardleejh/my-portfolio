@@ -1,10 +1,9 @@
 /* The exp card container - set the width and height to whatever you want. We have added the border property to demonstrate that the exp itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .exp-card {
   background-color: transparent;
-  width: 30em;
+  width: 35em;
   height: 20em;
   border-radius: 15px 50px;
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
 
 /* This container is needed to position the front and back side */
@@ -34,28 +33,66 @@
 
 /* Style the front side (fallback if image is missing) */
 .exp-card-front {
-  color: white;
   display: grid;
   place-items: center;
   padding: 1em;
-  border: 1px solid rgba($color: #000000, $alpha: 0.2);
   border-radius: 15px 50px;
+  border: 1px solid rgba($color: #000000, $alpha: 0.2);
 
   section {
     width: 80%;
-    height: 10%;
-    position: fixed;
-    bottom: 0%;
+    height: 35%;
+    display: grid;
+    place-items: center;
     background: rgba($color: #ffffff, $alpha: 0.8);
     backdrop-filter: blur(2px);
-    margin: 0.5% 0;
+    margin: 3% 0;
+
+    h1 {
+      margin: 0;
+      padding: 0;
+    }
   }
 }
 
 /* Style the back side */
 .exp-card-back {
-  background-color: dodgerblue;
   color: white;
   border-radius: 50px 15px;
+  display: grid;
+  place-items: center;
   transform: rotateY(180deg);
+
+  h1,
+  h4 {
+    color: white;
+  }
+
+  p {
+    width: 30em;
+    height: 9em;
+    padding: 1em 2em;
+    text-align: justify;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .exp-card {
+    width: 25em;
+
+    .exp-card-front {
+      section {
+        width: 95%;
+        height: 50%;
+      }
+    }
+
+    .exp-card-back {
+      p {
+        width: 25em;
+        height: 5em;
+        overflow-y: scroll;
+      }
+    }
+  }
 }

@@ -1,3 +1,4 @@
+import { BrowserRouter } from 'react-router-dom'
 import MenuProvider from './Components/MenuProvider/MenuProvider'
 import AppLayout from './Components/AppLayout/AppLayout'
 import Home from './Pages/Home/Home'
@@ -7,9 +8,11 @@ const App = () => {
   return (
     <div className='App'>
       <MenuProvider>
-        <AppLayout>
-          <Home />
-        </AppLayout>
+        <BrowserRouter>
+          <AppLayout>
+            <Home />
+          </AppLayout>
+        </BrowserRouter>
       </MenuProvider>
     </div>
   )

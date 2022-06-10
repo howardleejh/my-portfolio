@@ -5,7 +5,8 @@ import IntroComponent from '../../Components/IntroComponent/IntroComponent'
 import ThreeDCarousel from '../../Components/ThreeDCarousel/ThreeDCarousel'
 import WordCloud from '../../Components/WordCloud/WordCloud'
 import ExperienceComponent from '../../Components/ExperienceComponent/ExperienceComponent'
-import ParticlesEFX from '../../Components/ParticlesEFX/ParticlesEFX'
+import ContactForm from '../../Components/ContactForm/ContactForm'
+// import ParticlesEFX from '../../Components/ParticlesEFX/ParticlesEFX'
 import './Home.scss'
 
 const Home = () => {
@@ -13,11 +14,22 @@ const Home = () => {
 
   return (
     <div className='home-page'>
-      <ParticlesEFX />
-      <IntroComponent />
-      <ThreeDCarousel />
-      <ExperienceComponent />
-      <WordCloud />
+      {/* <ParticlesEFX /> */}
+      <section id='intro'>
+        <IntroComponent />
+      </section>
+      <section id='tech'>
+        <ThreeDCarousel />
+      </section>
+      <section id='exp'>
+        <ExperienceComponent />
+      </section>
+      <section id='cloud'>
+        <WordCloud />
+      </section>
+      <section id='contact'>
+        <ContactForm />
+      </section>
       {menu.isMenuOpen ? <></> : <BackTop />}
     </div>
   )
