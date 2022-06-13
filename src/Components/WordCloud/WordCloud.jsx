@@ -14,7 +14,7 @@ Author: Paul Henschel [drcmda]
 Link: https://codesandbox.io/s/basic-demo-forked-yup2o?file=/src/App.js
 */
 
-function Word({ children, ...props }) {
+const Word = ({ children, ...props }) => {
   const color = new THREE.Color()
   const fontProps = {
     'fontSize': 2,
@@ -54,7 +54,7 @@ function Word({ children, ...props }) {
   )
 }
 
-function Cloud({ count = 8, radius = 20 }) {
+const Cloud = ({ count = 8, radius = 20 }) => {
   const words = [
     'Adobe After Effects',
     'Adobe Illustrator',
@@ -130,7 +130,7 @@ function Cloud({ count = 8, radius = 20 }) {
   ))
 }
 
-export default function WordCloud() {
+const WordCloud = () => {
   return (
     <div className='word-cloud-container'>
       <h1 id='word-cloud-title'> Skill Sets</h1>
@@ -153,3 +153,5 @@ export default function WordCloud() {
     </div>
   )
 }
+
+export default WordCloud

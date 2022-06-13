@@ -1,26 +1,19 @@
-import { Row, Col, Button } from 'antd'
+import { Row, Col } from 'antd'
 import ExperienceCard from '../ExperienceCard/ExperienceCard'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faDownload } from '@fortawesome/free-solid-svg-icons'
 import img1 from '../../Media/GA.png'
 import img2 from '../../Media/Centaur-md.png'
 import img3 from '../../Media/Igloo.png'
 import img4 from '../../Media/Facebook.png'
-import pdf from '../../Media/Howard_LEE_Resume_2022.pdf'
+
 import './ExperienceComponent.scss'
 
 const ExperienceComponent = () => {
   return (
     <div className='exp-component'>
-      <Row>
-        <Col>
-          <h1 className='exp-title'>Experience</h1>
-        </Col>
-      </Row>
       <Row align='middle' justify='center'>
         <Col>
           <ExperienceCard
-            company='Meta/Facebook'
+            company='Meta | Facebook'
             jobTitle='Events Operations Technician'
             fromTo='December 2017 - October 2021'
             jobDesc='Working at Facebook under Monolith Technologies was probably the most inspiring time of my career. It was what inspired me to pursue Software Engineering and step out to the next phase of my life, No regrets at all.'
@@ -238,16 +231,6 @@ const ExperienceComponent = () => {
               background: `linear-gradient(25deg, rgba(108,108,254,1) 18%, rgba(254,103,81,1) 89%)`,
             }}
           />
-        </Col>
-      </Row>
-      <Row align='middle' justify='center' className='exp-download-btn'>
-        <Col>
-          <h4>RESUME FOR OFFLINE REFERENCE:</h4>
-          <Button type='primary' size='large' href={pdf} target='_blank'>
-            <p>
-              DOWNLOAD <FontAwesomeIcon icon={faDownload} />
-            </p>
-          </Button>
         </Col>
       </Row>
     </div>
