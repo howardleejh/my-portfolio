@@ -1,7 +1,17 @@
 .exp-component {
-  margin: 4em 0;
+  margin: 5em 0;
+  display: grid;
+
+  .exp-title {
+    font-size: 7em;
+    color: rgba($color: #000000, $alpha: 0.2);
+    transform: rotate(-90deg);
+    position: absolute;
+    left: -1.5em;
+    top: 2.25em;
+  }
 
   .exp-download-btn {
-    padding: 2em 0;
+    margin: 1em 0;
   }
 }

@@ -1,20 +1,5 @@
 @use '../../Sass/Style.scss';
 
 .title-message-container {
-  margin: 1em 0;
   @include Style.messages-template;
-
-  @media screen and (max-width: 600px) {
-    font-size: 0.5em;
-    margin: 23em 2.5em;
-
-    h1 {
-      font-weight: 900;
-    }
-
-    p {
-      top: -3em;
-      font-size: 2em;
-    }
-  }
 }

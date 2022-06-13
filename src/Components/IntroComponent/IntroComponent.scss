@@ -1,6 +1,18 @@
 .intro-component-container {
-  #profile-container {
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+
+  section {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    scroll-snap-align: end;
+  }
+
+  #sticky-container {
     position: sticky;
-    top: -5em;
+    top: -15em;
+    scroll-snap-align: none;
   }
 }

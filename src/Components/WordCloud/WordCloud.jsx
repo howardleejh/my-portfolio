@@ -9,7 +9,7 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import './WordCloud.scss'
 
 /*
-Feature extracted:
+Feature: Word Cloud with Three JS
 Author: Paul Henschel [drcmda]
 Link: https://codesandbox.io/s/basic-demo-forked-yup2o?file=/src/App.js
 */
@@ -132,7 +132,8 @@ function Cloud({ count = 8, radius = 20 }) {
 
 export default function WordCloud() {
   return (
-    <div className='word-cloud'>
+    <div className='word-cloud-container'>
+      <h1 id='word-cloud-title'> Skill Sets</h1>
       <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 35], fov: 90 }}>
         <fog attach='fog' args={['#202025', 0, 80]} />
         <Cloud />

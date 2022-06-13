@@ -1,0 +1,44 @@
+@use '../../Sass/Style.scss';
+
+.footer {
+  width: 100%;
+  background: black;
+  display: grid;
+  @include Style.footer-font-colors;
+
+  .personal-title {
+    text-align: start;
+    display: grid;
+    margin: 0 1em;
+    line-height: 2em;
+
+    .personal-items {
+      padding: 0 1em;
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin: 0;
+      }
+    }
+  }
+
+  .site-map {
+    text-align: start;
+    display: grid;
+    padding: 2em 5em;
+
+    .site-map-items {
+      margin: 1em;
+
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+}

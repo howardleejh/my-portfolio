@@ -1,12 +1,11 @@
 import { Row, Col } from 'antd'
-import { Fade } from 'react-awesome-reveal'
 import TitleMessage from '../TitleMessage/TitleMessage'
 import './IntroComponent.scss'
 
 const IntroComponent = () => {
   return (
     <div className='intro-component-container'>
-      <Fade>
+      <section>
         <TitleMessage
           title={
             <>
@@ -14,13 +13,15 @@ const IntroComponent = () => {
             </>
           }
         />
-      </Fade>
-      <Row align='middle' justify='center' id='profile-container'>
-        <Col>
-          <TitleMessage title='I am a' />
-        </Col>
-      </Row>
-      <Fade fraction={0.4}>
+      </section>
+      <section id='sticky-container'>
+        <Row align='middle' justify='center'>
+          <Col>
+            <TitleMessage message='I am a' />
+          </Col>
+        </Row>
+      </section>
+      <section>
         <TitleMessage
           title={
             <>
@@ -29,6 +30,8 @@ const IntroComponent = () => {
           }
           message='4 years at Facebook, I had a blast with the Event Operations team in Singapore.'
         />
+      </section>
+      <section>
         <TitleMessage
           title={
             <>
@@ -37,6 +40,8 @@ const IntroComponent = () => {
           }
           message='6 months at General Assembly Singapore, I learnt the ropes.'
         />
+      </section>
+      <section>
         <TitleMessage
           title={
             <>
@@ -45,11 +50,17 @@ const IntroComponent = () => {
           }
           message='Really...'
         />
+      </section>
+      <section>
         <TitleMessage
           title={<>Full Stack</>}
           message='MongoDB • Express • React • Node'
         />
+      </section>
+      <section>
         <TitleMessage title={<>and ...</>} />
+      </section>
+      <section>
         <TitleMessage
           title={
             <>
@@ -58,7 +69,7 @@ const IntroComponent = () => {
           }
           message='Solidity • Hardhat • Ethers '
         />
-      </Fade>
+      </section>
     </div>
   )
 }

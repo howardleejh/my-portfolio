@@ -6,7 +6,6 @@ import ThreeDCarousel from '../../Components/ThreeDCarousel/ThreeDCarousel'
 import WordCloud from '../../Components/WordCloud/WordCloud'
 import ExperienceComponent from '../../Components/ExperienceComponent/ExperienceComponent'
 import ContactForm from '../../Components/ContactForm/ContactForm'
-// import ParticlesEFX from '../../Components/ParticlesEFX/ParticlesEFX'
 import './Home.scss'
 
 const Home = () => {
@@ -14,7 +13,6 @@ const Home = () => {
 
   return (
     <div className='home-page'>
-      {/* <ParticlesEFX /> */}
       <section id='intro'>
         <IntroComponent />
       </section>
@@ -30,7 +28,7 @@ const Home = () => {
       <section id='contact'>
         <ContactForm />
       </section>
-      {menu.isMenuOpen ? <></> : <BackTop />}
+      {menu.isMenuOpen ? <></> : <BackTop visibilityHeight={150} />}
     </div>
   )
 }

@@ -6,11 +6,17 @@ import img1 from '../../Media/GA.png'
 import img2 from '../../Media/Centaur-md.png'
 import img3 from '../../Media/Igloo.png'
 import img4 from '../../Media/Facebook.png'
+import pdf from '../../Media/Howard_LEE_Resume_2022.pdf'
 import './ExperienceComponent.scss'
 
 const ExperienceComponent = () => {
   return (
     <div className='exp-component'>
+      <Row>
+        <Col>
+          <h1 className='exp-title'>Experience</h1>
+        </Col>
+      </Row>
       <Row align='middle' justify='center'>
         <Col>
           <ExperienceCard
@@ -236,13 +242,8 @@ const ExperienceComponent = () => {
       </Row>
       <Row align='middle' justify='center' className='exp-download-btn'>
         <Col>
-          <h4>Here's my resume for your reference:</h4>
-          <Button
-            type='primary'
-            size='large'
-            href='https://drive.google.com/file/d/1QYSo4QjjBGRKZnxTO9wX96mpqF4lnZkU/view?usp=sharing'
-            target='_blank'
-          >
+          <h4>RESUME FOR OFFLINE REFERENCE:</h4>
+          <Button type='primary' size='large' href={pdf} target='_blank'>
             <p>
               DOWNLOAD <FontAwesomeIcon icon={faDownload} />
             </p>

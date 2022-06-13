@@ -1,13 +1,28 @@
-.word-cloud {
-  width: 100%;
+.word-cloud-container {
   height: 100vh;
   display: grid;
   place-items: center;
-  padding: 1em 0;
+
+  #word-cloud-title {
+    position: absolute;
+    font-size: 10em;
+    z-index: 1;
+    opacity: 1;
+    transition: all 0.25s ease-in-out;
+  }
+
+  &:hover {
+    #word-cloud-title {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
 
   #next-btn {
+    width: 25em;
     background: transparent;
-    z-index: 1;
+    position: relative;
+    top: -5em;
     animation: bounce 2s infinite;
 
     @-moz-keyframes bounce {
