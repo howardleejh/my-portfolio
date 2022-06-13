@@ -46,10 +46,8 @@ const ExperienceCard = (props) => {
       >
         {
           <>
-            <p>
-              <strong>{props.fromTo}</strong>
-            </p>
-            <p>{props.jobDescLong}</p>
+            <strong>{props.fromTo}</strong>
+            {props.jobDescLong}
           </>
         }
       </Modal>

@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react'
-import { Button } from 'antd'
+import { Row, Col, Button } from 'antd'
 import { HashLink } from 'react-router-hash-link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'

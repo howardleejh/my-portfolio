@@ -130,13 +130,13 @@ const Cloud = ({ count = 8, radius = 20 }) => {
 
 const WordCloud = () => {
   return (
-    <>
+    <div className='canvas'>
       <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 35], fov: 90 }}>
         <fog attach='fog' args={['#202025', 0, 80]} />
         <Cloud />
         <OrbitControls />
       </Canvas>
-    </>
+    </div>
   )
 }
 

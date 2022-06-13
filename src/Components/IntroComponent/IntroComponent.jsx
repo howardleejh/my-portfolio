@@ -11,8 +11,8 @@ const IntroComponent = () => {
           title={
             <>
               <Fade cascade damping={1}>
-                <p>Hello</p>
-                <p>I'm Howard.</p>
+                <span>Hello</span>
+                <span>I'm Howard.</span>
               </Fade>
             </>
           }
