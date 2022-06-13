@@ -12,41 +12,40 @@ const Footer = () => {
   return (
     <div className='footer'>
       <Row align='middle' justify='space-between'>
-        <Col span={10} className='personal-title'>
-          <Row>
-            <Col className='personal-items'>
-              <h1>HOWARD LEE</h1>
-              <h3>BLOCKCHAIN • FULL STACK MERN DEVELOPER</h3>
-              <h5>+65 8322 2931 | vault2howard@gmail.com</h5>
-              <Space direction='horizontal'>
-                <Button
-                  ghost
-                  href='https://www.linkedin.com/in/howardleejh'
-                  target='_blank'
-                >
-                  <FontAwesomeIcon icon={faLinkedinIn} />
-                </Button>
-                <Button ghost href='https://t.me/howardleejh' target='_blank'>
-                  <FontAwesomeIcon icon={faTelegram} />
-                </Button>
-                <Button
-                  ghost
-                  href={`https://wa.me/6583222931?text=I'm%20interested%20to%20connect%20with%20you!`}
-                  target='_blank'
-                  rel='noreferrer'
-                >
-                  <FontAwesomeIcon icon={faWhatsapp} />
-                </Button>
-                <Button
-                  ghost
-                  href='https://www.github.com/howardleejh'
-                  target='_blank'
-                >
-                  <FontAwesomeIcon icon={faGithub} />
-                </Button>
-              </Space>
-            </Col>
-          </Row>
+        <Col className='personal-title'>
+          <Col className='personal-items'>
+            <h1>HOWARD LEE</h1>
+            <h3>BLOCKCHAIN • FULL STACK MERN DEVELOPER</h3>
+            <h5>+65 8322 2931 | vault2howard@gmail.com</h5>
+            <Space direction='horizontal'>
+              <Button
+                ghost
+                href='https://www.linkedin.com/in/howardleejh'
+                target='_blank'
+              >
+                <FontAwesomeIcon icon={faLinkedinIn} />
+              </Button>
+              <Button ghost href='https://t.me/howardleejh' target='_blank'>
+                <FontAwesomeIcon icon={faTelegram} />
+              </Button>
+              <Button
+                ghost
+                href={`https://wa.me/6583222931?text=I'm%20interested%20to%20connect%20with%20you!`}
+                target='_blank'
+                rel='noreferrer'
+              >
+                <FontAwesomeIcon icon={faWhatsapp} />
+              </Button>
+              <Button
+                ghost
+                href='https://www.github.com/howardleejh'
+                target='_blank'
+              >
+                <FontAwesomeIcon icon={faGithub} />
+              </Button>
+            </Space>
+            <h6>© Howard Lee. All Rights Reserved.</h6>
+          </Col>
         </Col>
         <Col span={10} className='site-map'>
           <Row justify='start'>
@@ -94,11 +93,6 @@ const Footer = () => {
               <h6>FAQ</h6>
             </Col>
           </Row>
-        </Col>
-      </Row>
-      <Row align='middle' justify='center'>
-        <Col>
-          <h6>© Howard Lee. All Rights Reserved.</h6>
         </Col>
       </Row>
     </div>
