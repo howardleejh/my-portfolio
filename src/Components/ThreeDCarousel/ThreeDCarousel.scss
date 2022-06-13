@@ -1,19 +1,16 @@
 .three-d-carousel {
   height: 100vh;
-  display: grid;
-  place-items: center;
 
   h1 {
     font-size: 8em;
     font-weight: 700;
+    padding: 0.5em 0;
   }
 
   ul {
     list-style: none;
-    font-size: 5em;
     transform-style: preserve-3d;
     animation: three-dimensions-circle 30s linear infinite;
-    padding: 1em 0;
 
     &:hover {
       animation-play-state: paused;
@@ -21,6 +18,7 @@
   }
 
   li {
+    font-size: 5vw;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -41,6 +39,16 @@
     }
     100% {
       transform: rotateX(-100deg) rotate(-360deg);
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    h1 {
+      font-size: 5em;
+    }
+
+    li {
+      font-size: 7vw;
     }
   }
 }

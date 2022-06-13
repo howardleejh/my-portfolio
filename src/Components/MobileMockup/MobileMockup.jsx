@@ -12,24 +12,26 @@ Link: https://codepen.io/snjy07/pen/ExayJGK
 const MobileMockup = () => {
   return (
     <div className='mobile-container'>
-      <Col>
-        <div className='dm-width'>
-          <div className='dm-device'>
-            <div className='device'>
-              <div className='screen'>
-                <Carousel autoplay dots={false}>
-                  <>
-                    <img src={linkedin} alt='test' />
-                  </>
-                  <>
-                    <img src={github} alt='test' />
-                  </>
-                </Carousel>
+      <Row>
+        <Col>
+          <div className='dm-width'>
+            <div className='dm-device'>
+              <div className='device'>
+                <div className='screen'>
+                  <Carousel autoplay dots={false}>
+                    <>
+                      <img src={linkedin} alt='test' />
+                    </>
+                    <>
+                      <img src={github} alt='test' />
+                    </>
+                  </Carousel>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </Col>
+        </Col>
+      </Row>
     </div>
   )
 }

@@ -11,7 +11,7 @@ const ExperienceComponent = () => {
   return (
     <div className='exp-component'>
       <Row align='middle' justify='center'>
-        <Col>
+        <Col className='exp-item'>
           <ExperienceCard
             company='Meta | Facebook'
             jobTitle='Events Operations Technician'
@@ -66,14 +66,14 @@ const ExperienceComponent = () => {
             }
             frontStyle={{
               background: `#ffffff url(${img4}) no-repeat center`,
-              backgroundSize: 'contain',
+              backgroundSize: '10em',
             }}
             backStyle={{
               background: `linear-gradient(25deg, rgba(0,99,223,1) 0%, rgba(2,129,251,1) 52%, rgba(104,148,242,1) 100%)`,
             }}
           />
         </Col>
-        <Col>
+        <Col className='exp-item'>
           <ExperienceCard
             company='General Assembly Singapore'
             jobTitle='Student'
@@ -111,14 +111,14 @@ const ExperienceComponent = () => {
             }
             frontStyle={{
               background: `#ffffff url(${img1}) no-repeat center`,
-              backgroundSize: 'contain',
+              backgroundSize: '10em',
             }}
             backStyle={{
               background: `linear-gradient(25deg, rgba(175,9,18,1) 0%, rgba(226,29,39,1) 22%, rgba(224,139,143,1) 100%)`,
             }}
           />
         </Col>
-        <Col>
+        <Col className='exp-item'>
           <ExperienceCard
             company='Centaur Finance'
             jobTitle='Full Stack Blockchain Developer'
@@ -169,14 +169,14 @@ const ExperienceComponent = () => {
             }
             frontStyle={{
               background: `#ffffff url(${img2}) no-repeat center`,
-              backgroundSize: 'contain',
+              backgroundSize: '10em',
             }}
             backStyle={{
               background: `linear-gradient(25deg, rgba(37,129,37,1) 25%, rgba(51,204,51,1) 81%, rgba(116,221,116,1) 100%)`,
             }}
           />
         </Col>
-        <Col>
+        <Col className='exp-item'>
           <ExperienceCard
             company='Igloo Insure'
             jobTitle='Blockchain Developer'
@@ -225,7 +225,7 @@ const ExperienceComponent = () => {
             }
             frontStyle={{
               background: `#ffffff url(${img3}) no-repeat center`,
-              backgroundSize: 'cover',
+              backgroundSize: '15em',
             }}
             backStyle={{
               background: `linear-gradient(25deg, rgba(108,108,254,1) 18%, rgba(254,103,81,1) 89%)`,

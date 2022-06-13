@@ -2,10 +2,6 @@ import * as THREE from 'three'
 import { useRef, useState, useEffect } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Text, OrbitControls } from '@react-three/drei'
-import { Button } from 'antd'
-import { HashLink } from 'react-router-hash-link'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import './WordCloud.scss'
 
 /*
@@ -17,6 +13,8 @@ Link: https://codesandbox.io/s/basic-demo-forked-yup2o?file=/src/App.js
 const Word = ({ children, ...props }) => {
   const color = new THREE.Color()
   const fontProps = {
+    'fontFamily': 'Helvetica',
+    'fontWeight': 700,
     'fontSize': 2,
     'letterSpacing': -0.05,
     'lineHeight': 1,
@@ -132,25 +130,13 @@ const Cloud = ({ count = 8, radius = 20 }) => {
 
 const WordCloud = () => {
   return (
-    <div className='word-cloud-container'>
-      <h1 id='word-cloud-title'> Skill Sets</h1>
+    <>
       <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 35], fov: 90 }}>
         <fog attach='fog' args={['#202025', 0, 80]} />
         <Cloud />
         <OrbitControls />
       </Canvas>
-      <HashLink
-        smooth
-        to={'/#contact'}
-        scroll={(el) =>
-          el.scrollIntoView({ behavior: 'smooth', block: 'center' })
-        }
-      >
-        <Button type='text' size='large' id='next-btn'>
-          <FontAwesomeIcon icon={faChevronDown} />
-        </Button>
-      </HashLink>
-    </div>
+    </>
   )
 }
 

@@ -10,9 +10,40 @@
     scroll-snap-align: end;
   }
 
+  #intro {
+    p {
+      line-height: 1em;
+    }
+  }
+
   #sticky-container {
     position: sticky;
-    top: -15em;
+    top: -6.5em;
     scroll-snap-align: none;
+    font-size: 2.5em;
+  }
+
+  @media screen and (max-width: 600px) {
+    font-size: 0.5em;
+
+    #intro {
+      p {
+        font-size: 1em;
+        font-weight: 700;
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    p {
+      font-size: 2.5em;
+      line-height: 1.5em;
+      padding: 1em;
+    }
+
+    #sticky-container {
+      font-size: 1.5em;
+      top: -13em;
+    }
   }
 }

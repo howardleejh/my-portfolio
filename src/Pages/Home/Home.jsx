@@ -1,22 +1,15 @@
-import { useContext, lazy, Suspense } from 'react'
+import { useContext } from 'react'
 import { BackTop } from 'antd'
 import { MenuContext } from '../../Components/MenuProvider/MenuProvider'
-import { LoadingOutlined } from '@ant-design/icons'
-import { Spin } from 'antd'
 import IntroComponent from '../../Components/IntroComponent/IntroComponent'
 import ThreeDCarousel from '../../Components/ThreeDCarousel/ThreeDCarousel'
 import ExperienceComponent from '../../Components/ExperienceComponent/ExperienceComponent'
+import WordCloudComponent from '../../Components/WordCloudComponent/WordCloudComponent'
 import ContactComponent from '../../Components/ContactComponent/ContactComponent'
 import './Home.scss'
 
 const Home = () => {
   const menu = useContext(MenuContext)
-
-  const loadingIcon = <LoadingOutlined />
-
-  const LazyWordCloud = lazy(() =>
-    import('../../Components/WordCloud/WordCloud')
-  )
 
   return (
     <div className='home-page'>
@@ -30,9 +23,7 @@ const Home = () => {
         <ExperienceComponent />
       </section>
       <section id='cloud'>
-        <Suspense fallback={<Spin indicator={loadingIcon} />}>
-          <LazyWordCloud />
-        </Suspense>
+        <WordCloudComponent />
       </section>
       <section id='contact'>
         <ContactComponent />

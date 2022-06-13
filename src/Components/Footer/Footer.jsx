@@ -4,8 +4,8 @@ import {
   faLinkedinIn,
   faGithub,
   faWhatsapp,
+  faTelegram,
 } from '@fortawesome/free-brands-svg-icons'
-import { faAt } from '@fortawesome/free-solid-svg-icons'
 import './Footer.scss'
 
 const Footer = () => {
@@ -21,11 +21,13 @@ const Footer = () => {
               <Space direction='horizontal'>
                 <Button
                   ghost
-                  href='mailto:vault2howard@gmail.com'
-                  target='_top'
-                  rel='noreferrer'
+                  href='https://www.linkedin.com/in/howardleejh'
+                  target='_blank'
                 >
-                  <FontAwesomeIcon icon={faAt} />
+                  <FontAwesomeIcon icon={faLinkedinIn} />
+                </Button>
+                <Button ghost href='https://t.me/howardleejh' target='_blank'>
+                  <FontAwesomeIcon icon={faTelegram} />
                 </Button>
                 <Button
                   ghost
@@ -34,13 +36,6 @@ const Footer = () => {
                   rel='noreferrer'
                 >
                   <FontAwesomeIcon icon={faWhatsapp} />
-                </Button>
-                <Button
-                  ghost
-                  href='https://www.linkedin.com/in/howardleejh'
-                  target='_blank'
-                >
-                  <FontAwesomeIcon icon={faLinkedinIn} />
                 </Button>
                 <Button
                   ghost
@@ -54,7 +49,7 @@ const Footer = () => {
           </Row>
         </Col>
         <Col span={10} className='site-map'>
-          <Row justify='start' gutter={[16, 16]}>
+          <Row justify='start'>
             <Col className='site-map-items'>
               <h6>ABOUT</h6>
               <ul>

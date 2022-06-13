@@ -15,9 +15,6 @@ const ExperienceCard = (props) => {
     <div className='exp-card'>
       <div className='exp-card-inner'>
         <div className='exp-card-front' style={props.frontStyle}>
-          <div className='card-title'>
-            <h1>EXP</h1>
-          </div>
           <section>
             <h1>{props.company}</h1>
           </section>

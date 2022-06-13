@@ -1,10 +1,10 @@
 @use '../../Sass/Style.scss';
 
 .footer {
-  width: 100%;
   background: black;
   display: grid;
   @include Style.footer-font-colors;
+  padding: 1em;
 
   .personal-title {
     text-align: start;
@@ -13,8 +13,6 @@
     line-height: 2em;
 
     .personal-items {
-      padding: 0 1em;
-
       h1,
       h2,
       h3,
@@ -28,11 +26,10 @@
 
   .site-map {
     text-align: start;
-    display: grid;
-    padding: 2em 5em;
+    padding: 1em;
 
     .site-map-items {
-      margin: 1em;
+      padding: 2em;
 
       ul {
         list-style: none;
