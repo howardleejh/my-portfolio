@@ -13,12 +13,10 @@ const Navbar = () => {
   useLayoutEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = 'hidden'
-      document.body.style.height = '0%'
       return
     }
     if (!isMenuOpen) {
       document.body.style.overflow = 'auto'
-      document.body.style.height = '100%'
       return
     }
   }, [isMenuOpen])

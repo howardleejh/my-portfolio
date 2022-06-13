@@ -5,8 +5,8 @@ import './MenuOverlay.scss'
 const MenuOverlay = () => {
   return (
     <div className='menu-overlay'>
-      <Fade direction='down'>
-        <Row justify='center' align='middle'>
+      <Row justify='center' align='middle'>
+        <Fade direction='down'>
           <Col>
             <ul>
               <li>Home</li>
@@ -18,8 +18,8 @@ const MenuOverlay = () => {
               <li>FAQ</li>
             </ul>
           </Col>
-        </Row>
-      </Fade>
+        </Fade>
+      </Row>
     </div>
   )
 }
