@@ -7,6 +7,7 @@ import {
   faTelegram,
 } from '@fortawesome/free-brands-svg-icons'
 import './Footer.scss'
+import { HashLink } from 'react-router-hash-link'
 
 const Footer = () => {
   return (
@@ -52,11 +53,61 @@ const Footer = () => {
             <Col className='site-map-items'>
               <h6>ABOUT</h6>
               <ul>
-                <li>Howard</li>
-                <li>Tech Stack</li>
-                <li>Experience</li>
-                <li>Skill Sets</li>
-                <li>Contact</li>
+                <li>
+                  <HashLink
+                    smooth
+                    to={'/#'}
+                    scroll={(el) =>
+                      el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+                    }
+                  >
+                    Howard
+                  </HashLink>
+                </li>
+                <li>
+                  <HashLink
+                    smooth
+                    to={'/#tech'}
+                    scroll={(el) =>
+                      el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+                    }
+                  >
+                    Tech Stack
+                  </HashLink>
+                </li>
+                <li>
+                  <HashLink
+                    smooth
+                    to={'/#exp'}
+                    scroll={(el) =>
+                      el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+                    }
+                  >
+                    Experience
+                  </HashLink>
+                </li>
+                <li>
+                  <HashLink
+                    smooth
+                    to={'/#cloud'}
+                    scroll={(el) =>
+                      el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+                    }
+                  >
+                    Skill Set
+                  </HashLink>
+                </li>
+                <li>
+                  <HashLink
+                    smooth
+                    to={'/#contact'}
+                    scroll={(el) =>
+                      el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+                    }
+                  >
+                    Contact
+                  </HashLink>
+                </li>
               </ul>
             </Col>
             <Col className='site-map-items'>

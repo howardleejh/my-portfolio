@@ -33,3 +33,7 @@
     color: whitesmoke;
   }
 }
+
+@mixin hover-color {
+  color: rgb(56, 149, 255);
+}

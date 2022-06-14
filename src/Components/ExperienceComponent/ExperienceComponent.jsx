@@ -10,6 +10,7 @@ import './ExperienceComponent.scss'
 const ExperienceComponent = () => {
   return (
     <div className='exp-component'>
+      <h1 id='exp-title'>Experience</h1>
       <Row align='middle' justify='center'>
         <Col className='exp-item'>
           <ExperienceCard

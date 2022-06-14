@@ -1,8 +1,35 @@
 .exp-component {
   width: 100%;
   margin: 0 0 2.5em 0;
+  position: relative;
+
+  #exp-title {
+    font-size: 10em;
+    position: absolute;
+    top: 28.5%;
+    left: 22%;
+  }
 
   .exp-item {
     padding: 1em;
+  }
+
+  @media screen and (max-width: 1000px) {
+    #exp-title {
+      font-size: 3.5em;
+      position: static;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .exp-component {
+      display: grid;
+      place-items: center;
+    }
+
+    #exp-title {
+      font-size: 3.5em;
+      position: static;
+    }
   }
 }
