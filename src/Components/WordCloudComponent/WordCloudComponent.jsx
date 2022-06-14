@@ -15,7 +15,10 @@ const WordCloudComponent = () => {
   return (
     <div className='word-cloud-component'>
       <h1 id='word-cloud-title'> Skill Sets</h1>
-      <Suspense fallback={<Spin indicator={loadingIcon} />}>
+      <Suspense
+        fallback={<Spin indicator={loadingIcon} />}
+        id='lazy-word-cloud'
+      >
         <LazyWordCloud />
       </Suspense>
       <HashLink
