@@ -4,7 +4,6 @@ import { MenuContext } from '../../Components/MenuProvider/MenuProvider'
 import IntroComponent from '../../Components/IntroComponent/IntroComponent'
 import ThreeDCarousel from '../../Components/ThreeDCarousel/ThreeDCarousel'
 import ExperienceComponent from '../../Components/ExperienceComponent/ExperienceComponent'
-import WordCloudComponent from '../../Components/WordCloudComponent/WordCloudComponent'
 import ContactComponent from '../../Components/ContactComponent/ContactComponent'
 import './Home.scss'
 
@@ -21,9 +20,6 @@ const Home = () => {
       </section>
       <section id='exp'>
         <ExperienceComponent />
-      </section>
-      <section id='cloud'>
-        <WordCloudComponent />
       </section>
       <section id='contact'>
         <ContactComponent />

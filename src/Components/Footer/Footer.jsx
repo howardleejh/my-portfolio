@@ -1,4 +1,4 @@
-import { Row, Col, Button, Space } from 'antd'
+import { Row, Col, Button } from 'antd'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faLinkedinIn,
@@ -18,33 +18,39 @@ const Footer = () => {
             <h1>HOWARD LEE</h1>
             <h3>BLOCKCHAIN • FULL STACK MERN DEVELOPER</h3>
             <h5>+65 8322 2931 | vault2howard@gmail.com</h5>
-            <Space direction='horizontal'>
-              <Button
-                ghost
-                href='https://www.linkedin.com/in/howardleejh'
-                target='_blank'
-              >
-                <FontAwesomeIcon icon={faLinkedinIn} />
-              </Button>
-              <Button ghost href='https://t.me/howardleejh' target='_blank'>
-                <FontAwesomeIcon icon={faTelegram} />
-              </Button>
-              <Button
-                ghost
-                href={`https://wa.me/6583222931?text=I'm%20interested%20to%20connect%20with%20you!`}
-                target='_blank'
-                rel='noreferrer'
-              >
-                <FontAwesomeIcon icon={faWhatsapp} />
-              </Button>
-              <Button
-                ghost
-                href='https://www.github.com/howardleejh'
-                target='_blank'
-              >
-                <FontAwesomeIcon icon={faGithub} />
-              </Button>
-            </Space>
+            <Button
+              ghost
+              href='https://www.linkedin.com/in/howardleejh'
+              target='_blank'
+              className='footer-btn'
+            >
+              <FontAwesomeIcon icon={faLinkedinIn} />
+            </Button>
+            <Button
+              ghost
+              href='https://t.me/howardleejh'
+              target='_blank'
+              className='footer-btn'
+            >
+              <FontAwesomeIcon icon={faTelegram} />
+            </Button>
+            <Button
+              ghost
+              href={`https://wa.me/6583222931?text=I'm%20interested%20to%20connect%20with%20you!`}
+              target='_blank'
+              rel='noreferrer'
+              className='footer-btn'
+            >
+              <FontAwesomeIcon icon={faWhatsapp} />
+            </Button>
+            <Button
+              ghost
+              href='https://www.github.com/howardleejh'
+              target='_blank'
+              className='footer-btn'
+            >
+              <FontAwesomeIcon icon={faGithub} />
+            </Button>
             <h6>© Howard Lee. All Rights Reserved.</h6>
           </Col>
         </Col>
@@ -84,17 +90,6 @@ const Footer = () => {
                     }
                   >
                     Experience
-                  </HashLink>
-                </li>
-                <li>
-                  <HashLink
-                    smooth
-                    to={'/#cloud'}
-                    scroll={(el) =>
-                      el.scrollIntoView({ behavior: 'smooth', block: 'center' })
-                    }
-                  >
-                    Skill Set
                   </HashLink>
                 </li>
                 <li>

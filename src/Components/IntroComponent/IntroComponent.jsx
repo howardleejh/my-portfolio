@@ -25,7 +25,7 @@ const IntroComponent = () => {
           </Col>
         </Row>
       </section>
-      <Fade fraction={0.1} direction='down'>
+      <Fade fraction={0.3}>
         <section>
           <TitleMessage
             title={
@@ -37,7 +37,7 @@ const IntroComponent = () => {
           />
         </section>
       </Fade>
-      <Fade fraction={0.1} direction='down'>
+      <Fade fraction={0.3}>
         <section>
           <TitleMessage
             title={
@@ -49,7 +49,7 @@ const IntroComponent = () => {
           />
         </section>
       </Fade>
-      <Fade fraction={0.2}>
+      <Fade fraction={0.3}>
         <section>
           <TitleMessage
             title={
@@ -61,7 +61,7 @@ const IntroComponent = () => {
           />
         </section>
       </Fade>
-      <Fade fraction={0.2}>
+      <Fade fraction={0.3}>
         <section>
           <TitleMessage
             title={<>Full Stack</>}
@@ -69,12 +69,7 @@ const IntroComponent = () => {
           />
         </section>
       </Fade>
-      <Fade fraction={0.2}>
-        <section>
-          <TitleMessage title={<>and ...</>} />
-        </section>
-      </Fade>
-      <Fade fraction={0.2}>
+      <Fade fraction={0.3}>
         <section>
           <TitleMessage
             title={

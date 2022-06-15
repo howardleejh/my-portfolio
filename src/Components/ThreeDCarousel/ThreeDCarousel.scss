@@ -7,7 +7,6 @@
   h1 {
     font-size: 8em;
     font-weight: 700;
-    margin: 0.5em 0;
   }
 
   ul {
@@ -39,20 +38,22 @@
       }
     }
   }
+}
 
-  @keyframes three-dimensions-circle {
-    0% {
-      transform: rotateX(-100deg) rotate(0);
-    }
-    100% {
-      transform: rotateX(-100deg) rotate(-360deg);
-    }
+@keyframes three-dimensions-circle {
+  0% {
+    transform: rotateX(-100deg) rotate(0);
   }
+  100% {
+    transform: rotateX(-100deg) rotate(-360deg);
+  }
+}
 
-  @media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
+  .three-d-carousel {
     h1 {
       font-size: 4em;
-      margin: 2em 0;
+      margin: 1em 0;
     }
 
     li {
