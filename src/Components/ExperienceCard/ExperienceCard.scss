@@ -50,7 +50,7 @@
       font-size: 1.5em;
       text-transform: uppercase;
       margin: 0;
-      padding: 0.5em 0;
+      padding: 0 0 1em;
     }
   }
 }
@@ -90,21 +90,25 @@
 
 @media screen and (max-width: 600px) {
   .exp-card {
-    width: 23em;
+    width: 21em;
     height: 32em;
   }
 
   .exp-card-front {
     section {
-      h1 {
-        font-size: 1.25em;
+      h2 {
+        font-size: 2em;
       }
     }
   }
 
   .exp-card-back {
+    h3 {
+      font-size: 1.5em;
+    }
+
     p {
-      margin: 5em 0;
+      margin: 0 0 6.5em 0;
     }
   }
 }
