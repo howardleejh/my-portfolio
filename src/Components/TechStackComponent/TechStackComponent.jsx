@@ -14,11 +14,11 @@ import {
   faSpotify,
 } from '@fortawesome/free-brands-svg-icons'
 import { faDatabase } from '@fortawesome/free-solid-svg-icons'
-import './ThreeDCarousel.scss'
+import './TechStackComponent.scss'
 
-const ThreeDCarousel = () => {
+const TechStackComponent = () => {
   return (
-    <div className='three-d-carousel'>
+    <div className='tech-stack-component'>
       <Row align='middle' justify='center'>
         <Col>
           <h1>Tech Stack</h1>
@@ -89,4 +89,4 @@ const ThreeDCarousel = () => {
     </div>
   )
 }
-export default ThreeDCarousel
+export default TechStackComponent

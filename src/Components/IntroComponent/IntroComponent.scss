@@ -1,4 +1,4 @@
-.intro-component-container {
+.intro-component {
   height: 100vh;
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
@@ -14,12 +14,6 @@
     scroll-snap-align: start;
   }
 
-  #intro {
-    p {
-      line-height: 1.25em;
-    }
-  }
-
   #sticky-container {
     position: sticky;
     top: -35%;
@@ -30,7 +24,7 @@
 }
 
 @media screen and (max-width: 600px) {
-  .intro-component-container {
+  .intro-component {
     h1 {
       font-size: 4.5em;
       font-weight: 700;

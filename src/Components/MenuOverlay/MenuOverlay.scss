@@ -2,8 +2,8 @@
   width: 100vw;
   height: 100vh;
   position: fixed;
-  display: grid;
-  place-items: center;
+  // display: grid;
+  // place-items: center;
   bottom: 0%;
   z-index: -1;
   background: rgba($color: #ffffff, $alpha: 0.9);
@@ -11,7 +11,7 @@
 
   ul {
     list-style: none;
-    margin: 1em 0;
+    margin: 7em 0;
     padding: 0;
     line-height: 3em;
   }

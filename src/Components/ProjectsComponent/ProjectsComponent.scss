@@ -1,0 +1,31 @@
+.projects-component {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  margin: 0 0 10em 0;
+  position: relative;
+
+  h1 {
+    font-size: 10em;
+    position: absolute;
+    transform: rotate(-90deg);
+    top: 32%;
+    left: -12%;
+  }
+
+  .projects-item {
+    margin: 1em 2.5em;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .projects-component {
+    h1 {
+      font-size: 4em;
+      transform: none;
+      font-weight: 900;
+      position: static;
+      margin: 0;
+    }
+  }
+}

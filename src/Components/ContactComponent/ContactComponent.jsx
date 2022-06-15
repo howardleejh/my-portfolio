@@ -24,6 +24,7 @@ const ContactComponent = () => {
             <Col className='contact-items'>
               <h1>Let's CONNECT!</h1>
               <Button
+                title='LinkedIn'
                 size='large'
                 href='https://www.linkedin.com/in/howardleejh'
                 target='_blank'
@@ -32,6 +33,7 @@ const ContactComponent = () => {
                 <FontAwesomeIcon icon={faLinkedinIn} />
               </Button>
               <Button
+                title='Telegram'
                 size='large'
                 href='https://t.me/howardleejh'
                 target='_blank'
@@ -40,6 +42,7 @@ const ContactComponent = () => {
                 <FontAwesomeIcon icon={faTelegram} />
               </Button>
               <Button
+                title='Whatsapp'
                 size='large'
                 href={`https://wa.me/6583222931?text=I'm%20interested%20to%20connect%20with%20you!`}
                 target='_blank'
@@ -49,6 +52,7 @@ const ContactComponent = () => {
                 <FontAwesomeIcon icon={faWhatsapp} />
               </Button>
               <Button
+                title='Github'
                 size='large'
                 href='https://www.github.com/howardleejh'
                 target='_blank'
@@ -67,15 +71,16 @@ const ContactComponent = () => {
                     EMAIL ME <FontAwesomeIcon icon={faAt} />
                   </p>
                 </Button>
+
+                <Col className='contact-items'>
+                  <h4>RESUME FOR OFFLINE REFERENCE:</h4>
+                  <Button size='large' href={pdf} target='_blank'>
+                    <p>
+                      DOWNLOAD <FontAwesomeIcon icon={faDownload} />
+                    </p>
+                  </Button>
+                </Col>
               </Col>
-            </Col>
-            <Col className='contact-items'>
-              <h4>RESUME FOR OFFLINE REFERENCE:</h4>
-              <Button size='large' href={pdf} target='_blank'>
-                <p>
-                  DOWNLOAD <FontAwesomeIcon icon={faDownload} />
-                </p>
-              </Button>
             </Col>
           </Row>
         </Col>

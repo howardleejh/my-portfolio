@@ -1,3 +1,4 @@
+@use '../../Sass//Style.scss';
 /* The exp card container - set the width and height to whatever you want. We have added the border property to demonstrate that the exp itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .exp-card {
   background-color: transparent;
@@ -40,11 +41,12 @@
 
   section {
     height: 100%;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
+    display: grid;
+    place-items: end center;
 
-    h1 {
+    h2,
+    h3,
+    h4 {
       font-size: 1.5em;
       text-transform: uppercase;
       margin: 0;
@@ -55,20 +57,20 @@
 
 /* Style the back side */
 .exp-card-back {
-  color: white;
+  color: whitesmoke;
   display: grid;
   place-items: center;
   border-radius: 50px 15px;
   transform: rotateY(180deg);
 
-  h1 {
+  h3 {
     font-weight: 700;
     text-transform: uppercase;
   }
 
-  h1,
+  h3,
   h4 {
-    color: white;
+    color: whitesmoke;
   }
 
   p {
@@ -79,7 +81,10 @@
   }
 
   .modal-btn {
-    color: #fff;
+    color: whitesmoke;
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 }
 

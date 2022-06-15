@@ -19,6 +19,7 @@ const Footer = () => {
             <h3>BLOCKCHAIN • FULL STACK MERN DEVELOPER</h3>
             <h5>+65 8322 2931 | vault2howard@gmail.com</h5>
             <Button
+              title='LinkedIn'
               ghost
               href='https://www.linkedin.com/in/howardleejh'
               target='_blank'
@@ -27,6 +28,7 @@ const Footer = () => {
               <FontAwesomeIcon icon={faLinkedinIn} />
             </Button>
             <Button
+              title='Telegram'
               ghost
               href='https://t.me/howardleejh'
               target='_blank'
@@ -35,6 +37,7 @@ const Footer = () => {
               <FontAwesomeIcon icon={faTelegram} />
             </Button>
             <Button
+              title='Whatsapp'
               ghost
               href={`https://wa.me/6583222931?text=I'm%20interested%20to%20connect%20with%20you!`}
               target='_blank'
@@ -44,6 +47,7 @@ const Footer = () => {
               <FontAwesomeIcon icon={faWhatsapp} />
             </Button>
             <Button
+              title='Github'
               ghost
               href='https://www.github.com/howardleejh'
               target='_blank'
@@ -73,23 +77,34 @@ const Footer = () => {
                 <li>
                   <HashLink
                     smooth
-                    to={'/#tech'}
-                    scroll={(el) =>
-                      el.scrollIntoView({ behavior: 'smooth', block: 'center' })
-                    }
-                  >
-                    Tech Stack
-                  </HashLink>
-                </li>
-                <li>
-                  <HashLink
-                    smooth
                     to={'/#exp'}
                     scroll={(el) =>
                       el.scrollIntoView({ behavior: 'smooth', block: 'center' })
                     }
                   >
                     Experience
+                  </HashLink>
+                </li>
+                <li>
+                  <HashLink
+                    smooth
+                    to={'/#projects'}
+                    scroll={(el) =>
+                      el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+                    }
+                  >
+                    Projects
+                  </HashLink>
+                </li>
+                <li>
+                  <HashLink
+                    smooth
+                    to={'/#tech'}
+                    scroll={(el) =>
+                      el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+                    }
+                  >
+                    Tech Stack
                   </HashLink>
                 </li>
                 <li>

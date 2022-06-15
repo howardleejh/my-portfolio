@@ -5,7 +5,7 @@ import './IntroComponent.scss'
 
 const IntroComponent = () => {
   return (
-    <div className='intro-component-container'>
+    <div className='intro-component'>
       <section id='intro'>
         <TitleMessage
           title={

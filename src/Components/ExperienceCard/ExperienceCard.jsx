@@ -16,12 +16,12 @@ const ExperienceCard = (props) => {
       <div className='exp-card-inner'>
         <div className='exp-card-front' style={props.frontStyle}>
           <section>
-            <h1>{props.company}</h1>
+            <h2>{props.company}</h2>
           </section>
         </div>
         <div className='exp-card-back' style={props.backStyle}>
           <section>
-            <h1>{props.jobTitle}</h1>
+            <h3>{props.jobTitle}</h3>
             <h4>{props.fromTo}</h4>
             <p>{props.jobDesc}</p>
             <Button type='ghost' onClick={handleClick} className='modal-btn'>
@@ -31,7 +31,7 @@ const ExperienceCard = (props) => {
         </div>
       </div>
       <Modal
-        width={isMobile ? null : 850}
+        width={isMobile ? null : 750}
         title={
           <strong>
             {props.jobTitle} - {props.company}
