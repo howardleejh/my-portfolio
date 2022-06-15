@@ -13,7 +13,7 @@ const ProjectsComponent = () => {
     <div className='projects-component'>
       <h1>Projects</h1>
       <Row align='middle' justify='center'>
-        <Fade cascade triggerOnce>
+        <Fade cascade triggerOnce damping={0.5}>
           <Col className='projects-item'>
             <ProjectCard
               title={`3D Chess`}
