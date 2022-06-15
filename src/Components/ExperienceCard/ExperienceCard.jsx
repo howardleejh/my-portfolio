@@ -39,6 +39,7 @@ const ExperienceCard = (props) => {
         }
         centered
         visible={modalVisible}
+        cancelButtonProps={{ style: { display: 'none' } }}
         onOk={() => setModalVisible(false)}
         onCancel={() => setModalVisible(false)}
         className='exp-modal'

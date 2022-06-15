@@ -26,6 +26,10 @@
         display: grid;
         place-items: center;
 
+        h2 {
+          text-transform: uppercase;
+        }
+
         p {
           text-align: start;
           line-height: 1.1em;
