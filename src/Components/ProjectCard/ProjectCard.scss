@@ -19,21 +19,40 @@
     }
     .ant-card-body {
       width: 100%;
+      height: 35%;
       background-color: white;
       border-radius: 0 0 15px 15px;
 
       section {
         display: grid;
         place-items: center;
+        position: relative;
 
-        h2 {
-          text-transform: uppercase;
+        .project-card-btn {
+          width: 100%;
+          position: absolute;
+          top: -2.75em;
+          font-size: 1.25em;
+          font-weight: 700;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+            rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
+          &:hover {
+            transform: scale(1.05);
+            transition: all 0.3s ease-in-out;
+          }
+
+          h2 {
+            text-transform: uppercase;
+            margin: 0;
+            padding: 0;
+          }
         }
 
         p {
           text-align: start;
           line-height: 1.1em;
-          margin: 0;
+          margin: 1em;
         }
       }
     }

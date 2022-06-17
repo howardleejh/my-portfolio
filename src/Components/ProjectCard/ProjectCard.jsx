@@ -1,4 +1,4 @@
-import { Card } from 'antd'
+import { Card, Button } from 'antd'
 import './ProjectCard.scss'
 
 const ProjectCard = (props) => {
@@ -6,7 +6,15 @@ const ProjectCard = (props) => {
     <div className='project-card-container'>
       <Card hoverable className='project-card' style={props.style}>
         <section>
-          <h2>{props.title}</h2>
+          <Button
+            href={props.href}
+            target='_blank'
+            type='primary'
+            size='large'
+            className='project-card-btn'
+          >
+            {props.title}
+          </Button>
           <p>{props.description}</p>
         </section>
       </Card>

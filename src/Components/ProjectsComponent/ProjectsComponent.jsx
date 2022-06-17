@@ -13,11 +13,12 @@ const ProjectsComponent = () => {
     <div className='projects-component'>
       <h1>Projects</h1>
       <Row align='middle' justify='center'>
-        <Fade cascade triggerOnce damping={0.5}>
+        <Fade cascade triggerOnce>
           <Col className='projects-item'>
             <ProjectCard
               title={`3D Chess`}
               description={`A classic game of chess with 3D implementations.`}
+              href='https://github.com/howardleejh/chess3d'
               style={{
                 background: `#ffffff url(${img1}) no-repeat center`,
                 backgroundSize: '20em',
@@ -29,6 +30,7 @@ const ProjectsComponent = () => {
             <ProjectCard
               title={`Bazaar Malam`}
               description={`My first Mock NFT Marketplace. No smart contacts were written yet.`}
+              href='https://github.com/howardleejh/Bazaar-Malam'
               style={{
                 background: `#ffffff url(${img2}) no-repeat center`,
                 backgroundSize: '20em',
@@ -40,6 +42,7 @@ const ProjectsComponent = () => {
             <ProjectCard
               title={`TeamUp`}
               description={`An app to manage events, a Team Project. `}
+              href='https://github.com/howardleejh/teamup-fe'
               style={{
                 background: `#ffffff url(${img3}) no-repeat `,
                 backgroundSize: '20em',
@@ -51,6 +54,7 @@ const ProjectsComponent = () => {
             <ProjectCard
               title={`Gacha10`}
               description={`A platform that simulates an NFT marketplace.`}
+              href='https://github.com/howardleejh/Gacha10'
               style={{
                 background: `#ffffff url(${img4}) no-repeat center`,
                 backgroundSize: '20em',

@@ -1,62 +1,17 @@
-import { Row, Col, Button } from 'antd'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faLinkedinIn,
-  faGithub,
-  faWhatsapp,
-  faTelegram,
-} from '@fortawesome/free-brands-svg-icons'
+import { Row, Col } from 'antd'
 import './Footer.scss'
 import { HashLink } from 'react-router-hash-link'
-
+import SocialButtons from '../SocialButtons/SocialButtons'
 const Footer = () => {
   return (
     <div className='footer'>
       <Row align='middle' justify='space-between'>
-        <Col className='personal-title'>
-          <Col className='personal-items'>
-            <h1>HOWARD LEE</h1>
-            <h3>BLOCKCHAIN • FULL STACK MERN DEVELOPER</h3>
-            <h5>+65 8322 2931 | vault2howard@gmail.com</h5>
-            <Button
-              title='LinkedIn'
-              ghost
-              href='https://www.linkedin.com/in/howardleejh'
-              target='_blank'
-              className='footer-btn'
-            >
-              <FontAwesomeIcon icon={faLinkedinIn} />
-            </Button>
-            <Button
-              title='Telegram'
-              ghost
-              href='https://t.me/howardleejh'
-              target='_blank'
-              className='footer-btn'
-            >
-              <FontAwesomeIcon icon={faTelegram} />
-            </Button>
-            <Button
-              title='Whatsapp'
-              ghost
-              href={`https://wa.me/6583222931?text=I'm%20interested%20to%20connect%20with%20you!`}
-              target='_blank'
-              rel='noreferrer'
-              className='footer-btn'
-            >
-              <FontAwesomeIcon icon={faWhatsapp} />
-            </Button>
-            <Button
-              title='Github'
-              ghost
-              href='https://www.github.com/howardleejh'
-              target='_blank'
-              className='footer-btn'
-            >
-              <FontAwesomeIcon icon={faGithub} />
-            </Button>
-            <h6>© Howard Lee. All Rights Reserved.</h6>
-          </Col>
+        <Col className='personal-items'>
+          <h1>HOWARD LEE</h1>
+          <h3>BLOCKCHAIN • FULL STACK MERN DEVELOPER</h3>
+          <h5>+65 8322 2931 | vault2howard@gmail.com</h5>
+          <SocialButtons />
+          <h6>© Howard Lee. All Rights Reserved.</h6>
         </Col>
         <Col span={10} className='site-map'>
           <Row justify='start'>
