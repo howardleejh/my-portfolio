@@ -1,12 +1,7 @@
 import { Row, Col, Button } from 'antd'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDownload } from '@fortawesome/free-solid-svg-icons'
-import {
-  faLinkedinIn,
-  faTelegram,
-  faGithub,
-  faWhatsapp,
-} from '@fortawesome/free-brands-svg-icons'
+import SocialButtons from '../SocialButtons/SocialButtons'
 import { faAt } from '@fortawesome/free-solid-svg-icons'
 import MobileMockup from '../MobileMockup/MobileMockup'
 import pdf from '../../Media/Howard_LEE_Resume_2022.pdf'
@@ -23,46 +18,11 @@ const ContactComponent = () => {
           <Row align='middle' className='connect-container'>
             <Col className='contact-items'>
               <h1>Let's CONNECT!</h1>
-              <Button
-                title='LinkedIn'
-                size='large'
-                href='https://www.linkedin.com/in/howardleejh'
-                target='_blank'
-                className='contact-btns'
-              >
-                <FontAwesomeIcon icon={faLinkedinIn} />
-              </Button>
-              <Button
-                title='Telegram'
-                size='large'
-                href='https://t.me/howardleejh'
-                target='_blank'
-                className='contact-btns'
-              >
-                <FontAwesomeIcon icon={faTelegram} />
-              </Button>
-              <Button
-                title='Whatsapp'
-                size='large'
-                href={`https://wa.me/6583222931?text=I'm%20interested%20to%20connect%20with%20you!`}
-                target='_blank'
-                rel='noreferrer'
-                className='contact-btns'
-              >
-                <FontAwesomeIcon icon={faWhatsapp} />
-              </Button>
-              <Button
-                title='Github'
-                size='large'
-                href='https://www.github.com/howardleejh'
-                target='_blank'
-                className='contact-btns'
-              >
-                <FontAwesomeIcon icon={faGithub} />
-              </Button>
+              <SocialButtons type='primary' />
               <Col className='contact-items'>
                 <h1>Send me an Email!</h1>
                 <Button
+                  type='primary'
                   size='large'
                   href='mailto:vault2howard@gmail.com'
                   target='_blank'
@@ -74,7 +34,12 @@ const ContactComponent = () => {
 
                 <Col className='contact-items'>
                   <h4>RESUME FOR OFFLINE REFERENCE:</h4>
-                  <Button size='large' href={pdf} target='_blank'>
+                  <Button
+                    type='primary'
+                    size='large'
+                    href={pdf}
+                    target='_blank'
+                  >
                     <p>
                       DOWNLOAD <FontAwesomeIcon icon={faDownload} />
                     </p>

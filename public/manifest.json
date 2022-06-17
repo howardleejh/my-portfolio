@@ -3,17 +3,17 @@
   "name": "Howard Lee - Full Stack Blockchain Developer",
   "icons": [
     {
-      "src": "temp-logo.png",
+      "src": "HowardLogo_192x192.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/png"
     },
     {
-      "src": "temp-logo.png",
+      "src": "HowardLogo_192x192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "TempLogo.png",
+      "src": "HowardLogo.png",
       "type": "image/png",
       "sizes": "512x512"
     }
