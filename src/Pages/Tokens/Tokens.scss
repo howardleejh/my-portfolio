@@ -2,4 +2,16 @@
   height: 100vh;
   display: grid;
   place-items: center;
+  position: relative;
+
+  .tokens-container {
+    position: absolute;
+  }
+
+  .steps-content {
+    width: 50em;
+    height: 25em;
+    display: grid;
+    place-items: center;
+  }
 }
