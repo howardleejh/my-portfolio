@@ -2,8 +2,10 @@ import { useContext, useLayoutEffect } from 'react'
 import { MenuContext } from '../MenuProvider/MenuProvider'
 import { Row, Col } from 'antd'
 import { Spin as Hamburger } from 'hamburger-react'
+import { isMobile } from 'react-device-detect'
 import ConnectWallet from '../ConnectWallet/ConnectWallet'
 import MenuOverlay from '../MenuOverlay/MenuOverlay'
+import Wallet from '../Wallet/Wallet'
 import './Navbar.scss'
 
 const Navbar = () => {
@@ -24,7 +26,7 @@ const Navbar = () => {
   return (
     <div className='navbar'>
       <Row justify='space-between' align='middle'>
-        <Col span={8}>
+        <Col className='navbar-item'>
           <Hamburger
             direction='right'
             toggled={isMenuOpen}
@@ -32,8 +34,12 @@ const Navbar = () => {
             easing='ease-in'
           />
         </Col>
-        <Col>
-          <ConnectWallet />
+        <Col className='navbar-item'>
+          {isMobile ? null : menu.wallet.connected ? (
+            <Wallet />
+          ) : (
+            <ConnectWallet />
+          )}
         </Col>
       </Row>
       {isMenuOpen ? <MenuOverlay /> : null}

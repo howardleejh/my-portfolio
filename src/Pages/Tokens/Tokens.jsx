@@ -1,7 +1,14 @@
+import { Row, Col } from 'antd'
+import './Tokens.scss'
+
 const Tokens = () => {
   return (
     <div className='tokens-page'>
-      <h1>this is Tokens page</h1>
+      <Row align='middle' justify='center'>
+        <Col>
+          <h1>this is Tokens page</h1>
+        </Col>
+      </Row>
     </div>
   )
 }
