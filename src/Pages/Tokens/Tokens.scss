@@ -1,17 +1,13 @@
 .tokens-page {
-  height: 100vh;
-  display: grid;
-  place-items: center;
-  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 5em 0;
 
-  .tokens-container {
-    position: absolute;
+  h1 {
+    margin: 0;
   }
 
-  .steps-content {
-    width: 50em;
-    height: 25em;
-    display: grid;
-    place-items: center;
+  .tokens-tab {
+    min-width: 25em;
   }
 }

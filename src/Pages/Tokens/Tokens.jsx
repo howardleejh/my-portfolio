@@ -1,78 +1,46 @@
 import { useState } from 'react'
-import { Row, Col, Steps, Button, message } from 'antd'
-import TokensStep1 from '../../Components/TokensStep1/TokensStep1'
-import TokensStep2 from '../../Components/TokensStep2/TokensStep2'
-import TokensStep3 from '../../Components/TokensStep3/TokensStep3'
+import { Row, Col, Tabs } from 'antd'
+import StepsComponent from '../../Components/StepsComponent/StepsComponent'
+import TokensStatus from '../../Components/TokensStatus/TokensStatus'
 import './Tokens.scss'
 
-const { Step } = Steps
-
-const steps = [
-  {
-    title: 'Log In',
-    content: <TokensStep1 />,
-  },
-  {
-    title: 'Second',
-    content: <TokensStep2 />,
-  },
-  {
-    title: 'Last',
-    content: <TokensStep3 />,
-  },
-]
+const { TabPane } = Tabs
 
 const Tokens = () => {
-  const [current, setCurrent] = useState(0)
+  const [current, setCurrent] = useState(1)
 
-  const next = () => {
-    setCurrent(current + 1)
+  const handleReadyClick = () => {
+    setCurrent(2)
   }
 
-  const prev = () => {
-    setCurrent(current - 1)
+  const handleTabSwitch = () => {
+    if (current === 1) {
+      setCurrent(2)
+      return
+    }
+    setCurrent(1)
   }
 
   return (
     <div className='tokens-page'>
       <Row align='middle' justify='center'>
-        <Col className='tokens-container'>
-          <Steps current={current}>
-            {steps.map((item) => (
-              <Step key={item.title} title={item.title} />
-            ))}
-          </Steps>
-          <div className='steps-content'>{steps[current].content}</div>
-          <div className='steps-action'>
-            {current > 0 && (
-              <Button
-                style={{
-                  margin: '0 8px',
-                }}
-                onClick={() => prev()}
-              >
-                Previous
-              </Button>
-            )}
-            {current === 0 && (
-              <Button type='primary' onClick={() => next()}>
-                Check Eligibility
-              </Button>
-            )}
-            {current === 1 && (
-              <Button type='primary' onClick={() => next()}>
-                Submit
-              </Button>
-            )}
-            {current === steps.length - 1 && (
-              <Button
-                type='primary'
-                onClick={() => message.success('Token Minting complete!')}
-              >
-                Done
-              </Button>
-            )}
-          </div>
+        <Col>
+          <h1>DUMB TOKENS</h1>
+          <Tabs
+            defaultActiveKey='1'
+            centered
+            activeKey={`${current}`}
+            onTabClick={handleTabSwitch}
+            tabPosition='top'
+            className='tokens-tab'
+          >
+            <TabPane tab={<h3>STATUS</h3>} key='1'>
+              <TokensStatus onHandleReadyClick={handleReadyClick} />
+            </TabPane>
+            <TabPane tab={<h3>MINT TOKENS</h3>} key='2'>
+              <StepsComponent />
+            </TabPane>
+          </Tabs>
         </Col>
       </Row>
     </div>
