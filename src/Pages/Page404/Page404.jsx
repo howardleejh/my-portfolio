@@ -1,4 +1,4 @@
-import { Row, Col, Button } from 'antd'
+import { Row, Col } from 'antd'
 import { Link } from 'react-router-dom'
 import './Page404.scss'
 
@@ -9,7 +9,7 @@ const Page404 = () => {
         <Col>
           <h1>COMING SOON</h1>
           <h2>Under Maintenance</h2>
-          <Link to='/'>Go Home</Link>
+          <Link to='/#'>Go Home</Link>
         </Col>
       </Row>
     </div>
