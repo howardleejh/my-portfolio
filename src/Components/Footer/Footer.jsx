@@ -22,9 +22,7 @@ const Footer = () => {
                   <HashLink
                     smooth
                     to={'/#'}
-                    scroll={(el) =>
-                      el.scrollIntoView({ behavior: 'smooth', block: 'center' })
-                    }
+                    scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })}
                   >
                     Howard
                   </HashLink>
@@ -33,9 +31,7 @@ const Footer = () => {
                   <HashLink
                     smooth
                     to={'/#exp'}
-                    scroll={(el) =>
-                      el.scrollIntoView({ behavior: 'smooth', block: 'center' })
-                    }
+                    scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })}
                   >
                     Experience
                   </HashLink>
@@ -44,9 +40,7 @@ const Footer = () => {
                   <HashLink
                     smooth
                     to={'/#projects'}
-                    scroll={(el) =>
-                      el.scrollIntoView({ behavior: 'smooth', block: 'center' })
-                    }
+                    scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })}
                   >
                     Projects
                   </HashLink>
@@ -66,9 +60,7 @@ const Footer = () => {
                   <HashLink
                     smooth
                     to={'/#contact'}
-                    scroll={(el) =>
-                      el.scrollIntoView({ behavior: 'smooth', block: 'center' })
-                    }
+                    scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })}
                   >
                     Contact
                   </HashLink>
