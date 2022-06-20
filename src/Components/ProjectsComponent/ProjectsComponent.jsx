@@ -2,11 +2,11 @@ import { Row, Col } from 'antd'
 import { Fade } from 'react-awesome-reveal'
 import ProjectCard from '../ProjectCard/ProjectCard'
 import './ProjectsComponent.scss'
-import img1 from '../../Media/ChessLogo.png'
-import img2 from '../../Media/BazaarMalamLogo.png'
-import img3 from '../../Media/TeamUpLogo.png'
-import img4 from '../../Media/GachaLogo.png'
-import img5 from '../../Media/comingSoon.png'
+import img1 from '../../Assets/ChessLogo.png'
+import img2 from '../../Assets/BazaarMalamLogo.png'
+import img3 from '../../Assets/TeamUpLogo.png'
+import img4 from '../../Assets/GachaLogo.png'
+import img5 from '../../Assets/comingSoon.png'
 
 const ProjectsComponent = () => {
   return (

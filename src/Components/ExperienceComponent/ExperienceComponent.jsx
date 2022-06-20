@@ -1,9 +1,9 @@
 import { Row, Col } from 'antd'
 import ExperienceCard from '../ExperienceCard/ExperienceCard'
-import img1 from '../../Media/GA.png'
-import img2 from '../../Media/Centaur-md.png'
-import img3 from '../../Media/Igloo.png'
-import img4 from '../../Media/Facebook.png'
+import img1 from '../../Assets/GA.png'
+import img2 from '../../Assets/Centaur-md.png'
+import img3 from '../../Assets/Igloo.png'
+import img4 from '../../Assets/Facebook.png'
 
 import './ExperienceComponent.scss'
 

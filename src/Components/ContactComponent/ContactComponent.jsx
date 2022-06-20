@@ -4,7 +4,7 @@ import { faDownload } from '@fortawesome/free-solid-svg-icons'
 import SocialButtons from '../SocialButtons/SocialButtons'
 import { faAt } from '@fortawesome/free-solid-svg-icons'
 import MobileMockup from '../MobileMockup/MobileMockup'
-import pdf from '../../Media/Howard_LEE_Resume_2022.pdf'
+import pdf from '../../Assets/Howard_LEE_Resume_2022.pdf'
 import './ContactComponent.scss'
 
 const ContactComponent = () => {

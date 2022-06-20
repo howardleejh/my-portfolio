@@ -1,6 +1,6 @@
 import { Row, Col, Carousel } from 'antd'
-import linkedin from '../../Media/linkedin.png'
-import github from '../../Media/github.png'
+import linkedin from '../../Assets/linkedin.png'
+import github from '../../Assets/github.png'
 import './MobileMockup.scss'
 
 /*

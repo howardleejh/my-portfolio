@@ -1,0 +1,23 @@
+.tokens-page {
+  width: 100%;
+  min-height: 100%;
+  padding: 5em 0;
+
+  h1 {
+    margin: 0;
+  }
+
+  .tokens-tab {
+    width: 45em;
+    height: 40em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .tokens-page {
+    .tokens-tab {
+      width: 25em;
+      height: 45em;
+    }
+  }
+}

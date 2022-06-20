@@ -1,23 +1,65 @@
+import { useContext } from 'react'
 import { Row, Col } from 'antd'
 import { Fade } from 'react-awesome-reveal'
+import { Link } from 'react-router-dom'
+import { MenuContext } from '../MenuProvider/MenuProvider'
 import SocialButtons from '../SocialButtons/SocialButtons'
 
 import './MenuOverlay.scss'
 
 const MenuOverlay = () => {
+  const menu = useContext(MenuContext)
+
+  const menuItems = [
+    {
+      key: 'Home',
+      path: '/#',
+    },
+    {
+      key: 'DUMB Tokens',
+      path: 'tokens',
+    },
+    {
+      key: 'NFT',
+      path: 'nft',
+    },
+    {
+      key: 'Vault',
+      path: 'vault',
+    },
+    {
+      key: 'Lottery',
+      path: 'lottery',
+    },
+    {
+      key: 'Road Map',
+      path: 'roadmap',
+    },
+    {
+      key: 'FAQ',
+      path: 'faq',
+    },
+  ]
+
+  const clickHandler = () => {
+    menu.openMenu()
+  }
+
   return (
     <div className='menu-overlay'>
       <Fade direction='down'>
         <Row justify='center' align='middle'>
           <Col>
             <ul>
-              <li>Home</li>
-              <li>Token</li>
-              <li>NFT</li>
-              <li>Vault</li>
-              <li>Lottery</li>
-              <li>Roadmap</li>
-              <li>FAQ</li>
+              {menuItems.map((item) => {
+                let objItem = Object.values(item)
+
+                return (
+                  <Link key={objItem[0]} to={objItem[1]} onClick={clickHandler}>
+                    <li>{objItem[0]}</li>
+                  </Link>
+                )
+              })}
             </ul>
           </Col>
         </Row>

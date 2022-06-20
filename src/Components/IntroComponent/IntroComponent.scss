@@ -8,17 +8,17 @@
   }
 
   section {
-    height: 100vh;
+    min-height: 100vh;
     display: grid;
     place-items: center;
-    scroll-snap-align: start;
+    scroll-snap-align: end;
   }
 
   #sticky-container {
     position: sticky;
-    top: -35%;
+    top: -30%;
     scroll-snap-align: none;
-    font-size: 5em;
+    font-size: 2.5em;
     color: rgb(169, 55, 55);
   }
 }
@@ -38,7 +38,8 @@
     }
 
     #sticky-container {
-      top: -2em;
+      top: -3em;
+      font-size: 3em;
     }
   }
 }
