@@ -1,7 +1,7 @@
 import { useEffect, useContext } from 'react'
 import { Col, Button } from 'antd'
 import { MenuContext } from '../MenuProvider/MenuProvider'
-import { ellipseAdd } from '../../Utilities/Helper'
+import { EllipseAdd } from '../../Utilities/Helper'
 import './Wallet.scss'
 
 const Wallet = () => {
@@ -35,7 +35,7 @@ const Wallet = () => {
     <div className='wallet-container'>
       <Col>
         <Button className='wallet-btn'>{menu.wallet.network}</Button>
-        <Button className='wallet-btn'>{`${ellipseAdd(
+        <Button className='wallet-btn'>{`${EllipseAdd(
           menu.wallet.address,
           6,
           6

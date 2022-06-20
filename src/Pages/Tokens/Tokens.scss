@@ -1,6 +1,6 @@
 .tokens-page {
   width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
   padding: 5em 0;
 
   h1 {
@@ -8,6 +8,16 @@
   }
 
   .tokens-tab {
-    min-width: 25em;
+    width: 45em;
+    height: 40em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .tokens-page {
+    .tokens-tab {
+      width: 25em;
+      height: 45em;
+    }
   }
 }

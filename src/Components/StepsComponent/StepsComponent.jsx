@@ -1,5 +1,6 @@
-import { useState } from 'react'
-import { Row, Col, Steps, Button, message } from 'antd'
+import { useState, useContext } from 'react'
+import { Row, Col, Steps, Button } from 'antd'
+import { MenuContext } from '../MenuProvider/MenuProvider'
 import TokensStep1 from '../TokensStep1/TokensStep1'
 import TokensStep2 from '../TokensStep2/TokensStep2'
 import TokensStep3 from '../TokensStep3/TokensStep3'
@@ -22,15 +23,29 @@ const steps = [
   },
 ]
 
-const StepsComponent = () => {
+const StepsComponent = (props) => {
+  const menu = useContext(MenuContext)
+
   const [current, setCurrent] = useState(0)
 
   const next = () => {
     setCurrent(current + 1)
   }
 
-  const prev = () => {
-    setCurrent(current - 1)
+  const handleClickOnReady = () => {
+    next()
+  }
+
+  const handleClickOnSubmit = () => {
+    menu
+      .mintTokens()
+      .then((results) => console.log(results))
+      .then(() => next())
+  }
+
+  const handleClickOnDone = () => {
+    setCurrent(0)
+    props.onClickOnDone()
   }
 
   return (
@@ -60,20 +75,27 @@ const StepsComponent = () => {
               </Button>
             )} */}
             {current === 0 && (
-              <Button type='danger' onClick={() => next()}>
+              <Button
+                type='danger'
+                onClick={handleClickOnReady}
+                disabled={
+                  menu.wallet.connected && menu.userIsReady ? false : true
+                }
+              >
                 READY!
               </Button>
             )}
             {current === 1 && (
-              <Button type='primary' onClick={() => next()}>
+              <Button
+                type='primary'
+                onClick={handleClickOnSubmit}
+                loading={menu.isLoading}
+              >
                 Submit
               </Button>
             )}
             {current === steps.length - 1 && (
-              <Button
-                type='primary'
-                onClick={() => message.success('Token Minting complete!')}
-              >
+              <Button type='primary' onClick={handleClickOnDone}>
                 Done
               </Button>
             )}

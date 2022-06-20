@@ -9,10 +9,6 @@ const { TabPane } = Tabs
 const Tokens = () => {
   const [current, setCurrent] = useState(1)
 
-  const handleReadyClick = () => {
-    setCurrent(2)
-  }
-
   const handleTabSwitch = () => {
     if (current === 1) {
       setCurrent(2)
@@ -35,10 +31,10 @@ const Tokens = () => {
             className='tokens-tab'
           >
             <TabPane tab={<h3>STATUS</h3>} key='1'>
-              <TokensStatus onHandleReadyClick={handleReadyClick} />
+              <TokensStatus />
             </TabPane>
             <TabPane tab={<h3>MINT TOKENS</h3>} key='2'>
-              <StepsComponent />
+              <StepsComponent onClickOnDone={handleTabSwitch} />
             </TabPane>
           </Tabs>
         </Col>

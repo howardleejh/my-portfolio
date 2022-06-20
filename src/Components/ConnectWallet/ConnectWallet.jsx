@@ -11,7 +11,9 @@ const ConnectWallet = () => {
 
   return (
     <>
-      <Button onClick={handleClick}>Connect Wallet</Button>
+      <Button onClick={handleClick} loading={menu.isLoading}>
+        Connect Wallet
+      </Button>
     </>
   )
 }

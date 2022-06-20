@@ -1,0 +1,2 @@
+export const TRIVIA_CONTRACT = '0xd0c7df3b136894a3311ee623d030e0bf3e099fdf'
+export const TOKEN_CONTRACT = '0xb78a4d8661d496b49069f18eef2ab7b7eee9b8d1'

@@ -1,8 +1,21 @@
 .steps-component {
   .steps-container {
-    margin: 1em;
     .steps-content {
-      margin: 1em;
+      width: 40em;
+      height: 25em;
+      display: grid;
+      place-items: center;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .steps-component {
+    .steps-container {
+      .steps-content {
+        width: 100%;
+        height: auto;
+      }
     }
   }
 }

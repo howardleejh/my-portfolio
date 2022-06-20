@@ -1,4 +1,4 @@
-import { Row, Col, Button } from 'antd'
+import { Row, Col } from 'antd'
 import './TokensStep3.scss'
 
 const TokensStep3 = () => {
@@ -6,10 +6,7 @@ const TokensStep3 = () => {
     <div className='token-step-3'>
       <Row align='middle' justify='center'>
         <Col span={24}>
-          <h1>Claim your Tokens!</h1>
-        </Col>
-        <Col>
-          <Button>CLAIM</Button>
+          <h2>CONGRATULATIONS! You minted Tokens.</h2>
         </Col>
       </Row>
     </div>

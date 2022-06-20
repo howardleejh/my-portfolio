@@ -1,15 +1,37 @@
-import { useContext } from 'react'
-import { Row, Col, Button, Tooltip, Descriptions } from 'antd'
+import { useContext, useEffect, useState } from 'react'
+import { Row, Col, Button, Tooltip, Descriptions, Spin } from 'antd'
 import { MenuContext } from '../MenuProvider/MenuProvider'
-import { ellipseAdd } from '../../Utilities/Helper'
+import { TOKEN_CONTRACT, TRIVIA_CONTRACT } from '../../Constants/Addresses'
+import { LoadingOutlined } from '@ant-design/icons'
 import Clock from 'react-live-clock'
 import './TokensStatus.scss'
 
-const TokensStatus = (props) => {
+const antIcon = (
+  <LoadingOutlined
+    style={{
+      fontSize: 24,
+    }}
+    spin
+  />
+)
+
+const TokensStatus = () => {
   const menu = useContext(MenuContext)
 
-  const tokenAdd = '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2'
-  const triviaAdd = '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2'
+  const tokenAdd = `${TOKEN_CONTRACT}`
+  const triviaAdd = `${TRIVIA_CONTRACT}`
+
+  const [userRewards, setUserRewards] = useState({})
+
+  useEffect(() => {
+    // eslint-disable-next-line
+    if (!menu.wallet.connected) {
+      return
+    }
+    // eslint-disable-next-line
+    menu.getUserTokens().then((results) => setUserRewards(results))
+    // eslint-disable-next-line
+  }, [menu.wallet])
 
   return (
     <div className='tokens-status'>
@@ -22,6 +44,7 @@ const TokensStatus = (props) => {
             bordered
             layout='vertical'
             size='small'
+            column={4}
             className='tokens-status-item'
           >
             <Descriptions.Item label='Contracts' span={4}>
@@ -29,7 +52,7 @@ const TokensStatus = (props) => {
                 <Tooltip title='View on Etherscan'>
                   <Button
                     type='link'
-                    href={`https://etherscan.io/token/${tokenAdd}`}
+                    href={`https://mumbai.polygonscan.com/token/${tokenAdd}`}
                     target='_blank'
                     rel='noreferrer'
                   >
@@ -40,7 +63,7 @@ const TokensStatus = (props) => {
                 <Tooltip title='View on Etherscan'>
                   <Button
                     type='link'
-                    href={`https://etherscan.io/token/${tokenAdd}`}
+                    href={`https://mumbai.polygonscan.com/address/${triviaAdd}`}
                     target='_blank'
                     rel='noreferrer'
                   >
@@ -50,15 +73,17 @@ const TokensStatus = (props) => {
               </Row>
             </Descriptions.Item>
             <Descriptions.Item label='Total Rewards'>
-              asdasdsa
+              {userRewards.totalReward || <Spin indicator={antIcon} />}
             </Descriptions.Item>
             <Descriptions.Item label='Reward to Withdraw'>
-              asdasdsa
+              {userRewards.rewardRemaining || <Spin indicator={antIcon} />}
             </Descriptions.Item>
             <Descriptions.Item label='Reward Withdrawn'>
-              asdasdsa
+              {userRewards.rewardWithdrawn || <Spin indicator={antIcon} />}
             </Descriptions.Item>
-            <Descriptions.Item label='Next Mint'>asdasdsa</Descriptions.Item>
+            <Descriptions.Item label='Next Mint'>
+              {userRewards.nextMint || <Spin indicator={antIcon} />}
+            </Descriptions.Item>
           </Descriptions>
           <Button type='primary' className='tokens-status-item'>
             Withdraw Rewards
