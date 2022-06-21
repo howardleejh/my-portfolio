@@ -34,7 +34,7 @@ const Footer = () => {
                     smooth
                     to={'/#exp'}
                     scroll={(el) =>
-                      el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+                      el.scrollIntoView({ behavior: 'smooth', block: 'start' })
                     }
                   >
                     Experience
@@ -45,7 +45,7 @@ const Footer = () => {
                     smooth
                     to={'/#projects'}
                     scroll={(el) =>
-                      el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+                      el.scrollIntoView({ behavior: 'smooth', block: 'start' })
                     }
                   >
                     Projects
@@ -56,7 +56,7 @@ const Footer = () => {
                     smooth
                     to={'/#tech'}
                     scroll={(el) =>
-                      el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+                      el.scrollIntoView({ behavior: 'smooth', block: 'end' })
                     }
                   >
                     Tech Stack
@@ -67,7 +67,7 @@ const Footer = () => {
                     smooth
                     to={'/#contact'}
                     scroll={(el) =>
-                      el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+                      el.scrollIntoView({ behavior: 'smooth', block: 'start' })
                     }
                   >
                     Contact
@@ -78,8 +78,28 @@ const Footer = () => {
             <Col className='site-map-items'>
               <h6>TOKENS</h6>
               <ul>
-                <li>How To</li>
-                <li>Mint Tokens</li>
+                <li>
+                  <HashLink
+                    smooth
+                    to={'/tokens/#tokens-status'}
+                    scroll={(el) =>
+                      el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+                    }
+                  >
+                    Status
+                  </HashLink>
+                </li>
+                <li>
+                  <HashLink
+                    smooth
+                    to={'/tokens/#tokens-mint'}
+                    scroll={(el) =>
+                      el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+                    }
+                  >
+                    Mint
+                  </HashLink>
+                </li>
               </ul>
             </Col>
             <Col className='site-map-items'>

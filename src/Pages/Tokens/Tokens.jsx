@@ -28,13 +28,18 @@ const Tokens = () => {
             activeKey={`${current}`}
             onTabClick={handleTabSwitch}
             tabPosition='top'
+            destroyInactiveTabPane
             className='tokens-tab'
           >
             <TabPane tab={<h3>STATUS</h3>} key='1'>
-              <TokensStatus />
+              <section id='tokens-status'>
+                <TokensStatus />
+              </section>
             </TabPane>
             <TabPane tab={<h3>MINT TOKENS</h3>} key='2'>
-              <StepsComponent onClickOnDone={handleTabSwitch} />
+              <section id='tokens-mint'>
+                <StepsComponent onClickOnDone={handleTabSwitch} />
+              </section>
             </TabPane>
           </Tabs>
         </Col>

@@ -1,5 +1,5 @@
 import { useEffect, useContext } from 'react'
-import { Col, Button } from 'antd'
+import { Col, Button, Tooltip } from 'antd'
 import { MenuContext } from '../MenuProvider/MenuProvider'
 import { EllipseAdd } from '../../Utilities/Helper'
 import './Wallet.scss'
@@ -35,11 +35,14 @@ const Wallet = () => {
     <div className='wallet-container'>
       <Col>
         <Button className='wallet-btn'>{menu.wallet.network}</Button>
-        <Button className='wallet-btn'>{`${EllipseAdd(
-          menu.wallet.address,
-          6,
-          6
-        )}`}</Button>
+        <Tooltip title={`View in Explorer`}>
+          <Button
+            href={`https://mumbai.polygonscan.com/address/${menu.wallet.address}`}
+            target='_blank'
+            rel='noreferrer'
+            className='wallet-btn'
+          >{`${EllipseAdd(menu.wallet.address, 6, 6)}`}</Button>
+        </Tooltip>
       </Col>
     </div>
   )

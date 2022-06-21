@@ -1,8 +1,8 @@
 import { useState, createContext } from 'react'
 import { ethers } from 'ethers'
-import { TRIVIA_CONTRACT } from '../../Constants/Addresses'
-import { GetProvider } from '../../Utilities/Helper'
-import triviaAbi from '../../Abi/Trivia.json'
+import { DISTRIBUTION_CONTRACT } from '../../Constants/Addresses'
+import { GetProvider, Toast } from '../../Utilities/Helper'
+import distributionAbi from '../../Abi/distribution.json'
 
 const ethereum = window.ethereum
 
@@ -11,9 +11,9 @@ export const MenuContext = createContext({})
 export default function MenuProvider({ children }) {
   const provider = GetProvider('alchemy')
 
-  const triviaContract = new ethers.Contract(
-    TRIVIA_CONTRACT,
-    triviaAbi,
+  const distributionContract = new ethers.Contract(
+    DISTRIBUTION_CONTRACT,
+    distributionAbi,
     provider
   )
 
@@ -28,19 +28,21 @@ export default function MenuProvider({ children }) {
       return
     }
     setIsMenuOpen(false)
+    return
   }
 
   const connectWallet = async () => {
     if (typeof window.ethereum === 'undefined') {
-      console.log('Please install Metamask!')
+      Toast('Please install Metamask!')
       return
     }
     if (ethereum.networkVersion !== '80001') {
-      return console.log('Please only connect to Polygon Mumbai testnet.')
+      Toast('Please only use Mumbai Polygon Testnet')
+      return
     }
     setIsLoading(true)
-    const provider = GetProvider('metamask')
     try {
+      const provider = GetProvider('metamask')
       await provider.send('eth_requestAccounts')
       const signer = provider.getSigner()
       await signer.signMessage(
@@ -53,7 +55,8 @@ export default function MenuProvider({ children }) {
       })
     } catch (err) {
       setIsLoading(false)
-      return console.log(err.message)
+      Toast(err.message)
+      return
     }
     setIsLoading(false)
   }
@@ -63,13 +66,10 @@ export default function MenuProvider({ children }) {
   }
 
   const getUserTokens = async () => {
-    if (!wallet.connected) {
-      return console.log('Please connect wallet')
-    }
-
+    setIsLoading(true)
     let obj
     try {
-      await triviaContract.users(wallet.address).then((results) => {
+      await distributionContract.users(wallet.address).then((results) => {
         let d = new Date(parseInt(results.nextMint.toString() * 1000))
         let timestamp = d.toLocaleString('en-US')
         obj = {
@@ -80,28 +80,33 @@ export default function MenuProvider({ children }) {
         }
       })
     } catch (err) {
-      return console.log(err.message)
+      setIsLoading(false)
+      Toast(err.message)
+      return
     }
-
+    setIsLoading(false)
     return obj
   }
 
   const checkUserReady = async () => {
+    console.log('checking user readiness?')
     let balance
     let isEligible
     try {
       const provider = GetProvider('metamask')
       const signer = provider.getSigner()
+      let connectedContract = distributionContract.connect(signer)
       balance = await signer.getBalance()
-      isEligible = await triviaContract.checkEligibility()
+      isEligible = await connectedContract.checkEligibility()
     } catch (err) {
-      return console.log(err.message)
+      Toast(err.message)
+      return
     }
-    console.log(isEligible)
-    if (balance > 0 && isEligible === true) {
-      return setUserIsReady(true)
+    if (isEligible === false || ethers.utils.formatEther(balance) <= 0) {
+      return
     }
-
+    setUserIsReady(true)
+    Toast('You are ready to mint!')
     return
   }
 
@@ -111,15 +116,34 @@ export default function MenuProvider({ children }) {
     try {
       const provider = GetProvider('metamask')
       const signer = provider.getSigner()
-      let connectedContract = triviaContract.connect(signer)
-      tx = await connectedContract.userMint(true)
+      let connectedContract = distributionContract.connect(signer)
+      tx = await connectedContract.userMint()
       await tx.wait()
     } catch (err) {
       setIsLoading(false)
-      return console.log(err.message)
+      Toast(err.message)
+      return
     }
     setIsLoading(false)
-    return ethers.utils.formatEther(tx)
+    return tx
+  }
+
+  const claimTokens = async (amount) => {
+    setIsLoading(true)
+    let tx
+    try {
+      const provider = GetProvider('metamask')
+      const signer = provider.getSigner()
+      let connectedContract = distributionContract.connect(signer)
+      tx = await connectedContract.userWithdraw(amount)
+      await tx.wait()
+    } catch (err) {
+      setIsLoading(false)
+      Toast(err.message)
+      return
+    }
+    setIsLoading(false)
+    return Toast('Reward is successfully claimed!')
   }
 
   return (
@@ -135,6 +159,7 @@ export default function MenuProvider({ children }) {
         userIsReady,
         getUserTokens,
         mintTokens,
+        claimTokens,
       }}
     >
       {children}

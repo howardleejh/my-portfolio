@@ -6,12 +6,7 @@ const TokensStep2 = () => {
     <div className='token-step-2'>
       <Row align='middle' justify='center'>
         <Col span={24}>
-          <h2>Trivia Question?</h2>
-        </Col>
-        <Col>
-          <ul>
-            <li>TRIVIA QUESTION IS HERE</li>
-          </ul>
+          <h2>I'm ready to Mint!</h2>
         </Col>
       </Row>
     </div>
