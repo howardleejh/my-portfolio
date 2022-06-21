@@ -24,12 +24,12 @@ const TokensInfo = () => {
             {' '}
             A set of 1 Billion FUSE tokens stored within a distribution smart
             contract that allows for anyone to mint. The only caveat is that
-            each user only gets to mint a range of 1~10 Tokens per day and that
-            you will have to pay for your own gas fee, which in Polygon MATIC,
-            costs less than 0.01 MATIC. The objective of FUSE is that it will be
-            used to purchase NFT in an upcoming NFT launch that is current work
-            in progress. More information will provided nearing the launch date
-            of this NFT project.
+            each user only gets to mint from a range of 1~10 Tokens per day and
+            that you will have to pay for your own gas fee, which in Polygon
+            MATIC, costs less than 0.01 MATIC (literally free!). The FUSE token
+            will be used to purchase NFTs in an upcoming launch that is current
+            work in progress. More information will be provided nearing the
+            launch date of the NFT project.
           </p>
           <Col>
             <Button
