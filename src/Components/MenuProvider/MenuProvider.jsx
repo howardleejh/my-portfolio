@@ -23,6 +23,7 @@ export default function MenuProvider({ children }) {
   const [isLoading, setIsLoading] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [wallet, setWallet] = useState({})
+  const [userTokens, setUserTokens] = useState({})
   const [userIsReady, setUserIsReady] = useState(false)
 
   const openMenu = () => {
@@ -70,6 +71,8 @@ export default function MenuProvider({ children }) {
 
   const getUserTokens = async () => {
     if (!wallet.connected) {
+      setUserTokens({})
+      Toast('Please connect wallet to begin')
       return
     }
     setIsLoading(true)
@@ -90,8 +93,9 @@ export default function MenuProvider({ children }) {
       Toast(err.message)
       return
     }
+    setUserTokens(obj)
     setIsLoading(false)
-    return obj
+    return
   }
 
   const checkUserReady = async () => {
@@ -228,6 +232,7 @@ export default function MenuProvider({ children }) {
         disconnectWallet,
         checkUserReady,
         userIsReady,
+        userTokens,
         getUserTokens,
         mintTokens,
         claimTokens,

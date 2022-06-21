@@ -164,7 +164,7 @@
     "inputs": [],
     "name": "tokens",
     "outputs": [
-      { "internalType": "contract DumbTokens", "name": "", "type": "address" }
+      { "internalType": "contract FuseTokens", "name": "", "type": "address" }
     ],
     "stateMutability": "view",
     "type": "function"
@@ -181,7 +181,7 @@
   {
     "inputs": [],
     "name": "userMint",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
   },

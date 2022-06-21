@@ -14,7 +14,7 @@ import {
   TOKEN_CONTRACT,
   DISTRIBUTION_CONTRACT,
 } from '../../Constants/Addresses'
-import { EllipseAdd, Toast } from '../../Utilities/Helper'
+import { EllipseAdd } from '../../Utilities/Helper'
 import { LoadingOutlined } from '@ant-design/icons'
 
 import Clock from 'react-live-clock'
@@ -35,7 +35,6 @@ const TokensStatus = () => {
   const tokenAdd = `${TOKEN_CONTRACT}`
   const distributionAdd = `${DISTRIBUTION_CONTRACT}`
 
-  const [userRewards, setUserRewards] = useState({})
   const [modal, setModal] = useState(false)
   const [inputValue, setInputValue] = useState()
 
@@ -56,13 +55,7 @@ const TokensStatus = () => {
 
   useEffect(() => {
     // eslint-disable-next-line
-    if (!menu.wallet.connected) {
-      setUserRewards({})
-      Toast('Please connect your wallet to begin.')
-      return
-    }
-    // eslint-disable-next-line
-    menu.getUserTokens().then((results) => setUserRewards(results))
+    menu.getUserTokens()
     // eslint-disable-next-line
   }, [menu.wallet])
 
@@ -105,16 +98,16 @@ const TokensStatus = () => {
               </Row>
             </Descriptions.Item>
             <Descriptions.Item label='Total Rewards' span={2}>
-              {userRewards.totalReward || <Spin indicator={antIcon} />}
+              {menu.userTokens.totalReward || <Spin indicator={antIcon} />}
             </Descriptions.Item>
             <Descriptions.Item label='Unclaimed Reward'>
-              {userRewards.rewardRemaining || <Spin indicator={antIcon} />}
+              {menu.userTokens.rewardRemaining || <Spin indicator={antIcon} />}
             </Descriptions.Item>
             <Descriptions.Item label='Claimed Reward'>
-              {userRewards.rewardWithdrawn || <Spin indicator={antIcon} />}
+              {menu.userTokens.rewardWithdrawn || <Spin indicator={antIcon} />}
             </Descriptions.Item>
             <Descriptions.Item label='Next Mint'>
-              {userRewards.nextMint || <Spin indicator={antIcon} />}
+              {menu.userTokens.nextMint || <Spin indicator={antIcon} />}
             </Descriptions.Item>
           </Descriptions>
           <Row align='middle' justify='space-evenly'>
@@ -122,7 +115,8 @@ const TokensStatus = () => {
               ghost
               onClick={handleClaimRewards}
               disabled={
-                userRewards.totalReward && userRewards.rewardRemaining > 0
+                menu.userTokens.totalReward &&
+                menu.userTokens.rewardRemaining > 0
                   ? false
                   : true
               }
