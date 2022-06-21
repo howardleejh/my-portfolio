@@ -7,13 +7,14 @@ import img2 from '../../Assets/BazaarMalamLogo.png'
 import img3 from '../../Assets/TeamUpLogo.png'
 import img4 from '../../Assets/GachaLogo.png'
 import img5 from '../../Assets/comingSoon.png'
+import img6 from '../../Assets/TokenLogo.png'
 
 const ProjectsComponent = () => {
   return (
     <div className='projects-component'>
       <h1>Projects</h1>
       <Row align='middle' justify='center'>
-        <Fade cascade triggerOnce>
+        <Fade cascade triggerOnce fraction={0.1}>
           <Col className='projects-item'>
             <ProjectCard
               title={`3D Chess`}
@@ -64,12 +65,13 @@ const ProjectsComponent = () => {
           </Col>
           <Col className='projects-item'>
             <ProjectCard
-              title={`DUMB Tokens [ERC20]`}
-              description={`A Token project for my upcoming NFT project.`}
+              title={`FUSE Tokens`}
+              description={`An ERC20 project for my upcoming NFT launch.`}
+              href='https://github.com/howardleejh/fuse-tokens'
               style={{
-                background: `#ffffff url(${img5}) no-repeat top left`,
-                backgroundSize: '20em',
-                backgroundPosition: 'contain',
+                background: `#ffffff url(${img6}) no-repeat top center`,
+                backgroundSize: '15em',
+                backgroundPosition: 'cover',
               }}
             />
           </Col>

@@ -16,7 +16,7 @@ import {
 } from '../../Constants/Addresses'
 import { EllipseAdd, Toast } from '../../Utilities/Helper'
 import { LoadingOutlined } from '@ant-design/icons'
-import TokenAddBtn from '../TokenAddBtn/TokenAddBtn'
+
 import Clock from 'react-live-clock'
 import './TokensStatus.scss'
 
@@ -58,7 +58,7 @@ const TokensStatus = () => {
     // eslint-disable-next-line
     if (!menu.wallet.connected) {
       setUserRewards({})
-      Toast('Please connect your wallet.')
+      Toast('Please connect your wallet to begin.')
       return
     }
     // eslint-disable-next-line
@@ -92,7 +92,6 @@ const TokensStatus = () => {
                     Tokens Contract
                   </Button>
                 </Tooltip>
-
                 <Tooltip title={`${EllipseAdd(distributionAdd, 10, 6)}`}>
                   <Button
                     type='link'
@@ -118,27 +117,21 @@ const TokensStatus = () => {
               {userRewards.nextMint || <Spin indicator={antIcon} />}
             </Descriptions.Item>
           </Descriptions>
-          <ul>
-            <li>
-              <TokenAddBtn
-                tokenAdd={`${tokenAdd}`}
-                disabled={userRewards.totalReward ? false : true}
-                loading={menu.isLoading}
-                className='tokens-status-item tokens-status-btn'
-              />
-            </li>
-            <li>
-              <Button
-                type='primary'
-                onClick={handleClaimRewards}
-                disabled={userRewards.totalReward ? false : true}
-                loading={menu.isLoading}
-                className='tokens-status-item tokens-status-btn'
-              >
-                Claim Rewards
-              </Button>
-            </li>
-          </ul>
+          <Row align='middle' justify='space-evenly'>
+            <Button
+              ghost
+              onClick={handleClaimRewards}
+              disabled={
+                userRewards.totalReward && userRewards.rewardRemaining > 0
+                  ? false
+                  : true
+              }
+              loading={menu.isLoading}
+              className='tokens-status-item tokens-status-btn'
+            >
+              Claim Rewards
+            </Button>
+          </Row>
         </Col>
       </Row>
       <Modal
@@ -148,7 +141,7 @@ const TokensStatus = () => {
         onOk={handleConfirmClaims}
         onCancel={() => setModal(false)}
       >
-        <Input suffix='DUMB' value={inputValue} onChange={handleInputChange} />
+        <Input suffix='FUSE' value={inputValue} onChange={handleInputChange} />
       </Modal>
     </div>
   )

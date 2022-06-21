@@ -51,7 +51,6 @@ const StepsComponent = (props) => {
   }
 
   useEffect(() => {
-    console.log(current)
     // eslint-disable-next-line
     menu.checkUserReady()
     // eslint-disable-next-line
@@ -75,8 +74,8 @@ const StepsComponent = (props) => {
           <div className='steps-action'>
             {current === 0 && (
               <Button
+                ghost
                 size='large'
-                type='danger'
                 onClick={handleClickOnReady}
                 disabled={
                   menu.wallet.connected && menu.userIsReady ? false : true
@@ -88,7 +87,7 @@ const StepsComponent = (props) => {
             {current === 1 && (
               <Button
                 size='large'
-                type='primary'
+                ghost
                 onClick={handleClickOnSubmit}
                 loading={menu.isLoading}
               >
@@ -96,7 +95,7 @@ const StepsComponent = (props) => {
               </Button>
             )}
             {current === steps.length - 1 && (
-              <Button type='primary' onClick={handleClickOnDone}>
+              <Button ghost onClick={handleClickOnDone}>
                 Done
               </Button>
             )}

@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import { Button } from 'antd'
 import { MenuContext } from '../MenuProvider/MenuProvider'
+import './ConnectWallet.scss'
 
 const ConnectWallet = () => {
   const menu = useContext(MenuContext)
@@ -11,7 +12,12 @@ const ConnectWallet = () => {
 
   return (
     <>
-      <Button onClick={handleClick} loading={menu.isLoading}>
+      <Button
+        size='large'
+        onClick={handleClick}
+        loading={menu.isLoading}
+        className='connect-wallet-btn'
+      >
         Connect Wallet
       </Button>
     </>

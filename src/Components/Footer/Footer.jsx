@@ -21,10 +21,8 @@ const Footer = () => {
                 <li>
                   <HashLink
                     smooth
-                    to={'/#'}
-                    scroll={(el) =>
-                      el.scrollIntoView({ behavior: 'smooth', block: 'center' })
-                    }
+                    to={'/#intro'}
+                    scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })}
                   >
                     Howard
                   </HashLink>
@@ -33,9 +31,7 @@ const Footer = () => {
                   <HashLink
                     smooth
                     to={'/#exp'}
-                    scroll={(el) =>
-                      el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-                    }
+                    scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })}
                   >
                     Experience
                   </HashLink>
@@ -44,9 +40,7 @@ const Footer = () => {
                   <HashLink
                     smooth
                     to={'/#projects'}
-                    scroll={(el) =>
-                      el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-                    }
+                    scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })}
                   >
                     Projects
                   </HashLink>
@@ -66,9 +60,7 @@ const Footer = () => {
                   <HashLink
                     smooth
                     to={'/#contact'}
-                    scroll={(el) =>
-                      el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-                    }
+                    scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })}
                   >
                     Contact
                   </HashLink>
@@ -81,23 +73,12 @@ const Footer = () => {
                 <li>
                   <HashLink
                     smooth
-                    to={'/tokens/#tokens-status'}
+                    to={'/tokens'}
                     scroll={(el) =>
                       el.scrollIntoView({ behavior: 'smooth', block: 'center' })
                     }
                   >
-                    Status
-                  </HashLink>
-                </li>
-                <li>
-                  <HashLink
-                    smooth
-                    to={'/tokens/#tokens-mint'}
-                    scroll={(el) =>
-                      el.scrollIntoView({ behavior: 'smooth', block: 'center' })
-                    }
-                  >
-                    Mint
+                    FUSE
                   </HashLink>
                 </li>
               </ul>

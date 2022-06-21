@@ -1,6 +1,9 @@
 import { useState, createContext } from 'react'
 import { ethers } from 'ethers'
-import { DISTRIBUTION_CONTRACT } from '../../Constants/Addresses'
+import {
+  TOKEN_CONTRACT,
+  DISTRIBUTION_CONTRACT,
+} from '../../Constants/Addresses'
 import { GetProvider, Toast } from '../../Utilities/Helper'
 import distributionAbi from '../../Abi/distribution.json'
 
@@ -66,6 +69,9 @@ export default function MenuProvider({ children }) {
   }
 
   const getUserTokens = async () => {
+    if (!wallet.connected) {
+      return
+    }
     setIsLoading(true)
     let obj
     try {
@@ -89,7 +95,9 @@ export default function MenuProvider({ children }) {
   }
 
   const checkUserReady = async () => {
-    console.log('checking user readiness?')
+    if (!wallet.connected) {
+      return
+    }
     let balance
     let isEligible
     try {
@@ -102,11 +110,11 @@ export default function MenuProvider({ children }) {
       Toast(err.message)
       return
     }
-    if (isEligible === false || ethers.utils.formatEther(balance) <= 0) {
+    if (isEligible === true && ethers.utils.formatEther(balance) > 0) {
+      setUserIsReady(true)
+      Toast('You are ready to mint!')
       return
     }
-    setUserIsReady(true)
-    Toast('You are ready to mint!')
     return
   }
 
@@ -146,6 +154,69 @@ export default function MenuProvider({ children }) {
     return Toast('Reward is successfully claimed!')
   }
 
+  const addTokenToWallet = async () => {
+    const tokenAddress = `${TOKEN_CONTRACT}`
+    const tokenSymbol = `FUSE`
+    const tokenDecimals = 18
+    const tokenImage = `https://res.cloudinary.com/dgpk8awuz/image/authenticated/s--mqrHt5-V--/v1655828489/jozfrfpa3v4moh9ad2yr.png`
+    setIsLoading(true)
+    try {
+      // wasAdded is a boolean. Like any RPC method, an error may be thrown.
+      const wasAdded = await ethereum.request({
+        method: 'wallet_watchAsset',
+        params: {
+          type: 'ERC20', // Initially only supports ERC20, but eventually more!
+          options: {
+            address: tokenAddress, // The address that the token is at.
+            symbol: tokenSymbol, // A ticker symbol or shorthand, up to 5 chars.
+            decimals: tokenDecimals, // The number of decimals in the token
+            image: tokenImage, // A string url of the token logo
+          },
+        },
+      })
+
+      if (wasAdded) {
+        setIsLoading(false)
+        Toast('Successfully added to wallet!')
+        return
+      }
+    } catch (err) {
+      setIsLoading(false)
+      Toast(err.message)
+      return
+    }
+  }
+
+  const addChainToWallet = async () => {
+    let tx
+    try {
+      tx = await ethereum.request({
+        id: 1,
+        jsonrpc: '2.0',
+        method: 'wallet_addEthereumChain',
+        params: [
+          {
+            chainId: '0x13881',
+            rpcUrls: ['https://rpc-mumbai.maticvigil.com'],
+            chainName: 'Polygon Testnet Mumbai',
+            nativeCurrency: {
+              name: 'tMATIC',
+              symbol: 'tMATIC', // 2-6 characters long
+              decimals: 18,
+            },
+            blockExplorerUrls: ['https://mumbai.polygonscan.com/'],
+          },
+        ],
+      })
+    } catch (err) {
+      Toast(err.message)
+    }
+    if (tx === null) {
+      Toast('Successfully Added to Wallet!')
+      return
+    }
+  }
+
   return (
     <MenuContext.Provider
       value={{
@@ -160,6 +231,8 @@ export default function MenuProvider({ children }) {
         getUserTokens,
         mintTokens,
         claimTokens,
+        addTokenToWallet,
+        addChainToWallet,
       }}
     >
       {children}

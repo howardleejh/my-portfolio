@@ -6,7 +6,7 @@ const TokensStep3 = () => {
     <div className='token-step-3'>
       <Row align='middle' justify='center'>
         <Col span={24}>
-          <h2>CONGRATULATIONS! You minted Tokens.</h2>
+          <h2>CONGRATULATIONS! You minted FUSE Tokens.</h2>
         </Col>
       </Row>
     </div>

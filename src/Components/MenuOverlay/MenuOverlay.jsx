@@ -13,10 +13,10 @@ const MenuOverlay = () => {
   const menuItems = [
     {
       key: 'Home',
-      path: '/#',
+      path: '/',
     },
     {
-      key: 'DUMB Tokens',
+      key: 'Tokens',
       path: 'tokens',
     },
     {
