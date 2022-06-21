@@ -21,7 +21,7 @@ const Footer = () => {
                 <li>
                   <HashLink
                     smooth
-                    to={'/#'}
+                    to={'/#intro'}
                     scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })}
                   >
                     Howard
@@ -50,7 +50,7 @@ const Footer = () => {
                     smooth
                     to={'/#tech'}
                     scroll={(el) =>
-                      el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+                      el.scrollIntoView({ behavior: 'smooth', block: 'end' })
                     }
                   >
                     Tech Stack
@@ -70,8 +70,17 @@ const Footer = () => {
             <Col className='site-map-items'>
               <h6>TOKENS</h6>
               <ul>
-                <li>How To</li>
-                <li>Mint Tokens</li>
+                <li>
+                  <HashLink
+                    smooth
+                    to={'/tokens'}
+                    scroll={(el) =>
+                      el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+                    }
+                  >
+                    FUSE
+                  </HashLink>
+                </li>
               </ul>
             </Col>
             <Col className='site-map-items'>

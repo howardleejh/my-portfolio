@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import { Row, Col, Steps, Button } from 'antd'
 import { MenuContext } from '../MenuProvider/MenuProvider'
 import TokensStep1 from '../TokensStep1/TokensStep1'
@@ -14,11 +14,11 @@ const steps = [
     content: <TokensStep1 />,
   },
   {
-    title: 'Trivia',
+    title: 'Mint',
     content: <TokensStep2 />,
   },
   {
-    title: 'Claim Tokens',
+    title: 'Claim',
     content: <TokensStep3 />,
   },
 ]
@@ -37,16 +37,24 @@ const StepsComponent = (props) => {
   }
 
   const handleClickOnSubmit = () => {
-    menu
-      .mintTokens()
-      .then((results) => console.log(results))
-      .then(() => next())
+    menu.mintTokens().then((results) => {
+      if (results.hash) {
+        next()
+        return
+      }
+    })
   }
 
   const handleClickOnDone = () => {
     setCurrent(0)
     props.onClickOnDone()
   }
+
+  useEffect(() => {
+    // eslint-disable-next-line
+    menu.checkUserReady()
+    // eslint-disable-next-line
+  }, [menu.wallet, current])
 
   return (
     <div className='steps-component'>
@@ -64,38 +72,30 @@ const StepsComponent = (props) => {
           </Steps>
           <div className='steps-content'>{steps[current].content}</div>
           <div className='steps-action'>
-            {/* {current > 0 && (
-              <Button
-                style={{
-                  margin: '0 8px',
-                }}
-                onClick={() => prev()}
-              >
-                Previous
-              </Button>
-            )} */}
             {current === 0 && (
               <Button
-                type='danger'
+                ghost
+                size='large'
                 onClick={handleClickOnReady}
                 disabled={
                   menu.wallet.connected && menu.userIsReady ? false : true
                 }
               >
-                READY!
+                READY
               </Button>
             )}
             {current === 1 && (
               <Button
-                type='primary'
+                size='large'
+                ghost
                 onClick={handleClickOnSubmit}
                 loading={menu.isLoading}
               >
-                Submit
+                MINT
               </Button>
             )}
             {current === steps.length - 1 && (
-              <Button type='primary' onClick={handleClickOnDone}>
+              <Button ghost onClick={handleClickOnDone}>
                 Done
               </Button>
             )}

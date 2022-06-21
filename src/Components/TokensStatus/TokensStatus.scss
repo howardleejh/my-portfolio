@@ -1,11 +1,24 @@
 .tokens-status {
+  span {
+    color: whitesmoke;
+  }
+
   ul {
     list-style: none;
     margin: 0;
     padding: 0;
   }
 
+  .ant-descriptions-item-label {
+    text-align: center;
+    background-color: rgb(161, 35, 35);
+  }
+
   .tokens-status-item {
     margin: 0.5em 0;
+  }
+
+  .tokens-status-btn {
+    width: 15em;
   }
 }

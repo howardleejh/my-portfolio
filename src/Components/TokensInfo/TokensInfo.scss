@@ -1,0 +1,28 @@
+.tokens-info {
+  background: url('../../Assets/TokenLogo.png') no-repeat center;
+  background-size: contain;
+  display: grid;
+  place-items: center;
+
+  .tokens-info-content {
+    backdrop-filter: brightness(45%) contrast(65%);
+  }
+
+  p {
+    text-align: justify;
+    padding: 2em;
+  }
+
+  .tokens-info-btn {
+    width: 12em;
+    margin: 0.25em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .tokens-info {
+    .tokens-info-btn {
+      margin: 0.5em;
+    }
+  }
+}

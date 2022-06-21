@@ -1,4 +1,5 @@
 import { ethers } from 'ethers'
+import { toast } from 'react-toastify'
 
 const ethereum = window.ethereum
 
@@ -23,4 +24,8 @@ export function GetProvider(platform) {
     const attachedProvider = new ethers.providers.Web3Provider(ethereum)
     return attachedProvider
   }
+}
+
+export function Toast(message) {
+  return toast(message)
 }

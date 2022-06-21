@@ -1,8 +1,22 @@
 import { useContext, useEffect, useState } from 'react'
-import { Row, Col, Button, Tooltip, Descriptions, Spin } from 'antd'
+import {
+  Row,
+  Col,
+  Button,
+  Tooltip,
+  Descriptions,
+  Spin,
+  Modal,
+  Input,
+} from 'antd'
 import { MenuContext } from '../MenuProvider/MenuProvider'
-import { TOKEN_CONTRACT, TRIVIA_CONTRACT } from '../../Constants/Addresses'
+import {
+  TOKEN_CONTRACT,
+  DISTRIBUTION_CONTRACT,
+} from '../../Constants/Addresses'
+import { EllipseAdd } from '../../Utilities/Helper'
 import { LoadingOutlined } from '@ant-design/icons'
+
 import Clock from 'react-live-clock'
 import './TokensStatus.scss'
 
@@ -19,17 +33,29 @@ const TokensStatus = () => {
   const menu = useContext(MenuContext)
 
   const tokenAdd = `${TOKEN_CONTRACT}`
-  const triviaAdd = `${TRIVIA_CONTRACT}`
+  const distributionAdd = `${DISTRIBUTION_CONTRACT}`
 
-  const [userRewards, setUserRewards] = useState({})
+  const [modal, setModal] = useState(false)
+  const [inputValue, setInputValue] = useState()
+
+  const handleClaimRewards = () => {
+    setModal(true)
+  }
+
+  const handleConfirmClaims = () => {
+    setModal(false)
+    let input = inputValue
+    setInputValue()
+    menu.claimTokens(input)
+  }
+
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value)
+  }
 
   useEffect(() => {
     // eslint-disable-next-line
-    if (!menu.wallet.connected) {
-      return
-    }
-    // eslint-disable-next-line
-    menu.getUserTokens().then((results) => setUserRewards(results))
+    menu.getUserTokens()
     // eslint-disable-next-line
   }, [menu.wallet])
 
@@ -38,7 +64,7 @@ const TokensStatus = () => {
       <Row align='middle' justify='center'>
         <Col>
           <h2 className='tokens-status-item'>
-            <Clock format={'HH:mm:ss A'} ticking={true} />
+            <Clock format={'M/DD/YYYY h:mm:ss A'} ticking={true} />
           </h2>
           <Descriptions
             bordered
@@ -49,7 +75,7 @@ const TokensStatus = () => {
           >
             <Descriptions.Item label='Contracts' span={4}>
               <Row align='middle' justify='space-around'>
-                <Tooltip title='View on Etherscan'>
+                <Tooltip title={`${EllipseAdd(tokenAdd, 10, 6)}`}>
                   <Button
                     type='link'
                     href={`https://mumbai.polygonscan.com/token/${tokenAdd}`}
@@ -59,37 +85,58 @@ const TokensStatus = () => {
                     Tokens Contract
                   </Button>
                 </Tooltip>
-
-                <Tooltip title='View on Etherscan'>
+                <Tooltip title={`${EllipseAdd(distributionAdd, 10, 6)}`}>
                   <Button
                     type='link'
-                    href={`https://mumbai.polygonscan.com/address/${triviaAdd}`}
+                    href={`https://mumbai.polygonscan.com/address/${distributionAdd}`}
                     target='_blank'
                     rel='noreferrer'
                   >
-                    Trivia Contract
+                    Distribution Contract
                   </Button>
                 </Tooltip>
               </Row>
             </Descriptions.Item>
-            <Descriptions.Item label='Total Rewards'>
-              {userRewards.totalReward || <Spin indicator={antIcon} />}
+            <Descriptions.Item label='Total Rewards' span={2}>
+              {menu.userTokens.totalReward || <Spin indicator={antIcon} />}
             </Descriptions.Item>
-            <Descriptions.Item label='Reward to Withdraw'>
-              {userRewards.rewardRemaining || <Spin indicator={antIcon} />}
+            <Descriptions.Item label='Unclaimed Reward'>
+              {menu.userTokens.rewardRemaining || <Spin indicator={antIcon} />}
             </Descriptions.Item>
-            <Descriptions.Item label='Reward Withdrawn'>
-              {userRewards.rewardWithdrawn || <Spin indicator={antIcon} />}
+            <Descriptions.Item label='Claimed Reward'>
+              {menu.userTokens.rewardWithdrawn || <Spin indicator={antIcon} />}
             </Descriptions.Item>
             <Descriptions.Item label='Next Mint'>
-              {userRewards.nextMint || <Spin indicator={antIcon} />}
+              {menu.userTokens.nextMint || <Spin indicator={antIcon} />}
             </Descriptions.Item>
           </Descriptions>
-          <Button type='primary' className='tokens-status-item'>
-            Withdraw Rewards
-          </Button>
+          <Row align='middle' justify='space-evenly'>
+            <Button
+              ghost
+              onClick={handleClaimRewards}
+              disabled={
+                menu.userTokens.totalReward &&
+                menu.userTokens.rewardRemaining > 0
+                  ? false
+                  : true
+              }
+              loading={menu.isLoading}
+              className='tokens-status-item tokens-status-btn'
+            >
+              Claim Rewards
+            </Button>
+          </Row>
         </Col>
       </Row>
+      <Modal
+        title='How much to withdraw?'
+        centered
+        visible={modal}
+        onOk={handleConfirmClaims}
+        onCancel={() => setModal(false)}
+      >
+        <Input suffix='FUSE' value={inputValue} onChange={handleInputChange} />
+      </Modal>
     </div>
   )
 }
