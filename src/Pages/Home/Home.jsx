@@ -2,6 +2,7 @@ import { useContext } from 'react'
 import { BackTop } from 'antd'
 import { MenuContext } from '../../Components/MenuProvider/MenuProvider'
 import IntroComponent from '../../Components/IntroComponent/IntroComponent'
+import QualitiesComponent from '../../Components/QualitiesComponent/QualitiesComponent'
 import TechStackComponent from '../../Components/TechStackComponent/TechStackComponent'
 import ExperienceComponent from '../../Components/ExperienceComponent/ExperienceComponent'
 import ProjectsComponent from '../../Components/ProjectsComponent/ProjectsComponent'
@@ -15,6 +16,9 @@ const Home = () => {
     <div className='home-page'>
       <section id='intro'>
         <IntroComponent />
+      </section>
+      <section id='qualities'>
+        <QualitiesComponent />
       </section>
       <section id='exp'>
         <ExperienceComponent />

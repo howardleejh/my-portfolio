@@ -1,0 +1,40 @@
+.qualities-component {
+  width: 100%;
+  background-color: rgba($color: #000000, $alpha: 0.15);
+  margin-bottom: 2.5em;
+  padding: 7em 0;
+  display: grid;
+  place-items: center;
+
+  .quality-container {
+    width: 23em;
+    text-align: justify;
+    margin: 0 3em;
+    padding: 0 1em;
+
+    h1 {
+      text-align: center;
+    }
+  }
+
+  .divider {
+    align-self: center;
+    height: 10em;
+    background-color: rgba($color: #000000, $alpha: 0.2);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .qualities-component {
+    padding: 3em 0;
+    margin-bottom: 0;
+
+    .quality-container {
+      margin: 1em 0;
+    }
+
+    .divider {
+      display: none;
+    }
+  }
+}

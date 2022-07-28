@@ -2,6 +2,8 @@ import { useContext, useLayoutEffect } from 'react'
 import { MenuContext } from '../MenuProvider/MenuProvider'
 import { Row, Col } from 'antd'
 import { Spin as Hamburger } from 'hamburger-react'
+import { useLocation } from 'react-router-dom'
+import { Fade } from 'react-awesome-reveal'
 import ConnectWallet from '../ConnectWallet/ConnectWallet'
 import MenuOverlay from '../MenuOverlay/MenuOverlay'
 import Wallet from '../Wallet/Wallet'
@@ -10,6 +12,8 @@ import './Navbar.scss'
 const Navbar = () => {
   const menu = useContext(MenuContext)
   const isMenuOpen = menu.isMenuOpen
+
+  const location = useLocation()
 
   useLayoutEffect(() => {
     if (isMenuOpen) {
@@ -33,9 +37,15 @@ const Navbar = () => {
             easing='ease-in'
           />
         </Col>
-        <Col className='navbar-item'>
-          {menu.wallet.connected ? <Wallet /> : <ConnectWallet />}
-        </Col>
+        {location.pathname !== '/' ? (
+          <Fade>
+            <Col className='navbar-item'>
+              {menu.wallet.connected ? <Wallet /> : <ConnectWallet />}
+            </Col>
+          </Fade>
+        ) : (
+          <></>
+        )}
       </Row>
       {isMenuOpen ? <MenuOverlay /> : null}
     </div>
