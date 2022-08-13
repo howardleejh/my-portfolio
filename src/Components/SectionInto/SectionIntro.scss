@@ -1,0 +1,14 @@
+@use '../../Styles/global' as g;
+
+.intro-section {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  // background-color: g.$secondary-color;
+
+  h3 {
+    margin: 2.5em 0;
+  }
+}
+
+// background-color: g.$main-color;

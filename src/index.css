@@ -2,14 +2,12 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Questrial', sans-serif, 'Space Grotesk', sans-serif,
-    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
-    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  color: rgb(66, 66, 66);
+  font-family: 'Anek Devanagari', sans-serif, 'Spinnaker', sans-serif,
+    'Syncopate', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-overflow-scrolling: touch;
-  overflow: hidden;
+  scroll-behavior: smooth;
 }
 
 h1,
@@ -18,8 +16,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Space Grotesk', sans-serif;
-  color: rgb(100, 100, 100);
+  font-family: 'Syncopate', sans-serif;
 }
 
 code {

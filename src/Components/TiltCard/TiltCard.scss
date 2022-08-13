@@ -1,0 +1,32 @@
+@use '../../Styles/global' as g;
+
+.tilt-card {
+  width: 42em;
+  height: 27em;
+  background: rgba(0, 0, 0, 0.9);
+  background-size: contain;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transform-style: preserve-3d;
+
+  .tilt-card-content {
+    border-radius: 25px;
+    position: absolute;
+    top: 20em;
+    left: 3.75em;
+    text-align: left;
+    transform: translateZ(60px);
+
+    h3,
+    h6 {
+      font-family: 'Syncopate', sans-serif;
+      font-weight: 700;
+      color: rgb(187, 38, 38);
+      margin: 0;
+      padding: 0;
+      line-height: 1em;
+    }
+  }
+}
