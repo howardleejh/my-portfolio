@@ -9,7 +9,7 @@ const HomePage = () => {
       <Parallax speed={-15}>
         <SectionIntro />
       </Parallax>
-      <Parallax speed={20}>
+      <Parallax speed={15}>
         <SectionAbout />
       </Parallax>
     </div>

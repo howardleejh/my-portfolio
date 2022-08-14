@@ -2,5 +2,11 @@
   height: 100vh;
   display: grid;
   place-items: center;
-  background-color: red;
+
+  p {
+    width: 65vw;
+    font-size: 1.5em;
+    text-align: justify;
+    margin: 2em 0;
+  }
 }
