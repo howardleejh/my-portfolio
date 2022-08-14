@@ -1,6 +1,7 @@
 import { Parallax } from 'react-scroll-parallax'
 import SectionIntro from '../../Components/SectionInto/SectionInto'
 import SectionAbout from '../../Components/SectionAbout/SectionAbout'
+import SectionAbilities from '../../Components/SectionAbilities/SectionAbilties'
 import './HomePage.scss'
 
 const HomePage = () => {
@@ -12,6 +13,7 @@ const HomePage = () => {
       <Parallax speed={15}>
         <SectionAbout />
       </Parallax>
+      <SectionAbilities />
     </div>
   )
 }

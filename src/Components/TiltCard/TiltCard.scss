@@ -2,26 +2,28 @@
 
 .tilt-card {
   width: 42em;
-  height: 27em;
+  min-height: 25em;
   background: rgba(0, 0, 0, 0.8);
   border-radius: 25px;
   position: relative;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
   transform-style: preserve-3d;
 
   .tilt-card-content {
     width: 100%;
     height: 100%;
     position: absolute;
-    left: 3.5em;
-    text-align: left;
+    left: 4em;
     transform: translateZ(60px);
 
     .card-number {
-      margin-bottom: 10em;
       color: g.$warm-color;
       font-weight: 700;
       @include g.text-shadows;
+      margin-bottom: 5em;
+    }
+
+    .card-details {
+      text-align: left;
     }
 
     h3,
@@ -32,12 +34,6 @@
       margin: 0;
       line-height: 1.25em;
       @include g.text-shadows;
-    }
-
-    .social-btns {
-      position: absolute;
-      bottom: 3em;
-      right: 7em;
     }
   }
 }

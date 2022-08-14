@@ -20,28 +20,33 @@ const TiltCard = () => {
       glareMaxOpacity={0.45}
       scale={1.02}
     >
-      <ThreeRenderer style={{ position: 'absolute', zIndex: '1' }} />
+      <ThreeRenderer style={{ position: 'absolute', overflow: 'hidden' }} />
       <Row className='tilt-card-content' justify='start'>
-        <Space direction='horizontal' size='large'>
+        <Row align='middle'>
           <Col>
             <h2 className='card-number'>0x1EEE...0000</h2>
-
-            <h3>Howard Lee</h3>
-            <h6>Full-Stack Blockchain Engineer</h6>
-            <h6>howardleejh.eth</h6>
           </Col>
-          <Col className='social-btns'>
-            <Space direction='horizontal'>
-              <SocialButton
-                name={<FontAwesomeIcon icon={faWhatsapp} />}
-                onClick={() => console.log('clicked!')}
-              />
-              <SocialButton name={<FontAwesomeIcon icon={faTelegram} />} />
-              <SocialButton name={<FontAwesomeIcon icon={faLinkedinIn} />} />
-              <SocialButton name={<FontAwesomeIcon icon={faGithub} />} />
-            </Space>
-          </Col>
-        </Space>
+        </Row>
+        <Row align='middle'>
+          <Space direction='horizontal' size='large'>
+            <Col className='card-details'>
+              <h3>Howard Lee</h3>
+              <h6>Full-Stack Blockchain Engineer</h6>
+              <h6>howardleejh.eth</h6>
+            </Col>
+            <Col>
+              <Space direction='horizontal'>
+                <SocialButton
+                  name={<FontAwesomeIcon icon={faWhatsapp} />}
+                  onClick={() => console.log('clicked!')}
+                />
+                <SocialButton name={<FontAwesomeIcon icon={faTelegram} />} />
+                <SocialButton name={<FontAwesomeIcon icon={faLinkedinIn} />} />
+                <SocialButton name={<FontAwesomeIcon icon={faGithub} />} />
+              </Space>
+            </Col>
+          </Space>
+        </Row>
       </Row>
     </Tilt>
   )
