@@ -17,17 +17,20 @@ const TiltCard = () => {
       className='tilt-card'
       perspective={500}
       glareEnable={true}
-      glareMaxOpacity={0.75}
+      glareMaxOpacity={0.45}
       scale={1.02}
     >
-      <ThreeRenderer />
+      <ThreeRenderer style={{ position: 'absolute', zIndex: '1' }} />
       <Row className='tilt-card-content' justify='start'>
         <Space direction='horizontal' size='large'>
           <Col>
+            <h2 className='card-number'>0x1EEE...0000</h2>
+
             <h3>Howard Lee</h3>
             <h6>Full-Stack Blockchain Engineer</h6>
+            <h6>howardleejh.eth</h6>
           </Col>
-          <Col>
+          <Col className='social-btns'>
             <Space direction='horizontal'>
               <SocialButton
                 name={<FontAwesomeIcon icon={faWhatsapp} />}

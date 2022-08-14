@@ -3,30 +3,41 @@
 .tilt-card {
   width: 42em;
   height: 27em;
-  background: rgba(0, 0, 0, 0.9);
-  background-size: contain;
+  background: rgba(0, 0, 0, 0.8);
   border-radius: 25px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   position: relative;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
   transform-style: preserve-3d;
 
   .tilt-card-content {
-    border-radius: 25px;
+    width: 100%;
+    height: 100%;
     position: absolute;
-    top: 20em;
-    left: 3.75em;
+    left: 3.5em;
     text-align: left;
     transform: translateZ(60px);
+
+    .card-number {
+      margin-bottom: 10em;
+      color: g.$warm-color;
+      font-weight: 700;
+      @include g.text-shadows;
+    }
 
     h3,
     h6 {
       font-family: 'Syncopate', sans-serif;
       font-weight: 700;
-      color: rgb(187, 38, 38);
+      color: g.$warm-color;
       margin: 0;
-      padding: 0;
-      line-height: 1em;
+      line-height: 1.25em;
+      @include g.text-shadows;
+    }
+
+    .social-btns {
+      position: absolute;
+      bottom: 3em;
+      right: 7em;
     }
   }
 }

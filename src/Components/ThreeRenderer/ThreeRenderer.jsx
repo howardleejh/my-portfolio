@@ -13,12 +13,12 @@ const Model = () => {
   )
 }
 
-const ThreeRenderer = () => {
+const ThreeRenderer = (props) => {
   return (
     <Suspense fallback={<Spin />}>
-      <Canvas camera={{ fov: 60 }}>
+      <Canvas camera={{ fov: 60 }} style={props.style}>
         <Stage
-          intensity={0.25}
+          intensity={0.35}
           contactShadow={false}
           shadows
           environment='studio'

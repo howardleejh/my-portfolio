@@ -14,11 +14,12 @@
   width: 3.5em;
   height: 3.5em;
   color: g.$warm-color;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.25);
   border-radius: 50%;
   display: grid;
   place-items: center;
   position: relative;
+  @include g.box-shadows;
   transition: 0.2s;
   -webkit-mask-image: none;
 }
