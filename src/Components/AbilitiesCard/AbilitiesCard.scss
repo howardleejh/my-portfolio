@@ -1,22 +1,24 @@
 @use '../../Styles/global' as g;
 
 .abilities-card {
-  width: 27vw;
-  height: 55vh;
-  display: grid;
-  place-items: center;
+  width: 27em;
+  height: 25em;
   background: rgba($color: #000000, $alpha: 0.2);
   border-radius: 25px;
-  padding: 2em;
+  padding: 2.5em;
   @include g.card-shadows;
 
   .divider {
     width: 2em;
   }
 
+  h3 {
+    font-weight: 700;
+  }
+
   p {
     text-align: justify;
-    text-size-adjust: unset;
     word-wrap: break-word;
+    word-spacing: -0.75px;
   }
 }

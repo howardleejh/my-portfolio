@@ -1,19 +1,33 @@
 import { useRef, useState, useEffect } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faHtml5,
+  faCss3Alt,
+  faReact,
+  faJsSquare,
+  faSass,
+  faBootstrap,
+  faNodeJs,
+  faEthereum,
+  faGitSquare,
+  faDigitalOcean,
+  faSpotify,
+} from '@fortawesome/free-brands-svg-icons'
 import classnames from 'https://cdn.skypack.dev/classnames@2.3.1'
 import './WheelCarousel.scss'
 
 const images = [
-  'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZmFjZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=60',
-  'https://images.unsplash.com/photo-1554151228-14d9def656e4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZmFjZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=60',
-  'https://images.unsplash.com/photo-1592124549776-a7f0cc973b24?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8ZmFjZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=60',
-  'https://images.unsplash.com/photo-1557296387-5358ad7997bb?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8ZmFjZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=60',
-  'https://images.unsplash.com/photo-1521146764736-56c929d59c83?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8ZmFjZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=60',
-  'https://images.unsplash.com/photo-1593529467220-9d721ceb9a78?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGZhY2V8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=60',
-  'https://images.unsplash.com/photo-1544348817-5f2cf14b88c8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGZhY2V8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=60',
-  'https://images.unsplash.com/photo-1596215143922-eedeaba0d91c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzR8fGZhY2V8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=60',
-  'https://images.unsplash.com/photo-1560787313-5dff3307e257?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjd8fGZhY2V8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=60',
-  'https://images.unsplash.com/photo-1604426633861-11b2faead63c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFjZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=60',
-  'https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDd8fGZhY2V8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=60',
+  faHtml5,
+  faCss3Alt,
+  faReact,
+  faJsSquare,
+  faSass,
+  faBootstrap,
+  faNodeJs,
+  faEthereum,
+  faGitSquare,
+  faDigitalOcean,
+  faSpotify,
 ]
 
 const initialSlidesState = images.map((slide, index) => ({
@@ -23,21 +37,23 @@ const initialSlidesState = images.map((slide, index) => ({
   },
   theta: 0,
   index: index + 1,
-  image: slide,
+  icon: slide,
 }))
 
 const numSlides = images.length
 const angle = 360 / numSlides
 
 const WheelCarousel = () => {
-  const wheelRef = useRef()
+  const wheelRef = useRef(null)
 
   const [slides, setSlides] = useState(initialSlidesState)
-  const [activeSlide, setActiveSlide] = useState(slides[0])
+  const [activeSlide, setActiveSlide] = useState(slides[8])
   const [wheelWidth, setWheelWidth] = useState(0)
   const [theta, setTheta] = useState(Math.PI / (numSlides / 2))
   const [center, setCenter] = useState({ x: 0, y: 0 })
   const [rotate, setRotate] = useState(0)
+
+  const [isDragging, setIsDragging] = useState(false)
 
   const getInitialPositions = () => {
     const center = {
@@ -65,7 +81,6 @@ const WheelCarousel = () => {
 
     const positionedSlides = slides.map((slide, index) => {
       const newTheta = theta * (index + numSlides)
-      setTheta(newTheta)
       const wheelRadius = wheelWidth / 2
       const x = Math.cos(newTheta) * -wheelRadius
       const y = Math.sin(newTheta) * -wheelRadius
@@ -77,7 +92,6 @@ const WheelCarousel = () => {
     })
 
     setSlides(positionedSlides)
-    // eslint-disable-next-line
   }, [wheelWidth])
 
   const handleSlideClick = (e) => {
@@ -116,13 +130,7 @@ const WheelCarousel = () => {
   }
 
   return (
-    <div className='circle-container'>
-      <button className='left-btn' onClick={handleLeftClick}>
-        button
-      </button>
-      <button className='right-btn' onClick={handleRightClick}>
-        button
-      </button>
+    <div className='wheel-container'>
       <div
         ref={wheelRef}
         className='wheel'
@@ -146,10 +154,20 @@ const WheelCarousel = () => {
                   transform: `translate(-50%, -50%) rotate(${-rotate}deg)`,
                 }}
               >
-                <img src={slide.image} alt={`slide ${index}`} />
+                <p className='slide-icon'>
+                  <FontAwesomeIcon icon={slide.icon} />
+                </p>
               </div>
             )
           })}
+      </div>
+      <div className='arrows'>
+        <button onClick={handleLeftClick} className='arrow-left'>
+          <span>&larr;</span>
+        </button>
+        <button onClick={handleRightClick} className='arrow-right'>
+          <span>&rarr;</span>
+        </button>
       </div>
     </div>
   )

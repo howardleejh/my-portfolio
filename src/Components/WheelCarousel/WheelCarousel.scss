@@ -4,40 +4,46 @@
 $easing: cubic-bezier(0.18, 0.89, 0.32, 1.27);
 $duration: 0.5s;
 
-.circle-container {
+.wheel-container {
   width: 100%;
   height: 100%;
-  position: relative;
+  background-color: red;
   display: grid;
   place-items: center;
-  top: 45em;
+  position: relative;
 
   .wheel {
-    width: 70em;
-    height: 70em;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: transform $duration $easing;
+    top: 35%;
+    left: 0%;
+    width: 55em;
+    height: 55em;
+    transition: transform $easing $duration;
   }
 
   .slide {
-    width: 5em;
-    height: 5em;
+    width: 12em;
+    height: 12em;
     border-radius: 50%;
-    overflow: hidden;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    overflow: hidden;
     cursor: pointer;
-    transition: transform $duration $easing;
+    transition: transform $easing $duration;
     border: 0.3vmin solid white;
   }
 
-  .slide img {
-    user-select: none;
+  // .slide img {
+  //   user-select: none;
+  // }
+
+  .slide-icon {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    font-size: 5em;
   }
 
   .slide.active {
@@ -45,34 +51,39 @@ $duration: 0.5s;
   }
 
   .slide img {
-    position: absolute;
-    top: 0;
-    left: 0;
+    display: grid;
+    place-items: center;
     width: 100%;
     height: 100%;
     object-fit: cover;
     pointer-events: none;
   }
 
-  .left-btn {
-    position: absolute;
-    bottom: 45em;
-    left: 0%;
-    margin: 0 2em;
-  }
+  .arrows {
+    width: 110vmin;
+    z-index: 2;
 
-  .right-btn {
-    position: absolute;
-    bottom: 45em;
-    right: 0%;
-    margin: 0 2em;
-  }
-}
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+    button {
+      top: 50%;
+      position: absolute;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      color: rgb(61, 34, 34);
+      font-size: 2rem;
+    }
+
+    .arrow-left {
+      left: 0;
+    }
+
+    .arrow-right {
+      right: 0;
+    }
+
+    button:active {
+      transform: scale(1.5);
+      transition: transform $easing $duration;
+    }
   }
 }

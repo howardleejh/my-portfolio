@@ -1,23 +1,23 @@
 @use '../../Styles/global' as g;
 
 .about-section {
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
   display: grid;
   place-items: center;
   background-color: white;
 
   .about-me-title {
     font-size: 1em;
-    margin: 2em 0;
   }
 
   .about-me-main {
     font-size: 2em;
-    padding: 0 5em;
+    margin: 1em 5em;
   }
 
   .about-me-desc {
     font-size: 1.25em;
-    padding: 0 10em;
+    margin: 0 10em;
   }
 }

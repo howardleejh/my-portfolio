@@ -1,5 +1,5 @@
 import { Row, Col, Space } from 'antd'
-import { Parallax } from 'react-scroll-parallax'
+import { Fade } from 'react-awesome-reveal'
 import './SectionAbout.scss'
 
 const SectionAbout = () => {
@@ -7,11 +7,9 @@ const SectionAbout = () => {
     <div className='about-section'>
       <Row align='middle' justify='center'>
         <Col>
-          <Parallax opacity={[0, 10]}>
+          <Fade cascade fraction={0.4}>
             <h1 className='about-me-title'>About Me</h1>
-          </Parallax>
-          <Space direction='vertical' size='large'>
-            <Parallax opacity={[0, 10]}>
+            <Space direction='vertical' size='large'>
               <p className='about-me-main'>
                 I specialize in building decentralized applications that
                 interact with EVM compatible blockchains such as Ethereum and
@@ -19,14 +17,12 @@ const SectionAbout = () => {
                 progressive web apps that are responsive and support cross
                 platforms.
               </p>
-            </Parallax>
-            <Parallax opacity={[0, 10]}>
               <p className='about-me-desc'>
-                I am a career switcher, a boot camp graduate and a tech
-                enthusiast who is passionate about all things Blockchain.
+                I am also a proud career switcher, a boot camp graduate and a
+                tech enthusiast who is passionate about all things Blockchain.
               </p>
-            </Parallax>
-          </Space>
+            </Space>
+          </Fade>
         </Col>
       </Row>
     </div>

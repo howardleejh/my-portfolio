@@ -20,7 +20,7 @@ const TiltCard = () => {
       glareMaxOpacity={0.45}
       scale={1.02}
     >
-      <ThreeRenderer style={{ position: 'absolute', overflow: 'hidden' }} />
+      <ThreeRenderer style={{ position: 'absolute' }} />
       <Row className='tilt-card-content' justify='start'>
         <Row align='middle'>
           <Col>

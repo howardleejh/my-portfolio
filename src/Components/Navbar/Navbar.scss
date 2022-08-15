@@ -4,11 +4,15 @@
   width: 100vw;
   position: fixed;
   top: 0;
-  padding: 1.5em;
-  z-index: 2;
+  padding: 0.5em 1em;
+  z-index: 10;
 
   .hamburger-menu {
-    p {
+    color: g.$warm-color;
+    @include g.text-shadows;
+
+    h6 {
+      font-weight: 700;
       margin: 0;
       color: g.$warm-color;
     }
