@@ -13,6 +13,10 @@ import {
   faDigitalOcean,
   faSpotify,
 } from '@fortawesome/free-brands-svg-icons'
+import {
+  faChevronLeft,
+  faChevronRight,
+} from '@fortawesome/free-solid-svg-icons'
 import classnames from 'https://cdn.skypack.dev/classnames@2.3.1'
 import './WheelCarousel.scss'
 
@@ -53,8 +57,6 @@ const WheelCarousel = () => {
   const [center, setCenter] = useState({ x: 0, y: 0 })
   const [rotate, setRotate] = useState(0)
 
-  const [isDragging, setIsDragging] = useState(false)
-
   const getInitialPositions = () => {
     const center = {
       x: parseFloat(getComputedStyle(wheelRef.current).width) / 2,
@@ -81,6 +83,7 @@ const WheelCarousel = () => {
 
     const positionedSlides = slides.map((slide, index) => {
       const newTheta = theta * (index + numSlides)
+      setTheta(newTheta)
       const wheelRadius = wheelWidth / 2
       const x = Math.cos(newTheta) * -wheelRadius
       const y = Math.sin(newTheta) * -wheelRadius
@@ -95,6 +98,7 @@ const WheelCarousel = () => {
   }, [wheelWidth])
 
   const handleSlideClick = (e) => {
+    console.log(e.target)
     const nextIndex = parseFloat(e.target.dataset.index)
     const currentIndex = activeSlide.index
 
@@ -154,7 +158,7 @@ const WheelCarousel = () => {
                   transform: `translate(-50%, -50%) rotate(${-rotate}deg)`,
                 }}
               >
-                <p className='slide-icon'>
+                <p>
                   <FontAwesomeIcon icon={slide.icon} />
                 </p>
               </div>
@@ -163,10 +167,10 @@ const WheelCarousel = () => {
       </div>
       <div className='arrows'>
         <button onClick={handleLeftClick} className='arrow-left'>
-          <span>&larr;</span>
+          <FontAwesomeIcon icon={faChevronLeft} />
         </button>
         <button onClick={handleRightClick} className='arrow-right'>
-          <span>&rarr;</span>
+          <FontAwesomeIcon icon={faChevronRight} />
         </button>
       </div>
     </div>

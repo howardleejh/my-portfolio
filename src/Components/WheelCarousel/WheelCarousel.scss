@@ -1,3 +1,4 @@
+@use '../../Styles/global.scss' as g;
 // Author: Ali Klein
 // Source: https://codepen.io/AliKlein/details/jOByZQM
 
@@ -7,7 +8,6 @@ $duration: 0.5s;
 .wheel-container {
   width: 100%;
   height: 100%;
-  background-color: red;
   display: grid;
   place-items: center;
   position: relative;
@@ -31,22 +31,21 @@ $duration: 0.5s;
     overflow: hidden;
     cursor: pointer;
     transition: transform $easing $duration;
-    border: 0.3vmin solid white;
+    border: 0.3vmin solid g.$warm-color;
   }
 
-  // .slide img {
-  //   user-select: none;
-  // }
-
-  .slide-icon {
+  .slide p {
     width: 100%;
     height: 100%;
     display: grid;
     place-items: center;
     font-size: 5em;
+    pointer-events: none;
   }
 
   .slide.active {
+    background-color: g.$warm-color;
+    color: g.$light-color;
     border-width: 1.3vmin;
   }
 
@@ -69,8 +68,13 @@ $duration: 0.5s;
       border: none;
       background: transparent;
       cursor: pointer;
-      color: rgb(61, 34, 34);
+      color: g.$warm-color;
       font-size: 2rem;
+
+      &:active {
+        transform: scale(1.5);
+        transition: transform $easing $duration;
+      }
     }
 
     .arrow-left {
@@ -79,11 +83,6 @@ $duration: 0.5s;
 
     .arrow-right {
       right: 0;
-    }
-
-    button:active {
-      transform: scale(1.5);
-      transition: transform $easing $duration;
     }
   }
 }
