@@ -2,6 +2,7 @@ import { Parallax } from 'react-scroll-parallax'
 import SectionIntro from '../../Components/SectionInto/SectionInto'
 import SectionAbout from '../../Components/SectionAbout/SectionAbout'
 import SectionAbilities from '../../Components/SectionAbilities/SectionAbilties'
+import Temp from '../../Components/Temp/Temp'
 import './HomePage.scss'
 
 const HomePage = () => {
@@ -14,6 +15,7 @@ const HomePage = () => {
         <SectionAbout />
       </Parallax>
       <SectionAbilities />
+      <Temp />
     </div>
   )
 }

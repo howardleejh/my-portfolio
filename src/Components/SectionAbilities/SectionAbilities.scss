@@ -1,5 +1,8 @@
 .abilities-section {
+  width: 100vw;
   height: 100vh;
+  background-color: red;
   display: grid;
   place-items: center;
+  overflow: hidden;
 }
