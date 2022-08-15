@@ -17,31 +17,79 @@ import {
   faChevronLeft,
   faChevronRight,
 } from '@fortawesome/free-solid-svg-icons'
+import { Row, Col } from 'antd'
+import { Fade } from 'react-awesome-reveal'
 import classnames from 'https://cdn.skypack.dev/classnames@2.3.1'
 import './WheelCarousel.scss'
 
 const images = [
-  faHtml5,
-  faCss3Alt,
-  faReact,
-  faJsSquare,
-  faSass,
-  faBootstrap,
-  faNodeJs,
-  faEthereum,
-  faGitSquare,
-  faDigitalOcean,
-  faSpotify,
+  {
+    icon: faHtml5,
+    title: 'HTML',
+    desc: `Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups`,
+  },
+  {
+    icon: faCss3Alt,
+    title: 'CSS',
+    desc: `Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups`,
+  },
+  {
+    icon: faReact,
+    title: 'React',
+    desc: `Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups`,
+  },
+  {
+    icon: faJsSquare,
+    title: 'Javascript',
+    desc: `Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups`,
+  },
+  {
+    icon: faSass,
+    title: 'SASS',
+    desc: `Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups`,
+  },
+  {
+    icon: faBootstrap,
+    title: 'Bootstrap',
+    desc: `Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups`,
+  },
+  {
+    icon: faNodeJs,
+    title: 'NodeJS',
+    desc: `Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups`,
+  },
+  {
+    icon: faEthereum,
+    title: 'Solidity',
+    desc: `Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups`,
+  },
+  {
+    icon: faGitSquare,
+    title: 'Git',
+    desc: `Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups`,
+  },
+  {
+    icon: faDigitalOcean,
+    title: 'Digital Ocean',
+    desc: `Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups`,
+  },
+  {
+    icon: faSpotify,
+    title: 'Spotify',
+    desc: `Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups`,
+  },
 ]
 
-const initialSlidesState = images.map((slide, index) => ({
+const initialSlidesState = images.map((image, index) => ({
   coords: {
     x: 0,
     y: 0,
   },
   theta: 0,
   index: index + 1,
-  icon: slide,
+  icon: image.icon,
+  title: image.title,
+  desc: image.desc,
 }))
 
 const numSlides = images.length
@@ -164,6 +212,14 @@ const WheelCarousel = () => {
               </div>
             )
           })}
+      </div>
+      <div className='text-box'>
+        <Row align='middle' justify='center'>
+          <Fade cascade>
+            <h1>{activeSlide.title}</h1>
+            <p>{activeSlide.desc}</p>
+          </Fade>
+        </Row>
       </div>
       <div className='arrows'>
         <button onClick={handleLeftClick} className='arrow-left'>

@@ -24,6 +24,7 @@ $duration: 0.5s;
   .slide {
     width: 12em;
     height: 12em;
+    border: 0.3vmin solid g.$warm-color;
     border-radius: 50%;
     position: absolute;
     top: 50%;
@@ -31,7 +32,7 @@ $duration: 0.5s;
     overflow: hidden;
     cursor: pointer;
     transition: transform $easing $duration;
-    border: 0.3vmin solid g.$warm-color;
+    @include g.card-shadows;
   }
 
   .slide p {
@@ -41,6 +42,7 @@ $duration: 0.5s;
     place-items: center;
     font-size: 5em;
     pointer-events: none;
+    z-index: -1;
   }
 
   .slide.active {
@@ -58,18 +60,42 @@ $duration: 0.5s;
     pointer-events: none;
   }
 
+  .text-box {
+    width: 62%;
+    height: 100%;
+    position: absolute;
+    top: -5em;
+    right: 0;
+    display: grid;
+    place-items: center;
+
+    h1 {
+      font-weight: 700;
+    }
+
+    p {
+      padding: 0 5em;
+    }
+  }
+
   .arrows {
-    width: 110vmin;
     z-index: 2;
 
     button {
-      top: 50%;
+      width: 5%;
+      height: 100%;
       position: absolute;
+      top: 0;
       border: none;
       background: transparent;
       cursor: pointer;
       color: g.$warm-color;
       font-size: 2rem;
+      transition: all 0.1s ease-in-out;
+
+      &:hover {
+        transform: scale(1.2);
+      }
 
       &:active {
         transform: scale(1.5);
@@ -84,5 +110,16 @@ $duration: 0.5s;
     .arrow-right {
       right: 0;
     }
+  }
+}
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+  0% {
+    opacity: 0;
   }
 }
