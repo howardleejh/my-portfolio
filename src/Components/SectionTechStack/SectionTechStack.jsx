@@ -1,4 +1,3 @@
-import { Row, Col } from 'antd'
 import WheelCarousel from '../WheelCarousel/WheelCarousel'
 import './SectionTechStack.scss'
 

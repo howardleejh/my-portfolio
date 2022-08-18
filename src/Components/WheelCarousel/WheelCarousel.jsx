@@ -26,57 +26,58 @@ const images = [
   {
     icon: faHtml5,
     title: 'HTML',
-    desc: `Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups`,
+    desc: `The fundamentals of it all, I learnt about HTML and CSS during my time in General Assembly, I also picked up Search Engine Optimization using React Helmet with my projects to generate multiple document heads for better SEO performance.`,
   },
   {
     icon: faCss3Alt,
     title: 'CSS',
-    desc: `Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups`,
+    desc: `I work mainly with SASS as it is a very powerful CSS pre-processor. I believe in the separation of concerns design pattern and prefer to separate my CSS from my logic code.`,
   },
-  {
-    icon: faReact,
-    title: 'React',
-    desc: `Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups`,
-  },
-  {
-    icon: faJsSquare,
-    title: 'Javascript',
-    desc: `Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups`,
-  },
+
   {
     icon: faSass,
     title: 'SASS',
-    desc: `Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups`,
+    desc: `I use SASS but my file extensions are in SCSS. Well sometimes legacy methods are still pretty efficient and I'm not about to start a "which syntax is better" war here.`,
   },
   {
     icon: faBootstrap,
     title: 'Bootstrap',
-    desc: `Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups`,
+    desc: `Bootstrap used to be my go-to solution, I've since moved on to Ant Design, Bulma, Material UI and so much more. I've even resorted to creating my own components so that I get access to more complex customizations and better reusability.`,
   },
   {
     icon: faNodeJs,
     title: 'NodeJS',
-    desc: `Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups`,
-  },
-  {
-    icon: faEthereum,
-    title: 'Solidity',
-    desc: `Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups`,
+    desc: `NodeJS is my main backend solution when creating Web2 based web applications, though since working with blockchain, I'm slightly rusty with working with NodeJS, Express and MongoDB. Some documentation revisions ought to do!`,
   },
   {
     icon: faGitSquare,
     title: 'Git',
-    desc: `Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups`,
+    desc: `I use Git for version control and CI/CD pipeline deployments. My preferred choice for cloud based hosting would be Github though I use Gitlab in my professional working environments for better DevOps support.`,
   },
   {
-    icon: faDigitalOcean,
-    title: 'Digital Ocean',
-    desc: `Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups`,
+    icon: faReact,
+    title: 'React',
+    desc: `Yes, my main bread and butter. My main tech stack revolves around React and Javascript, while gaining experience with GatsbyJS for static website developments on the side. I am a functional components developer kind of guy.`,
+  },
+  {
+    icon: faJsSquare,
+    title: 'Javascript',
+    desc: `This here is my primary language for web development, I have plans to pick up typescript some time soon but there's always something new to learn about with Javascript, my to-do list is never empty.`,
+  },
+  {
+    icon: faEthereum,
+    title: 'Solidity',
+    desc: `Another main language that I use very often when developing smart contracts for EVM compatible blockchains, I also use Open Zeppelin when developing to adhere to EIP standards, Mocha and Chai for unit testing and Tenderly for transaction debugging. Ethereum Remix online IDE for quick tests and drafting of smart contracts.`,
   },
   {
     icon: faSpotify,
     title: 'Spotify',
-    desc: `Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups`,
+    desc: `This is a definite essential, along with good caffeine, an awesome gaming chair and crazy LED lights. No I'm just kidding, but the general consensus is true!`,
+  },
+  {
+    icon: faDigitalOcean,
+    title: 'Digital Ocean',
+    desc: `My first production app was deployed with Digital Ocean. I also have experience with Vercel, Heroku, Github and Netlify just to name a few. These days I'm exploring deployment to Fleek, as they say, "welcome to the new internet".`,
   },
 ]
 
@@ -143,6 +144,7 @@ const WheelCarousel = () => {
     })
 
     setSlides(positionedSlides)
+    // eslint-disable-next-line
   }, [wheelWidth])
 
   const handleSlideClick = (e) => {
@@ -214,10 +216,12 @@ const WheelCarousel = () => {
           })}
       </div>
       <div className='text-box'>
-        <Row align='middle' justify='center'>
+        <Row align='top' justify='center'>
           <Fade cascade>
-            <h1>{activeSlide.title}</h1>
-            <p>{activeSlide.desc}</p>
+            <Col>
+              <h1>{activeSlide.title}</h1>
+              <p>{activeSlide.desc}</p>
+            </Col>
           </Fade>
         </Row>
       </div>

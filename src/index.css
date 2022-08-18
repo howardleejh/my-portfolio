@@ -3,6 +3,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   text-align: center;
+  color: rgb(100, 100, 100);
   font-family: 'Spinnaker', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -17,6 +18,7 @@ h4,
 h5,
 h6 {
   font-family: 'Syncopate', sans-serif;
+  color: rgb(75, 75, 75);
 }
 
 code {

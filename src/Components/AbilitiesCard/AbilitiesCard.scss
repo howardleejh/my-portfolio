@@ -3,7 +3,7 @@
 .abilities-card {
   width: 27em;
   height: 25em;
-  background: rgba($color: #000000, $alpha: 0.2);
+  background-color: rgba($color: g.$warm-color, $alpha: 0.75);
   border-radius: 25px;
   padding: 2.5em;
   @include g.card-shadows;
@@ -13,12 +13,15 @@
   }
 
   h3 {
+    font-size: 1.5em;
     font-weight: 700;
+    color: g.$secondary-color;
   }
 
   p {
     text-align: justify;
     word-wrap: break-word;
     word-spacing: -0.75px;
+    color: g.$light-color;
   }
 }

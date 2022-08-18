@@ -9,5 +9,11 @@
 
   .ability-card {
     margin: 1.5vw;
+
+    &:hover {
+      transform: scale(1.05);
+      transition: 0.1s ease-in;
+      cursor: pointer;
+    }
   }
 }
