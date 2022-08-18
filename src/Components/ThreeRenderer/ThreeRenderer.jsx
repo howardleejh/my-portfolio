@@ -13,24 +13,29 @@ const Model = () => {
 
 const ThreeRenderer = (props) => {
   return (
-    <Canvas camera={{ fov: 60 }} style={props.style}>
-      <Stage
-        intensity={0.35}
-        contactShadow={false}
-        shadows
-        environment='studio'
+    <>
+      <Canvas
+        camera={{ fov: 60 }}
+        style={{ position: 'absolute', overflow: 'hidden' }}
       >
-        <Model />
-      </Stage>
-      <OrbitControls
-        makeDefault
-        enablePan={false}
-        enableZoom={false}
-        enableRotate={false}
-        autoRotate={true}
-        autoRotateSpeed={5}
-      />
-    </Canvas>
+        <Stage
+          intensity={0.35}
+          contactShadow={false}
+          shadows
+          environment='studio'
+        >
+          <Model />
+        </Stage>
+        <OrbitControls
+          makeDefault
+          enablePan={false}
+          enableZoom={false}
+          enableRotate={false}
+          autoRotate={true}
+          autoRotateSpeed={5}
+        />
+      </Canvas>
+    </>
   )
 }
 export default ThreeRenderer

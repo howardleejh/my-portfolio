@@ -8,8 +8,6 @@ $duration: 0.5s;
 .wheel-container {
   width: 100%;
   height: 100%;
-  display: grid;
-  place-items: center;
   position: relative;
 
   .wheel {
@@ -64,16 +62,18 @@ $duration: 0.5s;
   }
 
   .text-box {
-    width: 62%;
-    height: 30%;
+    width: 65%;
+    height: 50%;
     position: absolute;
     right: 3.5em;
+    top: 35%;
 
     h1 {
       font-weight: 700;
     }
 
     p {
+      font-size: 1.25em;
       padding: 0 5em;
     }
   }

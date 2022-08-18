@@ -67,7 +67,7 @@ const images = [
   {
     icon: faEthereum,
     title: 'Solidity',
-    desc: `Another main language that I use very often when developing smart contracts for EVM compatible blockchains, I also use Open Zeppelin when developing to adhere to EIP standards, Mocha and Chai for unit testing and Tenderly for transaction debugging. Ethereum Remix online IDE for quick tests and drafting of smart contracts.`,
+    desc: `The main language that I use when developing smart contracts for EVM compatible blockchains, I also use Open Zeppelin to adopt to the EIP and ERC standards, Chainlink for off-chain data processing, Mocha and Chai for unit testing and Tenderly for transaction debugging. Ethereum Remix online IDE for quick tests and drafting of smart contracts.`,
   },
   {
     icon: faSpotify,
