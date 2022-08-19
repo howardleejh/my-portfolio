@@ -5,6 +5,7 @@ import SectionAbout from '../../Components/SectionAbout/SectionAbout'
 import SectionRoles from '../../Components/SectionRoles/SectionRoles'
 import SectionTechStack from '../../Components/SectionTechStack/SectionTechStack'
 import SectionExperience from '../../Components/SectionExperience/SectionExperience'
+import SectionProjects from '../../Components/SectionProjects/SectionProjects'
 import './HomePage.scss'
 
 const HomePage = () => {
@@ -28,6 +29,9 @@ const HomePage = () => {
       </section>
       <section>
         <SectionExperience />
+      </section>
+      <section>
+        <SectionProjects />
       </section>
       <BackTop visibilityHeight={150} />
     </div>

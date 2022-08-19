@@ -1,6 +1,8 @@
 @use '../../Styles/global' as g;
 
 .experience-section {
+  min-height: 100vh;
+
   .org-grid {
     margin: 2em 0;
 
@@ -17,8 +19,8 @@
 
       &:hover {
         transform: scale(1);
-        transition: all 0.2s ease;
         cursor: pointer;
+        transition: all 0.2s ease-in-out;
       }
 
       h3 {
@@ -26,15 +28,16 @@
         height: 100%;
         background-color: rgba($color: g.$warm-color, $alpha: 0.8);
         color: g.$light-color;
-        display: grid;
-        place-items: center;
         border-radius: inherit;
         font-weight: 700;
         font-size: 1.5em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         text-align: center;
         padding: 1em;
         opacity: 0;
-        transition: opacity 0.2s, visibility 0.2s;
+        transition: all 0.2s;
 
         &:hover {
           opacity: 1;
@@ -53,6 +56,15 @@
     .swiper-slide {
       font-size: 1.5em;
       padding: 2em;
+
+      &:nth-child(1) {
+        h3 {
+          background-color: rgba($color: g.$warm-color, $alpha: 0.8);
+          color: g.$light-color;
+          font-weight: 700;
+          padding: 0.25em;
+        }
+      }
 
       h1,
       h3 {
