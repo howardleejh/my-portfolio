@@ -51,14 +51,13 @@ const SectionExperience = () => {
   const buttonRef = useRef(null)
 
   const handleClick = (e) => {
-    // console.log(e.target.id)
     swiperRef.current?.swiper.slideTo(e.target.id)
   }
 
   return (
     <div className='experience-section'>
       <Row align='middle' justify='center' className='org-grid'>
-        <Fade cascade>
+        <Fade cascade triggerOnce>
           {orgs.map((org) => {
             return (
               <div
@@ -70,7 +69,14 @@ const SectionExperience = () => {
                 ref={buttonRef}
                 style={{ backgroundImage: `url(${org.logo})` }}
               >
-                <h3 id={org.index}>{org.name}</h3>
+                <h3 id={org.index}>
+                  <ul>
+                    <li>{org.name}</li>
+                    <li>
+                      <span>{org.period}</span>
+                    </li>
+                  </ul>
+                </h3>
               </div>
             )
           })}

@@ -7,7 +7,7 @@ const SectionAbout = () => {
     <div className='about-section'>
       <Row align='middle' justify='center'>
         <Col>
-          <Fade cascade fraction={0.4}>
+          <Fade cascade fraction={0.4} triggerOnce>
             <h1 className='about-me-title'>About Me</h1>
             <Space direction='vertical' size='large'>
               <p className='about-me-main'>
