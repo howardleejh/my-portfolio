@@ -25,8 +25,8 @@ const abilities = [
 const SectionRoles = () => {
   return (
     <div className='roles-section'>
-      <Fade>
-        <h1>What I DO</h1>
+      <Fade delay={50}>
+        <h1 className='role-title'>What I DO</h1>
       </Fade>
       <Row align='middle' justify='center'>
         <Fade cascade direction='up' triggerOnce>

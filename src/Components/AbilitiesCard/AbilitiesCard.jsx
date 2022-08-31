@@ -1,4 +1,4 @@
-import { Row, Col, Divider, Space } from 'antd'
+import { Row, Col, Divider, Space, Tooltip } from 'antd'
 import './AbilitiesCard.scss'
 
 const AbilitiesCard = (props) => {
@@ -10,13 +10,15 @@ const AbilitiesCard = (props) => {
         <Col>
           <h3>{props.title}</h3>
           <ul>
-            <Space direction='horizontal' size='large'>
+            <Space direction='horizontal' size='small'>
               {icons
                 ? icons.map((icon, index) => {
                     return (
-                      <li>
-                        <img src={icon} alt={index} width='50em' />
-                      </li>
+                      <Tooltip placement='bottom' title={icon.name}>
+                        <li>
+                          <img src={icon.icon} alt={index} />
+                        </li>
+                      </Tooltip>
                     )
                   })
                 : null}

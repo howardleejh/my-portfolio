@@ -23,7 +23,9 @@ const HomePage = () => {
         </Parallax>
       </section>
       <section>
-        <SectionRoles />
+        <Parallax speed={-10}>
+          <SectionRoles />
+        </Parallax>
       </section>
       <section>
         <SectionTechStack />

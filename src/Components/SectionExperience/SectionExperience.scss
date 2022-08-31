@@ -3,12 +3,20 @@
 .experience-section {
   min-height: 100vh;
 
-  .org-grid {
+  .experience-title {
+    font-size: 1em;
     margin: 2em 0;
+  }
+
+  .org-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 
     .logo {
-      width: 20em;
-      height: 20em;
+      width: 15em;
+      height: 15em;
       border: 1px solid g.$warm-color;
       border-radius: 25px;
       background-size: 10em;
@@ -30,22 +38,15 @@
         color: g.$light-color;
         border-radius: inherit;
         font-weight: 700;
-        font-size: 1.5em;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding: 1em;
+        // font-size: 1.5em;
+        display: grid;
+        place-items: center;
         opacity: 0;
-        transition: all 0.2s;
+        padding: 0 1em;
+        transition: all 0.2s ease;
 
-        ul {
-          list-style: none;
-          padding: 0;
-
-          span {
-            font-size: 0.5em;
-          }
+        span {
+          font-size: 0.5em;
         }
 
         &:hover {
@@ -57,21 +58,20 @@
   }
 
   .swiper {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
     .swiper-slide {
+      width: 100%;
+      height: 100%;
       font-size: 1.5em;
-      padding: 2em;
+      display: flexbox;
+      align-items: flex-start;
+      justify-content: center;
 
       &:nth-child(1) {
         h3 {
-          background-color: rgba($color: g.$warm-color, $alpha: 0.8);
+          background-color: rgba($color: g.$warm-color, $alpha: 0.7);
           color: g.$light-color;
           font-weight: 700;
-          padding: 0.25em;
+          padding: 0.5em;
         }
       }
 
@@ -85,7 +85,7 @@
       }
 
       p {
-        margin: 1.5em 0;
+        padding: 1.5em 2em;
       }
     }
   }

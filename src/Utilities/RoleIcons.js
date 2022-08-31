@@ -11,7 +11,42 @@ import etherscan from '../Assets/etherscan.svg'
 import tenderly from '../Assets/tenderly.svg'
 
 export const RoleIcons = {
-  mern: [mongodb, express, react, node],
-  solidity: [solidity, openzeppelin, chainlink],
-  hardhat: [hardhat, ethers, etherscan, tenderly],
+  mern: [
+    {
+      icon: mongodb,
+      name: 'MongoDB'
+    }, {
+      icon: express,
+      name: 'ExpressJS'
+    }, {
+      icon: react,
+      name: 'ReactJS'
+    }, {
+      icon: node,
+      name: 'NodeJS'
+    }
+  ],
+  solidity: [{
+    icon: solidity,
+    name: 'Solidity'
+  }, {
+    icon: openzeppelin,
+    name: 'Open Zeppelin'
+  }, {
+    icon: chainlink,
+    name: 'Chainlink'
+  }],
+  hardhat: [{
+    icon: hardhat,
+    name: 'Hardhat'
+  }, {
+    icon: ethers,
+    name: 'EthersJS'
+  }, {
+    icon: etherscan,
+    name: 'Etherscan'
+  }, {
+    icon: tenderly,
+    name: 'Tenderly'
+  }],
 }

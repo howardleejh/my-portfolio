@@ -1,7 +1,7 @@
-import { useRef } from 'react'
-import { Row, Divider } from 'antd'
+import { useRef, useState } from 'react'
+import { Row, Col, Divider } from 'antd'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import SwiperCore, { Pagination, Autoplay } from 'swiper'
+import { Pagination } from 'swiper'
 import { Fade } from 'react-awesome-reveal'
 import centaur from '../../Assets/Centaur.png'
 import facebook from '../../Assets/Facebook.png'
@@ -45,10 +45,9 @@ const orgs = [
 ]
 
 const SectionExperience = () => {
-  SwiperCore.use([Pagination, Autoplay])
+  const [active, setActive] = useState(0)
 
   const swiperRef = useRef(null)
-  const buttonRef = useRef(null)
 
   const handleClick = (e) => {
     swiperRef.current?.swiper.slideTo(e.target.id)
@@ -56,55 +55,49 @@ const SectionExperience = () => {
 
   return (
     <div className='experience-section'>
-      <Row align='middle' justify='center' className='org-grid'>
-        <Fade cascade triggerOnce>
-          {orgs.map((org) => {
-            return (
-              <div
-                key={org.name}
-                src={org.logo}
-                alt={org.name}
-                className='logo'
-                onClick={handleClick}
-                ref={buttonRef}
-                style={{ backgroundImage: `url(${org.logo})` }}
-              >
-                <h3 id={org.index}>
-                  <ul>
-                    <li>{org.name}</li>
-                    <li>
-                      <span>{org.period}</span>
-                    </li>
-                  </ul>
-                </h3>
-              </div>
-            )
-          })}
-        </Fade>
-      </Row>
-      <Divider style={{ width: '15em', minWidth: '0', margin: '0 auto' }} />
-      <Row>
-        {/* Reference: https://codesandbox.io/s/bkpw8m?file=/src/App.jsx */}
-        <Swiper
-          initialSlide={0}
-          ref={swiperRef}
-          pagination={{ clickable: true, dynamicBullets: true }}
-          autoplay={{
-            delay: 7000,
-            disableOnInteraction: false,
-          }}
-          grabCursor={true}
-        >
-          {orgs.map((org) => {
-            return (
-              <SwiperSlide>
-                <h1>{org.name}</h1>
-                <h3 id={`slide-${org.index}`}>{org.period}</h3>
-                <p>{org.desc}</p>
-              </SwiperSlide>
-            )
-          })}
-        </Swiper>
+      <Fade delay={50}>
+        <h1 className='experience-title'>Experience</h1>
+      </Fade>
+      <Row align='middle' justify='space-evenly'>
+        <Col xs={24} xl={12}>
+          {/* Reference: https://codesandbox.io/s/bkpw8m?file=/src/App.jsx */}
+          <Swiper
+            modules={[Pagination]}
+            initialSlide={0}
+            ref={swiperRef}
+            pagination={{ clickable: true, dynamicBullets: true }}
+            grabCursor={true}
+          >
+            {orgs.map((org) => {
+              return (
+                <SwiperSlide>
+                  <h1>{org.name}</h1>
+                  <h3 id={`slide-${org.index}`}>{org.period}</h3>
+                  <p>{org.desc}</p>
+                </SwiperSlide>
+              )
+            })}
+          </Swiper>
+        </Col>
+        <Col className='org-grid' xs={24} xl={8}>
+          <Fade cascade direction='right' triggerOnce>
+            {orgs.map((org) => {
+              return (
+                <div
+                  key={org.name}
+                  src={org.logo}
+                  alt={org.name}
+                  className='logo'
+                  onClick={handleClick}
+                  style={{ backgroundImage: `url(${org.logo})` }}
+                  id={org.index}
+                >
+                  <h3 id={org.index}>{org.name}</h3>
+                </div>
+              )
+            })}
+          </Fade>
+        </Col>
       </Row>
     </div>
   )

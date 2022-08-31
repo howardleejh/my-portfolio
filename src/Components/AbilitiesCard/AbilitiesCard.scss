@@ -24,10 +24,24 @@
     padding: 0;
     display: inline-flex;
     align-items: center;
-  }
 
-  img {
-    width: 1.5em;
+    li {
+      border: 1px solid g.$light-color;
+      background-color: rgba($color: g.$secondary-color, $alpha: 0.1);
+      padding: 1em;
+      border-radius: 12px;
+      transform: scale(0.9);
+      transition: all 0.2s ease;
+      @include g.card-shadows;
+
+      &:hover {
+        transform: scale(1);
+      }
+      img {
+        width: 2.5em;
+        height: 2.5em;
+      }
+    }
   }
 
   p {

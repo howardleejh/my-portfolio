@@ -148,7 +148,6 @@ const WheelCarousel = () => {
   }, [wheelWidth])
 
   const handleSlideClick = (e) => {
-    console.log(e.target)
     const nextIndex = parseFloat(e.target.dataset.index)
     const currentIndex = activeSlide.index
 
@@ -217,12 +216,12 @@ const WheelCarousel = () => {
       </div>
       <div className='text-box'>
         <Row align='top' justify='center'>
-          <Fade cascade>
-            <Col>
+          <Col>
+            <Fade cascade triggerOnce>
               <h1>{activeSlide.title}</h1>
               <p>{activeSlide.desc}</p>
-            </Col>
-          </Fade>
+            </Fade>
+          </Col>
         </Row>
       </div>
       <div className='arrows'>
