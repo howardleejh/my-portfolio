@@ -1,4 +1,4 @@
-import { Row, Col, Space } from 'antd'
+import { Row, Col } from 'antd'
 import { Fade } from 'react-awesome-reveal'
 import './SectionAbout.scss'
 

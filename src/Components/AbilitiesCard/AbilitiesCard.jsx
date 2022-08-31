@@ -14,7 +14,11 @@ const AbilitiesCard = (props) => {
               {icons
                 ? icons.map((icon, index) => {
                     return (
-                      <Tooltip placement='bottom' title={icon.name}>
+                      <Tooltip
+                        key={icon.name}
+                        placement='bottom'
+                        title={icon.name}
+                      >
                         <li>
                           <img src={icon.icon} alt={index} />
                         </li>

@@ -1,5 +1,5 @@
-import { useRef, useState } from 'react'
-import { Row, Col, Divider } from 'antd'
+import { useRef } from 'react'
+import { Row, Col } from 'antd'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination } from 'swiper'
 import { Fade } from 'react-awesome-reveal'
@@ -45,8 +45,6 @@ const orgs = [
 ]
 
 const SectionExperience = () => {
-  const [active, setActive] = useState(0)
-
   const swiperRef = useRef(null)
 
   const handleClick = (e) => {
@@ -70,7 +68,7 @@ const SectionExperience = () => {
           >
             {orgs.map((org) => {
               return (
-                <SwiperSlide>
+                <SwiperSlide key={org.name}>
                   <h1>{org.name}</h1>
                   <h3 id={`slide-${org.index}`}>{org.period}</h3>
                   <p>{org.desc}</p>

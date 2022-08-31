@@ -1,6 +1,7 @@
-import { Row, Col } from 'antd'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, FreeMode, Autoplay } from 'swiper'
+import { projects } from '../../Utilities/Projects'
+import ProjectCard from '../ProjectCard/ProjectCard'
 import './SectionProjects.scss'
 
 const SectionProjects = () => {
@@ -13,8 +14,9 @@ const SectionProjects = () => {
       </h3>
       <Swiper
         modules={[Pagination, FreeMode, Autoplay]}
+        spaceBetween={10}
         slidesPerView={3}
-        speed={5000}
+        speed={10000}
         centeredSlides={true}
         grabCursor={true}
         pagination={{ clickable: true, dynamicBullets: true }}
@@ -25,12 +27,13 @@ const SectionProjects = () => {
         freeMode
         loop
       >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
+        {projects.map((slide) => {
+          return (
+            <SwiperSlide>
+              <ProjectCard title={slide.name} bg={slide.hover} />
+            </SwiperSlide>
+          )
+        })}
       </Swiper>
     </div>
   )
