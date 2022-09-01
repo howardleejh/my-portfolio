@@ -1,9 +1,23 @@
+@use '../../Styles/global.scss' as g;
+
 .projects-section {
   width: 100vw;
   min-height: 100vh;
+  padding: 3.5em 0;
+
+  .projects-section-title {
+    font-size: 1em;
+    padding: 2em 0;
+    margin: 0;
+  }
+
+  p {
+    font-size: 1.5em;
+    padding: 0 3.5em;
+  }
 
   .swiper {
-    margin: 5em 0;
+    padding: 2em 0;
 
     .swiper-wrapper {
       -webkit-transition-timing-function: linear !important;
@@ -13,11 +27,13 @@
 
     .swiper-slide {
       width: 100%;
-      aspect-ratio: 16/9;
-      border: 1px solid rgba(black, 0.1);
+      aspect-ratio: 16/10;
+      border-radius: 15px;
+      transform: scale(0.9);
 
       &:hover {
-        background-color: green;
+        transition: 0.2s ease-out;
+        transform: scale(1.05);
       }
     }
   }

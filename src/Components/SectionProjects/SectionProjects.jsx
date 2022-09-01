@@ -1,3 +1,4 @@
+import { Fade } from 'react-awesome-reveal'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, FreeMode, Autoplay } from 'swiper'
 import { projects } from '../../Utilities/Projects'
@@ -7,14 +8,17 @@ import './SectionProjects.scss'
 const SectionProjects = () => {
   return (
     <div className='projects-section'>
-      <h1>Projects Section</h1>
-      <h3>
-        Lorem ipsum is placeholder text commonly used in the graphic, print, and
-        publishing industries for previewing layouts and visual mockups.
-      </h3>
+      <Fade delay={50}>
+        <h1 className='projects-section-title'>Projects</h1>
+      </Fade>
+      <p>
+        Here are some of the projects that I developed while at General
+        Assembly. I am currently working on personal projects to further expand
+        my blockchain skill sets.
+      </p>
       <Swiper
         modules={[Pagination, FreeMode, Autoplay]}
-        spaceBetween={10}
+        // spaceBetween={1}
         slidesPerView={3}
         speed={10000}
         centeredSlides={true}
@@ -29,8 +33,12 @@ const SectionProjects = () => {
       >
         {projects.map((slide) => {
           return (
-            <SwiperSlide>
-              <ProjectCard title={slide.name} bg={slide.hover} />
+            <SwiperSlide key={slide.name}>
+              <ProjectCard
+                title={slide.name}
+                bg={slide.logo}
+                hover={slide.hover}
+              />
             </SwiperSlide>
           )
         })}

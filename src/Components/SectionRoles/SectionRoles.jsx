@@ -29,7 +29,7 @@ const SectionRoles = () => {
         <h1 className='role-title'>What I DO</h1>
       </Fade>
       <Row align='middle' justify='center'>
-        <Fade cascade direction='up' triggerOnce>
+        <Fade cascade direction='up' fraction={0.3} triggerOnce>
           {abilities.map((ability) => {
             return (
               <Col className='ability-card' key={ability.title}>
