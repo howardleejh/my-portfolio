@@ -7,17 +7,17 @@ import './SectionRoles.scss'
 const abilities = [
   {
     title: `MERN Stack`,
-    desc: `Experienced in developing with MongoDB, Express, React and Node JS. Works mainly with functional components and hooks in React. Able to work with ES7 and above. Uses npm as package manager and github for version control. Also experienced in deploying to cloud platforms like Heroku, Digital Ocean and Vercel.`,
+    desc: `Experience in developing with MongoDB, Express, React, Gatsby and NodeJS for static sites, single page and progress web applications.`,
     icons: RoleIcons.mern,
   },
   {
     title: `Solidity`,
-    desc: `Achieved professional certification for Ethereum & Solidity, and has been developing smart contracts since October 2021. Utilizes Open Zeppelin for development and adheres to the EIP standards. Developed in multiple networks including Ethereum and Polygon, main and test nets. Able to execute unit testing with Mocha and Chai.`,
+    desc: `Professionally certified for Ethereum & Solidity. I ensure that all smart contract development adhere to the EIP standards with Open Zeppelin and Chainlink for external off-chain data processing.`,
     icons: RoleIcons.solidity,
   },
   {
     title: `Hardhat & Ethers`,
-    desc: `Experienced with deploying to multiple networks including rinkeby, ropsten and polygon mumbai. Uses Etherscan and Tenderly for debugging transactions and is experienced with third party smart contract auditing. Understands various design concepts including the use of abstract contracts, interfaces, libraries, inheritance and gas fee optimization techniques.`,
+    desc: `Experience with deploying to multiple blockchains that are EVM compatible. Also have experiences with third party smart contract auditing.`,
     icons: RoleIcons.hardhat,
   },
 ]

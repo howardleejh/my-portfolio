@@ -26,7 +26,7 @@ const images = [
   {
     icon: faHtml5,
     title: 'HTML',
-    desc: `The fundamentals of it all, I learnt about HTML and CSS during my time in General Assembly, I also picked up Search Engine Optimization using React Helmet with my projects to generate multiple document heads for better SEO performance.`,
+    desc: `The fundamentals of it all, I learnt HTML Javascript and CSS during my time at General Assembly, I also picked up Search Engine Optimization using React Helmet with my projects to generate multiple document heads for better SEO performance.`,
   },
   {
     icon: faCss3Alt,
@@ -37,17 +37,17 @@ const images = [
   {
     icon: faSass,
     title: 'SASS',
-    desc: `I use SASS but my file extensions are in SCSS. Well sometimes legacy methods are still pretty efficient and I'm not about to start a "which syntax is better" war here.`,
+    desc: `I use SASS but my file extensions are in SCSS. I like being able to tell apart blocks of code with curly braces. Also nest my selectors within relevant blocks gives so much visualization and clarity.`,
   },
   {
     icon: faBootstrap,
     title: 'Bootstrap',
-    desc: `Bootstrap used to be my go-to solution, I've since moved on to Ant Design, Bulma, Material UI and so much more. I've even resorted to creating my own components so that I get access to more complex customizations and better reusability.`,
+    desc: `Bootstrap used to be my go-to solution, I've since moved on to Ant Design, Bulma, Material UI and so much more. I've explored creating my own components to achieve more complex customizations and better reusability.`,
   },
   {
     icon: faNodeJs,
     title: 'NodeJS',
-    desc: `NodeJS is my main backend solution when creating Web2 based web applications, though since working with blockchain, I'm slightly rusty with working with NodeJS, Express and MongoDB. Some documentation revisions ought to do!`,
+    desc: `NodeJS is my main backend solution when creating Web2 based web applications. I work well with REST APIs and have recently picked up Firebase to add into my collection along with MySQL, MongoDB and Express.`,
   },
   {
     icon: faGitSquare,
@@ -57,27 +57,27 @@ const images = [
   {
     icon: faReact,
     title: 'React',
-    desc: `Yes, my main bread and butter. My main tech stack revolves around React and Javascript, while gaining experience with GatsbyJS for static website developments on the side. I am a functional components developer kind of guy.`,
+    desc: `Yes, my main bread and butter. My main tech stack revolves around React and Javascript, I continue gaining experience with Gatsby for static website developments on the side. I am a functional components developer kind of guy.`,
   },
   {
     icon: faJsSquare,
     title: 'Javascript',
-    desc: `This here is my primary language for web development, I have plans to pick up typescript some time soon but there's always something new to learn about with Javascript, my to-do list is never empty.`,
+    desc: `This is my primary language for web development, I have plans to pick up typescript some time soon but there's always something new to learn about with Javascript, my to-do list is never empty.`,
   },
   {
     icon: faEthereum,
     title: 'Solidity',
-    desc: `The main language that I use when developing smart contracts for EVM compatible blockchains, I also use Open Zeppelin to adopt to the EIP and ERC standards, Chainlink for off-chain data processing, Mocha and Chai for unit testing and Tenderly for transaction debugging. Ethereum Remix online IDE for quick tests and drafting of smart contracts.`,
+    desc: `I use Solidity when developing smart contracts for EVM compatible blockchains, Open Zeppelin to adhere to the EIP and ERC standards, Chainlink for off-chain data processing, Mocha and Chai for unit testing and Tenderly for transaction debugging. Ethereum Remix online IDE for quick tests and drafting of smart contracts.`,
   },
   {
     icon: faSpotify,
     title: 'Spotify',
-    desc: `This is a definite essential, along with good caffeine, an awesome gaming chair and crazy LED lights. No I'm just kidding, but the general consensus is true!`,
+    desc: `This is a definite essential, along with a cup of good caffeine, an awesome gaming chair and crazy LED lights. No I'm just kidding, but the general consensus is true!`,
   },
   {
     icon: faDigitalOcean,
     title: 'Digital Ocean',
-    desc: `My first production app was deployed with Digital Ocean. I also have experience with Vercel, Heroku, Github and Netlify just to name a few. These days I'm exploring deployment to Fleek, as they say, "welcome to the new internet".`,
+    desc: `My first production app was deployed in Digital Ocean. I also have experience with Vercel, Heroku, Github and Netlify just to name a few. These days I'm exploring Fleek.`,
   },
 ]
 

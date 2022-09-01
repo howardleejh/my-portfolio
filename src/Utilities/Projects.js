@@ -6,6 +6,8 @@ import teamUp from '../Assets/teamup.png'
 import teamUpLogo from '../Assets/TeamUpLogo.png'
 import gacha from '../Assets/Gacha10.png'
 import gachaLogo from '../Assets/Gacha10Logo.png'
+import fuse from '../Assets/Fuse.png'
+import fuseLogo from '../Assets/FuseLogo.png'
 
 export const projects = [{
     name: 'Chess 3D',
@@ -25,5 +27,10 @@ export const projects = [{
     name: 'Gacha10!',
     logo: gachaLogo,
     hover: gacha
+},
+{
+    name: 'Fuse Tokens',
+    logo: fuseLogo,
+    hover: fuse
 },
 ]

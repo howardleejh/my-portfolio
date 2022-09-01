@@ -12,10 +12,10 @@ const SectionAbout = () => {
           </Fade>
           <Fade triggerOnce>
             <p className='about-me-main'>
-              I specialize in building decentralized applications that interact
-              with EVM compatible blockchains such as Ethereum and Polygon. I
-              have experience in building single page apps and progressive web
-              apps that are responsive and support cross platforms.
+              I build decentralized applications that interact with EVM
+              compatible blockchains such as Ethereum and Polygon. I have
+              experience in building single page and progressive web
+              applications that are responsive and support cross platforms.
             </p>
           </Fade>
         </Col>

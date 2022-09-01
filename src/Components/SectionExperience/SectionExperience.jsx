@@ -24,7 +24,7 @@ const orgs = [
     logo: centaur,
     color: '#33CC33',
     period: 'October 2021 - April 2022',
-    desc: 'I joined Centaur Finance when I graduated from General Assembly, and immediately got into learning more about Blockchain and DEFI. With the amazing support from my CTO, I managed Solidity and writing Smart Contracts while working on NFT projects on the side.',
+    desc: 'I joined Centaur Finance right after graduation, and immediately got into learning more about Blockchain and DeFi. I managed Solidity and writing Smart Contracts while working on NFT projects on the side.',
   },
   {
     index: 2,
@@ -32,7 +32,7 @@ const orgs = [
     logo: ga,
     color: '	#E41A24',
     period: 'March 2021 - September 2021',
-    desc: 'I was a part of class SEIF-5 at General Assembly for 6 months while still working full time at Facebook. I learnt so much about software engineering and made a lot of great contacts along the way.',
+    desc: 'I was a part of SEIF-5 at General Assembly while still working full time at Facebook now Meta. I survived the grueling 6 months and have not looked back ever since.',
   },
   {
     index: 3,
@@ -40,7 +40,7 @@ const orgs = [
     logo: facebook,
     color: '	#0183ff',
     period: 'December 2017 - October 2021',
-    desc: 'Working at Facebook under Monolith Technologies was probably the most inspiring time of my career. It was what inspired me to pursue Software Engineering and step out to the next phase of my life, No regrets at all.',
+    desc: 'Working at Facebook under Monolith Technologies was probably the most inspiring time of my career. It was what inspired me to pursue Software Engineering and to step out of my comfort zone.',
   },
 ]
 
@@ -78,7 +78,7 @@ const SectionExperience = () => {
           </Swiper>
         </Col>
         <Col className='org-grid' xs={24} xl={8}>
-          <Fade cascade direction='right' triggerOnce>
+          <Fade cascade direction='right' fraction={0.2} triggerOnce>
             {orgs.map((org) => {
               return (
                 <div

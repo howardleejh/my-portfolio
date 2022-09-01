@@ -1,0 +1,48 @@
+@use '../../Styles/global.scss' as g;
+
+.btn-40 {
+  border-radius: 50%;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  padding: 5em;
+  text-transform: uppercase;
+  transform: scale(0.9);
+  transition: all 0.2s ease;
+  @include g.card-shadows;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+.btn-40 .new,
+.btn-40 .old {
+  transition: transform 0.2s;
+}
+.btn-40 .old {
+  font-size: 3.5em;
+  display: grid;
+  inset: 0;
+  place-content: center;
+  position: absolute;
+}
+.btn-40:hover .old {
+  transform: translateY(100%);
+}
+.btn-40 .new {
+  font-family: 'Syncopate', sans-serif;
+  font-weight: 900;
+  display: grid;
+  inset: 0;
+  place-content: center;
+  pointer-events: none;
+  position: absolute;
+  transform: translateX(-150%);
+}
+
+.btn-40:hover .new {
+  background-color: g.$warm-color;
+  color: g.$light-color;
+  @include g.box-shadows;
+  transform: translateX(0);
+}

@@ -12,9 +12,9 @@ const SectionProjects = () => {
         <h1 className='projects-section-title'>Projects</h1>
       </Fade>
       <p>
-        Here are some of the projects that I developed while at General
-        Assembly. I am currently working on personal projects to further expand
-        my blockchain skill sets.
+        Here are some of the projects that I've developed so far. I am currently
+        working on multiple projects, both professionally and as a freelance to
+        further expand my knowledge. Find out more on my Github!
       </p>
       <Swiper
         modules={[Pagination, FreeMode, Autoplay]}

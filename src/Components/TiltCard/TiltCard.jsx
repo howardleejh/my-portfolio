@@ -35,13 +35,30 @@ const TiltCard = () => {
                 <Space direction='horizontal'>
                   <SocialButton
                     name={<FontAwesomeIcon icon={faWhatsapp} />}
-                    onClick={() => console.log('clicked!')}
+                    title='Whatsapp'
+                    href={`https://wa.me/6583222931?text=I'm%20interested%20to%20connect%20with%20you!`}
+                    target='_blank'
+                    rel='noreferrer'
                   />
-                  <SocialButton name={<FontAwesomeIcon icon={faTelegram} />} />
                   <SocialButton
-                    name={<FontAwesomeIcon icon={faLinkedinIn} />}
+                    title='Telegram'
+                    name={<FontAwesomeIcon icon={faTelegram} />}
+                    href='https://t.me/howardleejh'
+                    target='_blank'
+                    rel='noreferrer'
                   />
-                  <SocialButton name={<FontAwesomeIcon icon={faGithub} />} />
+                  <SocialButton
+                    title='LinkedIn'
+                    name={<FontAwesomeIcon icon={faLinkedinIn} />}
+                    href='https://www.linkedin.com/in/howardleejh'
+                    target='_blank'
+                  />
+                  <SocialButton
+                    title='Github'
+                    name={<FontAwesomeIcon icon={faGithub} />}
+                    href='https://www.github.com/howardleejh'
+                    target='_blank'
+                  />
                 </Space>
               </Col>
             </Row>

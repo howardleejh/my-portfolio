@@ -1,12 +1,22 @@
 @use '../../Styles/global' as g;
 
+@mixin border-style {
+  border: 1px solid g.$warm-color;
+}
+
 .abilities-card {
   width: 27em;
-  height: 30em;
-  background-color: rgba($color: g.$warm-color, $alpha: 0.75);
+  height: 28.5em;
   border-radius: 25px;
   padding: 2.5em;
-  @include g.card-shadows;
+  transition: 0.2s ease;
+  @include border-style;
+
+  &:hover {
+    background-color: white;
+    @include g.box-shadows;
+    border: none;
+  }
 
   .divider {
     width: 2em;
@@ -19,35 +29,45 @@
   }
 
   ul {
+    height: 5em;
     list-style: none;
     margin: 0;
     padding: 0;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
 
     li {
-      border: 1px solid g.$light-color;
-      background-color: rgba($color: g.$secondary-color, $alpha: 0.1);
+      background-color: rgba(255, 255, 255, 0.2);
       padding: 1em;
-      border-radius: 12px;
-      transform: scale(0.9);
-      transition: all 0.2s ease;
+      border-radius: 50%;
+      transition: 0.2s ease;
       @include g.card-shadows;
 
       &:hover {
-        transform: scale(1);
+        background-color: rgba(255, 255, 255, 0.5);
+        filter: none;
+        transform: scale(1.1);
+        @include border-style;
       }
+
+      &:hover img {
+        filter: none;
+        -webkit-filter: none;
+      }
+
       img {
-        width: 2.5em;
-        height: 2.5em;
+        width: 2em;
+        height: 2em;
+        filter: contrast(0.1);
+        -webkit-filter: contrast(0.1);
       }
     }
   }
-
-  p {
-    text-align: justify;
-    word-wrap: break-word;
-    word-spacing: -0.75px;
-    color: g.$light-color;
+  P {
+    width: 100%;
+    height: 100%;
+    text-align: start;
+    font-size: 1.15em;
   }
 }

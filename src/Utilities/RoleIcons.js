@@ -17,10 +17,10 @@ export const RoleIcons = {
       name: 'MongoDB'
     }, {
       icon: express,
-      name: 'ExpressJS'
+      name: 'Express'
     }, {
       icon: react,
-      name: 'ReactJS'
+      name: 'React'
     }, {
       icon: node,
       name: 'NodeJS'
@@ -41,7 +41,7 @@ export const RoleIcons = {
     name: 'Hardhat'
   }, {
     icon: ethers,
-    name: 'EthersJS'
+    name: 'Ethers'
   }, {
     icon: etherscan,
     name: 'Etherscan'

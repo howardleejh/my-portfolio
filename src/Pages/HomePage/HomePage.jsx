@@ -12,32 +12,36 @@ import './HomePage.scss'
 const HomePage = () => {
   return (
     <div className='homepage'>
-      <section>
+      <section id='intro'>
         <Parallax speed={-15}>
           <SectionIntro />
         </Parallax>
       </section>
-      <section>
+      <section id='about'>
         <Parallax speed={15}>
           <SectionAbout />
         </Parallax>
       </section>
-      <section>
-        <Parallax speed={-10}>
+      <section id='roles'>
+        <Parallax speed={-5}>
           <SectionRoles />
         </Parallax>
       </section>
-      <section>
+      <section id='tech'>
         <SectionTechStack />
       </section>
-      <section>
-        <SectionExperience />
+      <section id='experience'>
+        <Parallax speed={20}>
+          <SectionExperience />
+        </Parallax>
       </section>
-      <section>
+      <section id='projects'>
         <SectionProjects />
       </section>
-      <section>
-        <SectionContact />
+      <section id='contact'>
+        <Parallax speed={10}>
+          <SectionContact />
+        </Parallax>
       </section>
       <BackTop visibilityHeight={150} />
     </div>
