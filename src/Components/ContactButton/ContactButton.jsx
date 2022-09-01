@@ -5,8 +5,9 @@ const ContactButton = (props) => {
     <a
       className='btn-40'
       title={props.title}
-      href={props.href}
-      target={props.target}
+      href={props.href ? props.href : null}
+      rel={props.rel ? props.rel : null}
+      target={props.target ? props.target : null}
     >
       <span className='new'>{props.text}</span>
       <span style={{ color: `${props.color}` }} className='old'>
