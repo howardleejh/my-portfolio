@@ -14,8 +14,8 @@
     "Engineer"
   ],
   "engines": {
-    "node": ">= 18.0.0",
-    "npm": ">= 8.12.0"
+    "node": "> 16.x",
+    "npm": "> 8.0.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
