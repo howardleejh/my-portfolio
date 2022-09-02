@@ -67,15 +67,6 @@
       align-items: flex-start;
       justify-content: center;
 
-      &:nth-child(1) {
-        h3 {
-          background-color: rgba($color: g.$warm-color, $alpha: 0.7);
-          color: g.$light-color;
-          font-weight: 700;
-          padding: 0.5em;
-        }
-      }
-
       h1,
       h3 {
         margin: 0;

@@ -27,12 +27,12 @@ export const Images = [
     {
         icon: faSass,
         title: 'SASS',
-        desc: `I use SASS but my file extensions are in SCSS. I like being able to tell apart blocks of code with curly braces. Also nest my selectors within relevant blocks gives so much visualization and clarity.`,
+        desc: `I use SASS but my file extensions are in SCSS. I like being able to tell apart blocks of code with curly braces. Nesting my selectors within relevant blocks give so much more visualization and clarity.`,
     },
     {
         icon: faBootstrap,
         title: 'Bootstrap',
-        desc: `Bootstrap used to be my go-to solution, I've since moved on to Ant Design, Bulma, Material UI and so much more. I've explored creating my own components to achieve more complex customizations and better reusability.`,
+        desc: `I love using Bootstrap, but I've since moved on to Ant Design, Bulma, Material UI and so much more. I've explored creating my own components to achieve more complex customizations and better reusability.`,
     },
     {
         icon: faNodeJs,
@@ -42,12 +42,12 @@ export const Images = [
     {
         icon: faGitSquare,
         title: 'Git',
-        desc: `I use Git for version control and CI/CD pipeline deployments. My preferred choice for cloud based hosting would be Github though I use Gitlab in my professional working environments for better DevOps support.`,
+        desc: `I use Git for version control and CI/CD pipeline deployments. My preferred choice for cloud based hosting would be Github though I use Gitlab in my professional working environment for better DevOps support.`,
     },
     {
         icon: faReact,
         title: 'React',
-        desc: `Yes, my main bread and butter. My main tech stack revolves around React and Javascript, I continue gaining experience with Gatsby for static website developments on the side. I am a functional components developer kind of guy.`,
+        desc: `Yes, my main bread and butter. My main tech stack revolves around React and Javascript, I continue gaining experience with Gatsby for static website developments on the side. I am a functional components kind of guy.`,
     },
     {
         icon: faJsSquare,
@@ -57,7 +57,7 @@ export const Images = [
     {
         icon: faEthereum,
         title: 'Solidity',
-        desc: `I use Solidity when developing smart contracts for EVM compatible blockchains, Open Zeppelin to adhere to the EIP and ERC standards, Chainlink for off-chain data processing, Mocha and Chai for unit testing and Tenderly for transaction debugging. Ethereum Remix online IDE for quick tests and drafting of smart contracts.`,
+        desc: `I use Solidity when developing smart contracts for EVM compatible blockchains, Open Zeppelin to adhere to EIP and ERC standards, Chainlink for off-chain data processing, Mocha and Chai for unit testing and Tenderly for transaction debugging. Ethereum Remix IDE for quick tests and drafting of smart contracts.`,
     },
     {
         icon: faSpotify,
