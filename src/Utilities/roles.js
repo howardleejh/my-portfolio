@@ -10,7 +10,7 @@ import ethers from '../Assets/ethers.svg'
 import etherscan from '../Assets/etherscan.svg'
 import tenderly from '../Assets/tenderly.svg'
 
-export const roles = {
+export const Roles = {
     mern: [
         {
             icon: mongodb,

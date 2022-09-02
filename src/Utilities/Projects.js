@@ -9,7 +9,7 @@ import gachaLogo from '../Assets/Gacha10Logo.png'
 import fuse from '../Assets/Fuse.png'
 import fuseLogo from '../Assets/FuseLogo.png'
 
-export const Projects = [{
+export const ProjectsArr = [{
     name: 'Chess 3D',
     logo: chessLogo,
     hover: chess
