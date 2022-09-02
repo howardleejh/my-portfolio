@@ -18,9 +18,8 @@ const SectionProjects = () => {
       </p>
       <Swiper
         modules={[Pagination, FreeMode, Autoplay]}
-        // spaceBetween={1}
         slidesPerView={3}
-        speed={10000}
+        speed={7000}
         centeredSlides={true}
         grabCursor={true}
         pagination={{ clickable: true, dynamicBullets: true }}

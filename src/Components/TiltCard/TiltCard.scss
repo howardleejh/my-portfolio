@@ -8,6 +8,11 @@
   position: relative;
   transform-style: preserve-3d;
 
+  .tilt-renderer {
+    pointer-events: none;
+    overflow: hidden;
+  }
+
   .tilt-card-content {
     width: 100%;
     height: 100%;
@@ -36,6 +41,31 @@
       margin: 0;
       line-height: 1.25em;
       @include g.text-shadows;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .tilt-card {
+    width: 90%;
+    height: 35em;
+    border-radius: 25px;
+    text-align: center;
+
+    .tilt-card-content {
+      left: 0;
+      display: grid;
+      place-items: center;
+
+      .card-number {
+        text-align: center;
+        margin-bottom: 10em;
+      }
+
+      .card-details {
+        text-align: center;
+        margin: 0 0 1em 0;
+      }
     }
   }
 }

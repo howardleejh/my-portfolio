@@ -6,13 +6,13 @@ const Footer = () => {
   return (
     <div className='footer'>
       <div className='top'></div>
-      <Row align='middle' justify='space-between'>
+      <Row align='middle' justify='space-around'>
         <Col className='personal-items'>
           <h1>HOWARD LEE</h1>
           <h3>BLOCKCHAIN • FULL STACK MERN DEVELOPER</h3>
           <h3>vault2howard@gmail.com</h3>
         </Col>
-        <Col span={10} className='site-map'>
+        <Col xl={12} xs={22} className='site-map'>
           <Row justify='start'>
             <Col className='site-map-items'>
               <h6>ABOUT</h6>

@@ -26,7 +26,6 @@
     }
 
     .swiper-slide {
-      width: 100%;
       aspect-ratio: 16/10;
       border-radius: 15px;
       transform: scale(0.9);
@@ -34,6 +33,26 @@
       &:hover {
         transition: 0.2s ease-out;
         transform: scale(1.05);
+      }
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .projects-section {
+    overflow: hidden;
+
+    p {
+      padding: 1.5em;
+    }
+
+    .swiper {
+      width: 100em;
+
+      .swiper-slide {
+        &:hover {
+          transform: scale(1.5);
+          z-index: 5;
+        }
       }
     }
   }

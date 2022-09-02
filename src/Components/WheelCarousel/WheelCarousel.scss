@@ -105,11 +105,38 @@ $duration: 0.5s;
     }
 
     .arrow-left {
-      left: 0;
+      left: 1%;
     }
 
     .arrow-right {
-      right: 0;
+      right: 1%;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .wheel-container {
+    .wheel {
+      top: 50%;
+    }
+
+    .slide {
+      width: 10em;
+      height: 10em;
+    }
+
+    .text-box {
+      height: unset;
+      top: 34.5%;
+      left: 5%;
+      p {
+        font-size: 1em;
+        padding: 0.5em;
+      }
+    }
+
+    .arrows {
+      display: none;
     }
   }
 }
