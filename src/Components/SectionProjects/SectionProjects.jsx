@@ -2,7 +2,7 @@ import { Fade } from 'react-awesome-reveal'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, FreeMode, Autoplay } from 'swiper'
 import ProjectCard from '../ProjectCard/ProjectCard'
-import { projects } from '../../Utilities/projects'
+import { Projects } from '../../Utilities/projects'
 import './SectionProjects.scss'
 
 const SectionProjects = () => {
@@ -31,7 +31,7 @@ const SectionProjects = () => {
         freeMode
         loop
       >
-        {projects.map((slide) => {
+        {Projects.map((slide) => {
           return (
             <SwiperSlide key={slide.name}>
               <ProjectCard

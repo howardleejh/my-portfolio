@@ -12,7 +12,7 @@ import {
     faSpotify,
 } from '@fortawesome/free-brands-svg-icons'
 
-export const images = [
+export const Images = [
     {
         icon: faHtml5,
         title: 'HTML',

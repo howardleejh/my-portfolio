@@ -6,11 +6,11 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import { Row, Col } from 'antd'
 import { Fade } from 'react-awesome-reveal'
-import { images } from '../../Utilities/images'
+import { Images } from '../../Utilities/images'
 import classnames from 'classnames'
 import './WheelCarousel.scss'
 
-const initialSlidesState = images.map((image, index) => ({
+const initialSlidesState = Images.map((image, index) => ({
   coords: {
     x: 0,
     y: 0,
@@ -22,7 +22,7 @@ const initialSlidesState = images.map((image, index) => ({
   desc: image.desc,
 }))
 
-const numSlides = images.length
+const numSlides = Images.length
 const angle = 360 / numSlides
 
 const WheelCarousel = () => {
