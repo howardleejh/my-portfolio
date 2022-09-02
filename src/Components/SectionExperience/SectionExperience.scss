@@ -107,6 +107,12 @@
   }
 
   .swiper {
-    margin-bottom: 2em;
+    margin-bottom: 1em;
+
+    .swiper-slide {
+      p {
+        font-size: 0.75em;
+      }
+    }
   }
 }
