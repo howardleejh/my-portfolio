@@ -11,7 +11,7 @@ import etherscan from '../Assets/etherscan.svg'
 import tenderly from '../Assets/tenderly.svg'
 
 export const Roles = {
-    mern: [
+    Mern: [
         {
             icon: mongodb,
             name: 'MongoDB'
@@ -26,7 +26,7 @@ export const Roles = {
             name: 'NodeJS'
         }
     ],
-    solidity: [{
+    Solidity: [{
         icon: solidity,
         name: 'Solidity'
     }, {
@@ -36,7 +36,7 @@ export const Roles = {
         icon: chainlink,
         name: 'Chainlink'
     }],
-    hardhat: [{
+    Hardhat: [{
         icon: hardhat,
         name: 'Hardhat'
     }, {

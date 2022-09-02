@@ -8,17 +8,17 @@ const abilities = [
   {
     title: `MERN Stack`,
     desc: `Experience in developing with MongoDB, Express, React, Gatsby and NodeJS for static sites, single page and progress web applications.`,
-    icons: Roles.mern,
+    icons: Roles.Mern,
   },
   {
     title: `Solidity`,
     desc: `Professionally certified for Ethereum & Solidity. I ensure that all smart contract development adhere to the EIP standards with Open Zeppelin and Chainlink for external off-chain data processing.`,
-    icons: Roles.solidity,
+    icons: Roles.Solidity,
   },
   {
     title: `Hardhat & Ethers`,
     desc: `Experience with deploying to multiple blockchains that are EVM compatible. Also have experiences with third party smart contract auditing.`,
-    icons: Roles.hardhat,
+    icons: Roles.Hardhat,
   },
 ]
 
