@@ -17,7 +17,7 @@
 }
 .btn-40 .new,
 .btn-40 .old {
-  transition: transform 0.2s;
+  transition: transform 0.3s;
 }
 .btn-40 .old {
   font-size: 3.5em;
@@ -30,6 +30,7 @@
   transform: translateY(100%);
 }
 .btn-40 .new {
+  border-radius: 50%;
   font-family: 'Syncopate', sans-serif;
   font-weight: 900;
   display: grid;

@@ -8,15 +8,11 @@
     "Howard",
     "Lee",
     "Software",
-    "Full Stack",
+    "Fullstack",
     "Developer",
     "Block Chain",
     "Engineer"
   ],
-  "engines": {
-    "node": ">=16.0.0",
-    "npm": ">=8.0.0"
-  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
     "@fortawesome/free-brands-svg-icons": "^6.2.0",

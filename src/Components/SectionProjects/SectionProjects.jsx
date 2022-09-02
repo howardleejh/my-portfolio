@@ -1,8 +1,8 @@
 import { Fade } from 'react-awesome-reveal'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, FreeMode, Autoplay } from 'swiper'
-import { projects } from '../../Utilities/Projects'
 import ProjectCard from '../ProjectCard/ProjectCard'
+import { projects } from '../../Utilities/projects'
 import './SectionProjects.scss'
 
 const SectionProjects = () => {

@@ -10,7 +10,7 @@ const Footer = () => {
         <Col className='personal-items'>
           <h1>HOWARD LEE</h1>
           <h3>BLOCKCHAIN • FULL STACK MERN DEVELOPER</h3>
-          <h3>+65 8322 2931 | vault2howard@gmail.com</h3>
+          <h3>vault2howard@gmail.com</h3>
         </Col>
         <Col span={10} className='site-map'>
           <Row justify='start'>
