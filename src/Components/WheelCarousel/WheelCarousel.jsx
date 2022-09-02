@@ -6,7 +6,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import { Row, Col } from 'antd'
 import { Fade } from 'react-awesome-reveal'
-import { Images } from '../../Utilities/images'
+import { Images } from '../../Utilities/Images'
 import classnames from 'classnames'
 import './WheelCarousel.scss'
 

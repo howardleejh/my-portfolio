@@ -1,7 +1,7 @@
 import { Row, Col } from 'antd'
 import { Fade } from 'react-awesome-reveal'
 import AbilitiesCard from '../AbilitiesCard/AbilitiesCard'
-import { Roles } from '../../Utilities/roles'
+import { Roles } from '../../Utilities/Roles'
 import './SectionRoles.scss'
 
 const abilities = [
