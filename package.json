@@ -13,11 +13,6 @@
     "Block Chain",
     "Engineer"
   ],
-  "jest": {
-    "transformIgnorePatterns": [
-      "/node_modules/(?!(swiper|ssr-window|dom7))"
-    ]
-  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
     "@fortawesome/free-brands-svg-icons": "^6.2.0",
