@@ -30,7 +30,7 @@ const TiltCard = () => {
             <Row align='middle' justify='center'>
               <Col className='card-details'>
                 <h3>Howard Lee</h3>
-                <h6>Full-Stack Blockchain Dev</h6>
+                <h6>Fullstack Blockchain Dev</h6>
                 <h6>howardleejh.eth</h6>
               </Col>
               <Col>

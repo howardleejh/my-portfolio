@@ -9,11 +9,11 @@ const Footer = () => {
       <Row align='middle' justify='space-around'>
         <Col className='personal-items'>
           <h1>HOWARD LEE</h1>
-          <h3>BLOCKCHAIN • FULL STACK MERN DEVELOPER</h3>
+          <h3>BLOCKCHAIN • FULLSTACK MERN DEVELOPER</h3>
           <h3>vault2howard@gmail.com</h3>
         </Col>
-        <Col xl={12} xs={22} className='site-map'>
-          <Row justify='start'>
+        <Col xl={12} xs={20} className='site-map'>
+          <Row justify='space-between'>
             <Col className='site-map-items'>
               <h6>ABOUT</h6>
               <ul>
