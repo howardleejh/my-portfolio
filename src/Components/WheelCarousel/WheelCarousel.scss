@@ -6,30 +6,30 @@ $easing: cubic-bezier(0.18, 0.89, 0.32, 1.27);
 $duration: 0.5s;
 
 .wheel-container {
+  background-color: pink;
   width: 100%;
   height: 100%;
   position: relative;
 
   .wheel {
     position: absolute;
-    top: 35%;
-    left: 0%;
-    width: 55em;
-    height: 55em;
+    top: 50%;
+    width: 60%;
+    aspect-ratio: 1 / 1;
     transition: transform $easing $duration;
     border: 1px solid g.$warm-color;
     border-radius: 50%;
   }
 
   .slide {
-    width: 12em;
-    height: 12em;
+    width: 12vw;
+    aspect-ratio: 1 / 1;
     border: 0.3vmin solid g.$warm-color;
     border-radius: 50%;
     background-color: whitesmoke;
     position: absolute;
-    top: 50%;
-    left: 50%;
+    // top: 50%;
+    // left: 50%;
     overflow: hidden;
     cursor: pointer;
     transition: all $easing $duration;
@@ -41,7 +41,7 @@ $duration: 0.5s;
     height: 100%;
     display: grid;
     place-items: center;
-    font-size: 5em;
+    font-size: 5vw;
     pointer-events: none;
     z-index: -1;
   }
@@ -62,11 +62,10 @@ $duration: 0.5s;
   }
 
   .text-box {
-    width: 65%;
-    height: 50%;
+    width: 60%;
     position: absolute;
-    right: 2em;
-    top: 35%;
+    right: 5%;
+    top: 40%;
 
     h1 {
       font-weight: 700;
@@ -113,25 +112,32 @@ $duration: 0.5s;
     }
   }
 }
-
 @media screen and (max-width: 600px) {
   .wheel-container {
     .wheel {
+      position: absolute;
       top: 50%;
+      width: 175%;
+      aspect-ratio: 1 / 1;
+      transition: transform $easing $duration;
+      border: 1px solid g.$warm-color;
+      border-radius: 50%;
+      z-index: 2;
     }
 
     .slide {
-      width: 10em;
-      height: 10em;
+      width: 7em;
     }
 
     .text-box {
-      height: unset;
-      top: 34.5%;
-      left: 5%;
+      width: 80%;
+      position: absolute;
+      top: 20%;
+      left: 0;
+      text-align: left;
+
       p {
         font-size: 1em;
-        padding: 0.5em;
       }
     }
 

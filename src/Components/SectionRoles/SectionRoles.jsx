@@ -25,15 +25,18 @@ const abilities = [
 const SectionRoles = () => {
   return (
     <div className='roles-section'>
-      <Fade delay={50}>
-        <h1 className='role-title'>What I DO</h1>
-      </Fade>
       <Row align='middle' justify='center'>
+        <Col span={24}>
+          <Fade delay={'50'}>
+            <h1 className='role-title'>What I DO</h1>
+          </Fade>
+        </Col>
         <Fade cascade direction='up' triggerOnce>
           {abilities.map((ability) => {
             return (
-              <Col className='ability-card' key={ability.title}>
+              <Col className='roles-card-container'>
                 <AbilitiesCard
+                  key={abilities.title}
                   title={ability.title}
                   desc={ability.desc}
                   icons={ability.icons}

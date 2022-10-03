@@ -1,72 +1,31 @@
 @use '../../Styles/global' as g;
 
 .tilt-card {
-  width: 42em;
-  height: 25em;
+  min-width: 50%;
+  aspect-ratio: 16 / 9;
   background: rgba(0, 0, 0, 0.8);
-  border-radius: 50px 150px 50px 75px;
-  position: relative;
+  border-radius: 25px;
+  @include g.text-shadows;
   transform-style: preserve-3d;
+  position: relative;
 
   .tilt-renderer {
-    pointer-events: none;
     overflow: hidden;
+    pointer-events: none;
   }
 
   .tilt-card-content {
     width: 100%;
-    height: 100%;
     position: absolute;
-    left: 5em;
-    border-radius: inherit;
+    bottom: 3.5vmax;
+    font-size: 1.2vmax;
+    z-index: 2;
     transform: translateZ(60px);
-
-    .card-number {
-      color: g.$warm-color;
-      font-weight: 700;
-      @include g.text-shadows;
-      text-align: start;
-      margin-bottom: 8.5em;
-    }
-
-    .card-details {
-      text-align: left;
-      margin-right: 3em;
-    }
 
     h3,
     h6 {
-      font-family: 'Syncopate', sans-serif;
       font-weight: 700;
-      color: g.$warm-color;
       margin: 0;
-      line-height: 1.25em;
-      @include g.text-shadows;
-    }
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .tilt-card {
-    width: 85%;
-    height: 35em;
-    border-radius: 25px;
-    text-align: center;
-
-    .tilt-card-content {
-      left: 0;
-      display: grid;
-      place-items: center;
-
-      .card-number {
-        text-align: center;
-        margin-bottom: 10em;
-      }
-
-      .card-details {
-        text-align: center;
-        margin: 0 0 1em 0;
-      }
     }
   }
 }
