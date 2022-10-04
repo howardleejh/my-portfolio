@@ -1,6 +1,8 @@
 .roles-section {
   min-height: 100vh;
-  padding-bottom: 5em;
+  display: grid;
+  place-items: center;
+  margin-bottom: 7em;
 
   .role-title {
     font-size: 1em;

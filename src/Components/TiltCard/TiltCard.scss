@@ -1,31 +1,83 @@
 @use '../../Styles/global' as g;
 
 .tilt-card {
-  min-width: 50%;
-  aspect-ratio: 16 / 9;
+  width: 50vw;
+  aspect-ratio: 1.8 / 1;
   background: rgba(0, 0, 0, 0.8);
-  border-radius: 25px;
+  border-radius: 50px 120px;
   @include g.text-shadows;
   transform-style: preserve-3d;
-  position: relative;
-
-  .tilt-renderer {
-    overflow: hidden;
-    pointer-events: none;
-  }
 
   .tilt-card-content {
     width: 100%;
-    position: absolute;
-    bottom: 3.5vmax;
-    font-size: 1.2vmax;
-    z-index: 2;
+    height: 100%;
     transform: translateZ(60px);
+    @include g.text-shadows;
 
-    h3,
-    h6 {
-      font-weight: 700;
-      margin: 0;
+    .renderer {
+      width: 35%;
+      height: 100%;
+      position: absolute;
+      left: 3vw;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .details {
+      width: 60%;
+      height: 100%;
+      position: absolute;
+      right: 2em;
+      bottom: 0;
+      display: grid;
+      place-items: center;
+
+      h3,
+      h6 {
+        color: g.$warm-color;
+        font-weight: 700;
+      }
+
+      h3 {
+        font-size: 1.75vmax;
+        margin: 0;
+      }
+
+      .button-group {
+        font-size: 1.5vmax;
+        padding-top: 3em;
+      }
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .tilt-card {
+    width: 95%;
+    aspect-ratio: 1 / 1.6;
+
+    .tilt-card-content {
+      .renderer {
+        width: 100%;
+        left: -7%;
+      }
+
+      .details {
+        width: 100%;
+        left: 0;
+
+        h3,
+        h6 {
+          font-weight: 700;
+        }
+
+        h3 {
+          font-size: 3vmax;
+        }
+
+        .button-group {
+          font-size: 2.5vmax;
+        }
+      }
     }
   }
 }

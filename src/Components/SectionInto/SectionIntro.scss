@@ -1,18 +1,28 @@
 @use '../../Styles/global' as g;
 
 .intro-section {
-  min-height: 80vh;
+  min-height: 100vh;
   position: relative;
+  display: grid;
+  place-items: center;
 
   .intro-title {
     h3 {
       font-size: 2vmax;
-      margin: 2em 0;
+      margin: 1em 0;
     }
   }
 
   .scroll-btn {
     position: absolute;
     bottom: 3.5em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .intro-section {
+    .scroll-btn {
+      bottom: 1.5em;
+    }
   }
 }

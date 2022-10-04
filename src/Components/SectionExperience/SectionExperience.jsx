@@ -56,7 +56,26 @@ const SectionExperience = () => {
       <Fade delay={50}>
         <h1 className='experience-title'>Experience</h1>
       </Fade>
-      <Row align='middle' justify='space-evenly'>
+      <Row align='middle' justify='center'>
+        <Col className='org-grid' xs={24} xl={8}>
+          <Fade cascade direction='right' fraction={0.2} triggerOnce>
+            {orgs.map((org) => {
+              return (
+                <div
+                  key={org.name}
+                  src={org.logo}
+                  alt={org.name}
+                  className='logo'
+                  onClick={handleClick}
+                  style={{ backgroundImage: `url(${org.logo})` }}
+                  id={org.index}
+                >
+                  <h3 id={org.index}>{org.name}</h3>
+                </div>
+              )
+            })}
+          </Fade>
+        </Col>
         <Col xs={24} xl={12}>
           {/* Reference: https://codesandbox.io/s/bkpw8m?file=/src/App.jsx */}
           <Swiper
@@ -76,25 +95,6 @@ const SectionExperience = () => {
               )
             })}
           </Swiper>
-        </Col>
-        <Col className='org-grid' xs={24} xl={8}>
-          <Fade cascade direction='right' fraction={0.2} triggerOnce>
-            {orgs.map((org) => {
-              return (
-                <div
-                  key={org.name}
-                  src={org.logo}
-                  alt={org.name}
-                  className='logo'
-                  onClick={handleClick}
-                  style={{ backgroundImage: `url(${org.logo})` }}
-                  id={org.index}
-                >
-                  <h3 id={org.index}>{org.name}</h3>
-                </div>
-              )
-            })}
-          </Fade>
         </Col>
       </Row>
     </div>

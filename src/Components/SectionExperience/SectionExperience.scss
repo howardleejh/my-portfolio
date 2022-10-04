@@ -1,8 +1,7 @@
 @use '../../Styles/global' as g;
 
 .experience-section {
-  min-height: 100vh;
-  padding: 3.5em 0;
+  padding: 15em 0;
 
   .experience-title {
     font-size: 1em;
@@ -39,7 +38,6 @@
         color: g.$light-color;
         border-radius: inherit;
         font-weight: 700;
-        // font-size: 1.5em;
         display: grid;
         place-items: center;
         opacity: 0;
@@ -90,9 +88,14 @@
     padding: 2em 0;
 
     .org-grid {
+      margin-bottom: 1em;
       .logo {
-        width: 12em;
-        height: 12em;
+        width: 10em;
+        height: 10em;
+
+        h3 {
+          font-size: 1em;
+        }
       }
     }
   }
@@ -102,7 +105,8 @@
 
     .swiper-slide {
       p {
-        font-size: 0.75em;
+        font-size: 0.65em;
+        text-align: left;
       }
     }
   }

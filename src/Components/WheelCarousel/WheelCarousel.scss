@@ -6,14 +6,13 @@ $easing: cubic-bezier(0.18, 0.89, 0.32, 1.27);
 $duration: 0.5s;
 
 .wheel-container {
-  background-color: pink;
   width: 100%;
   height: 100%;
   position: relative;
 
   .wheel {
     position: absolute;
-    top: 50%;
+    top: 48%;
     width: 60%;
     aspect-ratio: 1 / 1;
     transition: transform $easing $duration;
@@ -28,22 +27,20 @@ $duration: 0.5s;
     border-radius: 50%;
     background-color: whitesmoke;
     position: absolute;
-    // top: 50%;
-    // left: 50%;
     overflow: hidden;
     cursor: pointer;
     transition: all $easing $duration;
     @include g.card-shadows;
-  }
 
-  .slide p {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    place-items: center;
-    font-size: 5vw;
-    pointer-events: none;
-    z-index: -1;
+    p {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      place-items: center;
+      font-size: 5vw;
+      pointer-events: none;
+      z-index: -1;
+    }
   }
 
   .slide.active {
@@ -65,14 +62,14 @@ $duration: 0.5s;
     width: 60%;
     position: absolute;
     right: 5%;
-    top: 40%;
+    top: 38vh;
 
     h1 {
       font-weight: 700;
     }
 
     p {
-      font-size: 1.5em;
+      font-size: 1.25vw;
       padding: 0 5em;
       text-align: justify;
     }
@@ -126,18 +123,28 @@ $duration: 0.5s;
     }
 
     .slide {
-      width: 7em;
+      width: 6em;
+
+      p {
+        font-size: 3.5em;
+      }
     }
 
     .text-box {
       width: 80%;
       position: absolute;
-      top: 20%;
-      left: 0;
+      left: 1em;
+      top: 32%;
       text-align: left;
 
+      h1 {
+        width: 50%;
+      }
+
       p {
-        font-size: 1em;
+        font-size: 0.8em;
+        padding: 0em 6em 0 0;
+        text-align: left;
       }
     }
 

@@ -6,7 +6,7 @@
 
 .abilities-card {
   max-width: 28em;
-  height: 30em;
+  height: 28em;
   border-radius: 25px;
   padding: 2.5em;
   transition: 0.2s ease;
@@ -29,7 +29,6 @@
   }
 
   ul {
-    height: 5em;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -38,6 +37,7 @@
     justify-content: center;
 
     li {
+      aspect-ratio: 1 / 1;
       background-color: rgba(255, 255, 255, 0.2);
       padding: 1em;
       border-radius: 50%;
@@ -62,9 +62,20 @@
       }
     }
   }
-  P {
+  p {
     text-align: start;
     font-size: 1.15em;
-    margin: 2em 0;
+    margin: 1em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .abilities-card {
+    height: 30em;
+
+    p {
+      font-size: 1em;
+      margin: 0;
+    }
   }
 }

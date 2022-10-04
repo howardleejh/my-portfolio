@@ -8,12 +8,8 @@ const SectionIntro = () => {
   return (
     <div className='intro-section'>
       <Row align='middle' justify='center'>
-        <Col xl={11} xs={20}>
-          <Suspense fallback={<Spin />}>
-            <TiltCard />
-          </Suspense>
-        </Col>
-        <Col className='intro-title' span={20}>
+        <TiltCard />
+        <Col span={20} className='intro-title'>
           <h3>DeFi Enthusiast • Coder • Gamer</h3>
         </Col>
         <ScrollButton className='scroll-btn' />

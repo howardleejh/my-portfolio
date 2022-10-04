@@ -13,15 +13,16 @@
   }
 
   .about-me-main {
-    font-size: 2em;
+    font-size: 2vmax;
     padding: 0 5em;
   }
 }
+
 @media screen and (max-width: 600px) {
   .about-section {
     .about-me-main {
-      font-size: 1.5em;
-      padding: 0 1em;
+      font-size: 2.5vmax;
+      padding: 0 2em;
     }
   }
 }
