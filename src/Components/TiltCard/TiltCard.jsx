@@ -26,12 +26,11 @@ const TiltCard = () => {
             <ThreeRenderer />
           </Col>
           <Col className='details'>
-            <Row justify='center'>
+            <Row align='middle' justify='center'>
               <Col>
                 <h3>Howard Lee</h3>
                 <h6>Fullstack | Blockchain</h6>
                 <h6>howardleejh.eth</h6>
-
                 <Space direction='horizontal' className='button-group'>
                   <SocialButton
                     name={<FontAwesomeIcon icon={faWhatsapp} />}

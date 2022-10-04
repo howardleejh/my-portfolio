@@ -38,7 +38,7 @@
 }
 @media screen and (max-width: 600px) {
   .projects-section {
-    overflow: hidden;
+    overflow-x: hidden;
 
     p {
       font-size: 1em;
@@ -47,14 +47,10 @@
     }
 
     .swiper {
-      width: 100em;
+      text-align: center;
 
       .swiper-slide {
         aspect-ratio: 4 / 3;
-
-        &:hover {
-          z-index: 5;
-        }
       }
     }
   }

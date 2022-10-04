@@ -23,7 +23,7 @@ const Loader = () => {
 const ThreeRenderer = () => {
   return (
     <>
-      <Canvas camera={{ zoom: 1.5 }} resize={{ scroll: false }}>
+      <Canvas camera={{ zoom: 1.25 }} resize={{ scroll: false }}>
         <Suspense fallback={<Loader />}>
           <Stage
             intensity={0.35}

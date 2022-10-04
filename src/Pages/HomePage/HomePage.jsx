@@ -23,23 +23,27 @@ const HomePage = () => {
         </Parallax>
       </section>
       <section id='roles'>
-        <Parallax speed={-5}>
+        <Parallax speed={-15}>
           <SectionRoles />
         </Parallax>
       </section>
       <section id='tech'>
-        <SectionTechStack />
+        <Parallax speed={15}>
+          <SectionTechStack />
+        </Parallax>
       </section>
       <section id='experience'>
-        <Parallax speed={20}>
+        <Parallax speed={-5}>
           <SectionExperience />
         </Parallax>
       </section>
       <section id='projects'>
-        <SectionProjects />
+        <Parallax speed={-15}>
+          <SectionProjects />
+        </Parallax>
       </section>
       <section id='contact'>
-        <Parallax speed={10}>
+        <Parallax speed={-15}>
           <SectionContact />
         </Parallax>
       </section>

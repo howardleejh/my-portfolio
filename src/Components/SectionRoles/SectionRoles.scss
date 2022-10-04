@@ -2,7 +2,6 @@
   min-height: 100vh;
   display: grid;
   place-items: center;
-  margin-bottom: 7em;
 
   .role-title {
     font-size: 1em;
@@ -12,5 +11,10 @@
 
   .roles-card-container {
     margin: 1em;
+  }
+}
+@media screen and (max-width: 600px) {
+  .roles-section {
+    margin-bottom: 15em;
   }
 }

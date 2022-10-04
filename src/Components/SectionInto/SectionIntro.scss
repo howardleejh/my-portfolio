@@ -8,21 +8,19 @@
 
   .intro-title {
     h3 {
-      font-size: 2vmax;
+      font-size: 2.25vmax;
       margin: 1em 0;
     }
   }
 
   .scroll-btn {
     position: absolute;
-    bottom: 3.5em;
+    bottom: 3.5vmax;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .intro-section {
-    .scroll-btn {
-      bottom: 1.5em;
-    }
+  .scroll-btn {
+    bottom: 0;
   }
 }

@@ -32,3 +32,13 @@
     }
   }
 }
+@media screen and (max-width: 600px) {
+  .project-card {
+    .project-card-content {
+      text-align: center;
+      h1 {
+        font-size: 0.5em;
+      }
+    }
+  }
+}

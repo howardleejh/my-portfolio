@@ -6,16 +6,16 @@
 
 .abilities-card {
   max-width: 28em;
-  height: 28em;
+  height: 27em;
   border-radius: 25px;
   padding: 2.5em;
   transition: 0.2s ease;
   @include border-style;
 
   &:hover {
+    border: none;
     background-color: white;
     @include g.box-shadows;
-    border: none;
   }
 
   .divider {
@@ -41,13 +41,11 @@
       background-color: rgba(255, 255, 255, 0.2);
       padding: 1em;
       border-radius: 50%;
-      transition: 0.2s ease-out;
       @include g.card-shadows;
 
       &:hover {
         background-color: rgba(255, 255, 255, 0.5);
         @include border-style;
-        transform: scale(1.05);
 
         img {
           filter: none;
@@ -56,26 +54,39 @@
       }
 
       img {
-        width: 1.5em;
+        width: 1.75em;
+        aspect-ratio: 1 / 1;
         filter: contrast(0.1);
         -webkit-filter: contrast(0.1);
       }
     }
   }
   p {
-    text-align: start;
+    text-align: justify;
     font-size: 1.15em;
-    margin: 1em;
   }
 }
 
 @media screen and (max-width: 600px) {
   .abilities-card {
-    height: 30em;
+    max-width: 20em;
+    height: 25em;
+
+    ul {
+      li {
+        width: 3em;
+        padding: 0.75em;
+
+        img {
+          max-width: 1.5em;
+        }
+      }
+    }
 
     p {
-      font-size: 1em;
       margin: 0;
+      font-size: 1em;
+      text-align: start;
     }
   }
 }

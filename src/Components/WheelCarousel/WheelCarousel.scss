@@ -37,7 +37,7 @@ $duration: 0.5s;
       height: 100%;
       display: grid;
       place-items: center;
-      font-size: 5vw;
+      font-size: 5vmax;
       pointer-events: none;
       z-index: -1;
     }
@@ -69,7 +69,7 @@ $duration: 0.5s;
     }
 
     p {
-      font-size: 1.25vw;
+      font-size: 1.25vmax;
       padding: 0 5em;
       text-align: justify;
     }
@@ -114,7 +114,7 @@ $duration: 0.5s;
     .wheel {
       position: absolute;
       top: 50%;
-      width: 175%;
+      width: 165%;
       aspect-ratio: 1 / 1;
       transition: transform $easing $duration;
       border: 1px solid g.$warm-color;
@@ -134,7 +134,7 @@ $duration: 0.5s;
       width: 80%;
       position: absolute;
       left: 1em;
-      top: 32%;
+      top: 30%;
       text-align: left;
 
       h1 {
@@ -142,7 +142,7 @@ $duration: 0.5s;
       }
 
       p {
-        font-size: 0.8em;
+        font-size: 0.85em;
         padding: 0em 6em 0 0;
         text-align: left;
       }
