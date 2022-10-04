@@ -1,5 +1,4 @@
-import { Suspense } from 'react'
-import { Row, Col, Spin } from 'antd'
+import { Row, Col } from 'antd'
 import TiltCard from '../../Components/TiltCard/TiltCard'
 import ScrollButton from '../ScrollButton/ScrollButton'
 import './SectionIntro.scss'
