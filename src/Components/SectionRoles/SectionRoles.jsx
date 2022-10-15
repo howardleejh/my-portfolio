@@ -11,7 +11,7 @@ const abilities = [
     icons: Roles.Mern,
   },
   {
-    title: `Solidity`,
+    title: `Blockchain`,
     desc: `Professionally certified for Ethereum & Solidity. I ensure that all smart contract development adhere to EIP standards with Open Zeppelin and Chainlink for external off-chain data processing.`,
     icons: Roles.Solidity,
   },

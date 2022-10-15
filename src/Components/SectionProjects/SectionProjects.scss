@@ -9,14 +9,8 @@
     margin: 0;
   }
 
-  p {
-    font-size: 1.5em;
-    padding: 0 7em;
-    margin: 0;
-  }
-
   .swiper {
-    padding: 3.5em 0;
+    padding: 2vmax 0;
 
     .swiper-wrapper {
       -webkit-transition-timing-function: linear !important;
@@ -26,7 +20,7 @@
 
     .swiper-slide {
       aspect-ratio: 16/10;
-      border-radius: 15px;
+      border-radius: 25px;
       transform: scale(0.9);
 
       &:hover {
@@ -36,22 +30,14 @@
     }
   }
 }
+
 @media screen and (max-width: 600px) {
   .projects-section {
-    overflow-x: hidden;
-
-    p {
-      font-size: 1em;
-      padding: 0 2em;
-      text-align: left;
-    }
-
+    overflow: hidden;
     .swiper {
-      text-align: center;
-
-      .swiper-slide {
-        aspect-ratio: 4 / 3;
-      }
+      height: 75vh;
+      aspect-ratio: 1 / 1;
+      padding: 1em 0;
     }
   }
 }

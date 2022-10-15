@@ -11,7 +11,7 @@ const SectionAbout = () => {
             <h1 className='about-me-title'>About Me</h1>
           </Fade>
           <Fade triggerOnce>
-            <p className='about-me-main'>
+            <p>
               I build decentralized applications that interact with EVM
               compatible blockchains such as Ethereum and Polygon. I have
               experience in building single page and progressive web

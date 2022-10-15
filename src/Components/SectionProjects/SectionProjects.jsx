@@ -11,14 +11,15 @@ const SectionProjects = () => {
       <Fade delay={50}>
         <h1 className='projects-section-title'>Projects</h1>
       </Fade>
-      <p>
-        Here are some of the projects that I've developed so far. I am currently
-        working on multiple projects, both professionally and as a freelance to
-        further expand my knowledge. Find out more on my Github!
-      </p>
       <Swiper
         modules={[Pagination, FreeMode, Autoplay]}
-        slidesPerView={3}
+        breakpoints={{
+          // when window width is >= 640px
+          600: {
+            width: 600,
+            slidesPerView: 1,
+          },
+        }}
         speed={7000}
         centeredSlides={true}
         grabCursor={true}

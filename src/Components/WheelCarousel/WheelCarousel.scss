@@ -12,8 +12,8 @@ $duration: 0.5s;
 
   .wheel {
     position: absolute;
-    top: 48%;
-    width: 60%;
+    top: 50%;
+    width: 50vmax;
     aspect-ratio: 1 / 1;
     transition: transform $easing $duration;
     border: 1px solid g.$warm-color;
@@ -21,7 +21,7 @@ $duration: 0.5s;
   }
 
   .slide {
-    width: 12vw;
+    min-width: 10vmax;
     aspect-ratio: 1 / 1;
     border: 0.3vmin solid g.$warm-color;
     border-radius: 50%;
@@ -62,9 +62,10 @@ $duration: 0.5s;
     width: 60%;
     position: absolute;
     right: 5%;
-    top: 38vh;
+    top: 35vh;
 
     h1 {
+      font-size: 1.5vmax;
       font-weight: 700;
     }
 
@@ -111,10 +112,11 @@ $duration: 0.5s;
 }
 @media screen and (max-width: 600px) {
   .wheel-container {
+    overflow: hidden;
     .wheel {
       position: absolute;
       top: 50%;
-      width: 165%;
+      width: 40em;
       aspect-ratio: 1 / 1;
       transition: transform $easing $duration;
       border: 1px solid g.$warm-color;
@@ -123,7 +125,7 @@ $duration: 0.5s;
     }
 
     .slide {
-      width: 6em;
+      width: 7em;
 
       p {
         font-size: 3.5em;
@@ -131,19 +133,19 @@ $duration: 0.5s;
     }
 
     .text-box {
-      width: 80%;
+      width: 50%;
       position: absolute;
       left: 1em;
-      top: 30%;
+      top: 32vh;
       text-align: left;
 
       h1 {
-        width: 50%;
+        font-size: 1.25em;
       }
 
       p {
         font-size: 0.85em;
-        padding: 0em 6em 0 0;
+        padding: 0;
         text-align: left;
       }
     }

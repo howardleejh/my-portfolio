@@ -1,7 +1,7 @@
 @use '../../Styles/global' as g;
 
 .tilt-card {
-  width: 50vw;
+  width: 42vw;
   aspect-ratio: 1.8 / 1;
   background: rgba(0, 0, 0, 0.8);
   border-radius: 50px 120px;
@@ -41,11 +41,11 @@
       }
 
       h3 {
-        font-size: 2vmax;
+        font-size: 1.5vmax;
       }
 
       .button-group {
-        font-size: 1.75vmax;
+        font-size: 1.5vmax;
         padding-top: 2vmax;
       }
     }
@@ -74,7 +74,6 @@
         }
 
         .button-group {
-          margin-top: 2vmax;
           font-size: 2.5vmax;
         }
       }

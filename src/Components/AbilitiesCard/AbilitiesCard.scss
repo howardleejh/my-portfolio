@@ -5,8 +5,8 @@
 }
 
 .abilities-card {
-  max-width: 28em;
-  height: 27em;
+  max-width: 28vmax;
+  height: 27vmax;
   border-radius: 25px;
   padding: 2.5em;
   transition: 0.2s ease;
@@ -19,11 +19,11 @@
   }
 
   .divider {
-    width: 2em;
+    width: 2vmax;
   }
 
   h3 {
-    font-size: 1.5em;
+    font-size: 1.25vmax;
     font-weight: 700;
     color: g.$secondary-color;
   }
@@ -32,14 +32,13 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
 
     li {
       aspect-ratio: 1 / 1;
       background-color: rgba(255, 255, 255, 0.2);
-      padding: 1em;
+      display: grid;
+      place-items: center;
+      padding: 1vmax;
       border-radius: 50%;
       @include g.card-shadows;
 
@@ -62,8 +61,8 @@
     }
   }
   p {
+    font-size: 1.15vmax;
     text-align: justify;
-    font-size: 1.15em;
   }
 }
 
@@ -72,14 +71,14 @@
     max-width: 20em;
     height: 25em;
 
+    h3 {
+      font-size: 1.25em;
+    }
+
     ul {
       li {
-        width: 3em;
-        padding: 0.75em;
-
-        img {
-          max-width: 1.5em;
-        }
+        width: 3.5em;
+        height: 3.5em;
       }
     }
 
@@ -88,5 +87,11 @@
       font-size: 1em;
       text-align: start;
     }
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .abilities-card {
+    height: 21vmax;
   }
 }

@@ -13,39 +13,27 @@ const HomePage = () => {
   return (
     <div className='homepage'>
       <section id='intro'>
-        <Parallax speed={-15}>
-          <SectionIntro />
-        </Parallax>
+        <SectionIntro />
       </section>
       <section id='about'>
-        <Parallax speed={15}>
+        <Parallax speed={10}>
           <SectionAbout />
         </Parallax>
       </section>
       <section id='roles'>
-        <Parallax speed={-15}>
-          <SectionRoles />
-        </Parallax>
+        <SectionRoles />
       </section>
       <section id='tech'>
-        <Parallax speed={15}>
-          <SectionTechStack />
-        </Parallax>
+        <SectionTechStack />
       </section>
       <section id='experience'>
-        <Parallax speed={-5}>
-          <SectionExperience />
-        </Parallax>
+        <SectionExperience />
       </section>
       <section id='projects'>
-        <Parallax speed={-15}>
-          <SectionProjects />
-        </Parallax>
+        <SectionProjects />
       </section>
       <section id='contact'>
-        <Parallax speed={-15}>
-          <SectionContact />
-        </Parallax>
+        <SectionContact />
       </section>
       <BackTop visibilityHeight={150} />
     </div>
