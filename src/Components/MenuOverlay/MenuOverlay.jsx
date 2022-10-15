@@ -5,7 +5,7 @@ const MenuOverlay = () => {
   return (
     <div className='menu-overlay'>
       <Fade cascade direction='down' duration={500}>
-        <ul>
+        {/* <ul>
           <li>
             <h1>Home</h1>
           </li>
@@ -27,7 +27,8 @@ const MenuOverlay = () => {
           <li>
             <h1>FAQ</h1>
           </li>
-        </ul>
+        </ul> */}
+        <h1 style={{ color: 'white' }}>Work in Progress</h1>
       </Fade>
     </div>
   )

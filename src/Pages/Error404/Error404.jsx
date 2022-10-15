@@ -7,7 +7,7 @@ const Error404 = () => {
     <div className='error-404'>
       <Row>
         <Col>
-          <h1>Error 404.</h1>
+          <h1>Work in Progress.</h1>
           <Link to='/' replace>
             Home
           </Link>
