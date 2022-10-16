@@ -57,7 +57,7 @@ const SectionExperience = () => {
         <h1 className='experience-title'>Experience</h1>
       </Fade>
       <Row align='middle' justify='center'>
-        <Col className='org-grid' xs={24} xl={10} xxl={20}>
+        <Col className='org-grid' xs={22} xl={10} xxl={20}>
           <Fade cascade direction='right' fraction={0.2} triggerOnce>
             {orgs.map((org) => {
               return (
@@ -76,7 +76,7 @@ const SectionExperience = () => {
             })}
           </Fade>
         </Col>
-        <Col xs={24} xl={10} xxl={20}>
+        <Col xs={22} xl={10} xxl={20}>
           {/* Reference: https://codesandbox.io/s/bkpw8m?file=/src/App.jsx */}
           <Swiper
             modules={[Pagination]}

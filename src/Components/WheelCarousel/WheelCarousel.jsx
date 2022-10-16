@@ -4,7 +4,7 @@ import {
   faChevronLeft,
   faChevronRight,
 } from '@fortawesome/free-solid-svg-icons'
-import { Row, Col } from 'antd'
+import { Row, Col, Tooltip } from 'antd'
 import { Fade } from 'react-awesome-reveal'
 import { Images } from '../../Utilities/Images'
 import classnames from 'classnames'
@@ -123,23 +123,25 @@ const WheelCarousel = () => {
         {slides &&
           slides.map((slide, index) => {
             return (
-              <div
-                onClick={handleSlideClick}
-                key={index}
-                data-index={index + 1}
-                className={classnames('slide', {
-                  active: slide.index === activeSlide.index,
-                })}
-                style={{
-                  top: center.x + slide.coords.x,
-                  left: center.y + slide.coords.y,
-                  transform: `translate(-50%, -50%) rotate(${-rotate}deg)`,
-                }}
-              >
-                <p>
-                  <FontAwesomeIcon icon={slide.icon} />
-                </p>
-              </div>
+              <Tooltip title='Click Me!'>
+                <div
+                  onClick={handleSlideClick}
+                  key={index}
+                  data-index={index + 1}
+                  className={classnames('slide', {
+                    active: slide.index === activeSlide.index,
+                  })}
+                  style={{
+                    top: center.x + slide.coords.x,
+                    left: center.y + slide.coords.y,
+                    transform: `translate(-50%, -50%) rotate(${-rotate}deg)`,
+                  }}
+                >
+                  <p>
+                    <FontAwesomeIcon icon={slide.icon} />
+                  </p>
+                </div>
+              </Tooltip>
             )
           })}
       </div>

@@ -77,7 +77,8 @@
       p {
         font-size: 1.15vmax;
         text-align: justify;
-        padding: 3em 0;
+        padding: 2em;
+        margin: 1em;
       }
     }
   }
@@ -97,12 +98,13 @@
       .swiper-slide {
         h1 {
           font-size: 1.25em;
+          margin: 0;
         }
 
         p {
           font-size: 0.75em;
-          padding: 1em 2.5em;
-          margin: 0;
+          padding: 1em;
+          margin: 1em;
         }
       }
     }
